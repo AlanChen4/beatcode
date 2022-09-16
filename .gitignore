@@ -1,0 +1,5 @@
+# venv related
+/Lib
+/Scripts
+/venv
+pyvenv.cfg
