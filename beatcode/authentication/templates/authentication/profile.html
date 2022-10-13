@@ -1,0 +1,18 @@
+{% extends 'authentication/main.html' %}
+{% load crispy_forms_tags %}
+{% block content%}
+<div class="mt-4">
+    <a class="ms-4 text-dark" href="{% url 'bundles' %}">Go back</a>
+    <div class="container w-25">
+        <h1>Profile</h1>
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-dark" type="submit">Update</button>
+                <a class="btn btn-dark float-end" href="{% url 'logout' %}">Logout</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content%}
