@@ -11,3 +11,5 @@ Alan Chen: Designed and worked on the Leetcode scraper with Sean; implemented au
 Lulu Tang: Created system context and container infrastructure diagrams
 
 ALL: Finished designing relational schemas and brainstormed/finalized the app’s feature list
+
+[Github Repo](https://github.com/AlanChen4/beatcode)
