@@ -63,5 +63,8 @@ class InSet(models.Model):
     pid = models.ForeignKey(Problem, on_delete=models.CASCADE)
     psid = models.ForeignKey(ProblemSet, on_delete=models.CASCADE) 
 
-#to add later
-#class Task(models.Model):
+
+class ToDo(models.Model):
+    uid = models.ManyToManyField(User)
+    pid = models.ManyToManyField(Problem)
+    progress = models.TextField()
