@@ -1,0 +1,34 @@
+{% extends 'beatcodeApp/main.html' %}
+{% block content %}
+<div class="container">
+    <h1>{{ problem_set.name }}</h1>
+    <form action="." method="GET" class="row"> {% csrf_token %}
+        <div class="col-auto">
+            <input type="text" name="category" placeholder="Category to search by" class="form-control">
+        </div>
+        <div class="col-auto">
+            <input type="submit" class="btn btn-dark">
+        </div>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">Problem</th>
+              <th scope="col">Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for problem in problems %}
+                <tr>
+                    <td>{{ problem.name }}</td>
+                    <td>
+                        {% for category in problem.category.all %}
+                            {{ category.get_category_display }}
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+          </tbody>
+    </table>
+</div>
+{% endblock %}
