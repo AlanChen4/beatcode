@@ -1,13 +1,7 @@
 from django.db import models
+from authentication.models import CustomUser as User
+import uuid
 
-class User(models.Model):
-    uid = models.IntegerField(primary_key=True)
-    leetcode_username = models.TextField(unique=True)
-    password = models.TextField()
-    last_login = models.DateField()
-    is_active = models.BooleanField()
-    is_admin = models.BooleanField()
-    is_superuser = models.BooleanField()
  
 class Category(models.Model):
     ARRAY = 'AR'
@@ -33,38 +27,46 @@ class Category(models.Model):
         (TREE, 'Tree'),
         (HEAP, 'Heap')
     ]
-
-    cat = models.TextField(
-        max_length = 255,
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    category = models.TextField(
+        max_length=255,
         choices=CATEGORY_CHOICES,
         unique=True)
     last_done = models.DateField()
 
+    def __str__(self):
+        return self.category
+
 class Problem(models.Model):
-    pid = models.IntegerField(primary_key=True)
-    cat = models.ManyToManyField(Category)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    category = models.ManyToManyField(Category)
     name = models.TextField()
-    ## difficulty = models. what are the difficulty levels?
-    
+    ## difficulty = models. what are the difficulty levels? 
+
+    def __str__(self):
+        return self.name  
+
 class ProblemSet(models.Model):
-    psid = models.IntegerField(primary_key=True)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     name = models.TextField()
 
+    def __str__(self):
+        return self.name
+
+class ProblemToProblemSet(models.Model):
+    problem = models.ForeignKey(to=Problem, on_delete=models.CASCADE)
+    problem_set = models.ForeignKey(to=ProblemSet, on_delete=models.CASCADE)
+
 class Submission(models.Model):
-    sid = models.IntegerField(primary_key=True)
-    uid = models.ForeignKey(to=User, on_delete=models.CASCADE)
-    pid = models.ForeignKey(to=Problem, on_delete=models.CASCADE)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE)
+    problem = models.ForeignKey(to=Problem, on_delete=models.CASCADE)
     sub_date = models.DateField()
     runtime = models.IntegerField()
     mem_used = models.IntegerField()
     success = models.BooleanField()
-    
-class InSet(models.Model):
-    pid = models.ForeignKey(Problem, on_delete=models.CASCADE)
-    psid = models.ForeignKey(ProblemSet, on_delete=models.CASCADE) 
-
 
 class ToDo(models.Model):
-    uid = models.ManyToManyField(User)
-    pid = models.ManyToManyField(Problem)
+    user = models.ManyToManyField(User)
+    problem = models.ManyToManyField(Problem)
     progress = models.TextField()
