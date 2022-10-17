@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views import View
+import json
 
 from .models import ProblemSet, ProblemToProblemSet
 
@@ -33,3 +34,15 @@ class ProblemSetView(View):
         context['problem_set'] = problem_set
         context['problems'] = filtered_problems
         return render(request, 'beatcodeApp/problemSet.html', context)
+
+class Chart(View):
+    #get all categories, 
+    def get(self, request, *args, **kwargs):
+        context = {}
+
+        context['categories'] = json.dumps(['Array', 'Binary', 'Dynamic Programming', 'Graph', 
+        'Interval', 'Linked List', 'Matrix', 'String', 'Tree', 'Heap'])
+
+
+        context['problem_freq'] = json.dumps([])
+        return render(request, 'beatcodeApp/chart.html', context)
