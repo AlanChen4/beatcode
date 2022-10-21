@@ -39,8 +39,8 @@ class Category(models.Model):
 
 class Problem(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    category = models.ManyToManyField(Category)
     name = models.CharField(max_length=255)
+    category = models.ForeignKey(to=Category, on_delete=models.CASCADE, blank=True, null=True)
     ## difficulty = models. what are the difficulty levels? 
 
     def __str__(self):

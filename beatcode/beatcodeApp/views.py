@@ -1,8 +1,9 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views import View
+import json
 
-from .models import ProblemSet, ProblemToProblemSet
+from .models import ProblemSet, ProblemToProblemSet, Submission
 
 
 class Home(View):
@@ -33,3 +34,18 @@ class ProblemSetView(View):
         context['problem_set'] = problem_set
         context['problems'] = filtered_problems
         return render(request, 'beatcodeApp/problemSet.html', context)
+
+class Chart(View):
+    #get all successful problems and their category
+    def get(self, request, *args, **kwargs):
+        context = {}
+
+        submissions = Submission.objects.filter(user=request.user, success=True)
+        categories = {}
+        for submission in submissions:
+            categories[submission.problem.category.category] = categories.get(submission.problem.category, 0) + 1
+
+        print(categories)
+        context['categories'] = json.dumps(list(categories.keys()))
+        context['problem_freq'] = json.dumps(list(categories.values()))
+        return render(request, 'beatcodeApp/chart.html', context)
