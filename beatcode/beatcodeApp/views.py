@@ -34,34 +34,37 @@ class ProblemSetView(View):
         return render(request, 'beatcodeApp/problemSet.html', context)
 
 class Chart(View):
-    #get all categories, 
+    #get all successful problems and their category
     def get(self, request, *args, **kwargs):
         context = {}
 
-        context['categories'] = json.dumps(['Array', 'Binary', 'Dynamic Programming', 'Graph', 
-        'Interval', 'Linked List', 'Matrix', 'String', 'Tree', 'Heap'])
+        submissions = Submission.objects.filter(user=request.user, success=True)
+        categories = {}
+        for submission in submissions:
+            categories[submission.problem.category] = categories.get(submission.problem.category, 0) + 1
 
 
-        context['problem_freq'] = json.dumps([])
+        print(categories)
+        context['categories'] = json.dumps(list(categories.keys()))
+        context['problem_freq'] = json.dumps(list(categories.values()))
         return render(request, 'beatcodeApp/chart.html', context)
 
 class CategoryView(View):
 
     def get(self, request, *args, **kwargs):
         context = {}
-        category_dict = []
+        category_dict = {}
 
         # query = """SELECT P.category, MAX(S.sub_date) AS most_recent_sub
         #             FROM beatcodeApp_submission S JOIN beatcodeApp_problem P ON S.problem_id = P.id
         #             GROUP BY P.category
         #             ORDER BY ASC most_recent_sub"""
 
-        query = "SELECT * FROM beatcodeApp_submission S JOIN beatcodeApp_problem P ON S.problem_id = P.id"
+        query = "SELECT * FROM beatcodeApp_problem"
 
         for cat in Submission.objects.raw(query):
-            # category_dict[cat.category] = cat.sub_date
-            # category_dict.append()
-            print(cat)
+            category_dict[cat.id] = cat.name
+            print(cat.name)
 
         # for f in Submission._meta.fields: print(f)
         # beatcodeApp.Submission.id
@@ -72,6 +75,6 @@ class CategoryView(View):
         # beatcodeApp.Submission.mem_used
         # beatcodeApp.Submission.success
 
-        #context['category'] = category_dict
+        context['category'] = category_dict
 
         return render(request, 'beatcodeApp/category.html', context)
