@@ -16,8 +16,8 @@ class ProblemSetView(View):
     def get(self, request, *args, **kwargs):
         context = {}
 
-        problem_set_id = kwargs['problem_set_id']
-        problem_set = ProblemSet.objects.get(id=problem_set_id)
+        problem_set_name = kwargs['problem_set_name']
+        problem_set = ProblemSet.objects.get(name=problem_set_name)
         problems = [ps.problem for ps in ProblemToProblemSet.objects.filter(problem_set=problem_set)]
 
         desired_category = request.GET.get('category')
