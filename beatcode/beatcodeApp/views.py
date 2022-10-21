@@ -53,28 +53,17 @@ class CategoryView(View):
 
     def get(self, request, *args, **kwargs):
         context = {}
-        category_dict = {}
+        category_to_activity = {}
 
-        # query = """SELECT P.category, MAX(S.sub_date) AS most_recent_sub
-        #             FROM beatcodeApp_submission S JOIN beatcodeApp_problem P ON S.problem_id = P.id
-        #             GROUP BY P.category
-        #             ORDER BY ASC most_recent_sub"""
-
-        query = "SELECT * FROM beatcodeApp_problem"
+        query = """SELECT C.category, C.id, MAX(sub_date) AS recent_activity
+                    FROM beatcodeApp_submission S JOIN beatcodeApp_problem P ON S.problem_id = P.id
+                    JOIN beatcodeApp_category C ON P.category_id = C.id
+                    GROUP BY P.category_id
+                    ORDER BY recent_activity ASC"""
 
         for cat in Submission.objects.raw(query):
-            category_dict[cat.id] = cat.name
-            print(cat.name)
+            category_to_activity[cat.category] = cat.recent_activity
 
-        # for f in Submission._meta.fields: print(f)
-        # beatcodeApp.Submission.id
-        # beatcodeApp.Submission.user
-        # beatcodeApp.Submission.problem
-        # beatcodeApp.Submission.sub_date
-        # beatcodeApp.Submission.runtime
-        # beatcodeApp.Submission.mem_used
-        # beatcodeApp.Submission.success
-
-        context['category'] = category_dict
+        context['category_to_activity'] = category_to_activity
 
         return render(request, 'beatcodeApp/category.html', context)

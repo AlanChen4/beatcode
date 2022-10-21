@@ -9,26 +9,12 @@
             </tr>
         </thead>
         <tbody>
-            {% for cat in category %}
-                <tr>
-                    <td>
-                        Category Name
-                    </td>
-                    <td>
-                        {{cat}}
-                    </td>
-                </tr>
+            {% for key, value in category_to_activity.items %}
+            <tr>
+                <td> {{ key }} </td>
+                <td> {{ value }} </td>
+            </tr>
             {% endfor %}
-            <!-- {% for cat in category_latest_sub %}
-                <tr>
-                    <td>{{ cat }}</td>
-                    <td>
-                        {% for category in problem.category.all %}
-                            {{ category.get_category_display }}
-                        {% endfor %}
-                    </td>
-                </tr>
-            {% endfor %} -->
         </tbody>
     </table>
 </div>
