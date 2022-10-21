@@ -1,0 +1,35 @@
+{% extends 'beatcodeApp/main.html' %}
+{% block content %}
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">Category</th>
+              <th scope="col">Most Recent Submission</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cat in category %}
+                <tr>
+                    <td>
+                        Category Name
+                    </td>
+                    <td>
+                        {{cat}}
+                    </td>
+                </tr>
+            {% endfor %}
+            <!-- {% for cat in category_latest_sub %}
+                <tr>
+                    <td>{{ cat }}</td>
+                    <td>
+                        {% for category in problem.category.all %}
+                            {{ category.get_category_display }}
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %} -->
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -3,14 +3,12 @@ from django.shortcuts import render
 from django.views import View
 import json
 
-from .models import ProblemSet, ProblemToProblemSet
-
+from .models import ProblemSet, ProblemToProblemSet, Submission, Category, Problem
 
 class Home(View):
 
     def get(self, request, *args, **kwargs):
         return JsonResponse({'foo': 'bar'})
-
 
 class ProblemSetView(View):
 
@@ -46,3 +44,34 @@ class Chart(View):
 
         context['problem_freq'] = json.dumps([])
         return render(request, 'beatcodeApp/chart.html', context)
+
+class CategoryView(View):
+
+    def get(self, request, *args, **kwargs):
+        context = {}
+        category_dict = []
+
+        # query = """SELECT P.category, MAX(S.sub_date) AS most_recent_sub
+        #             FROM beatcodeApp_submission S JOIN beatcodeApp_problem P ON S.problem_id = P.id
+        #             GROUP BY P.category
+        #             ORDER BY ASC most_recent_sub"""
+
+        query = "SELECT * FROM beatcodeApp_submission S JOIN beatcodeApp_problem P ON S.problem_id = P.id"
+
+        for cat in Submission.objects.raw(query):
+            # category_dict[cat.category] = cat.sub_date
+            # category_dict.append()
+            print(cat)
+
+        # for f in Submission._meta.fields: print(f)
+        # beatcodeApp.Submission.id
+        # beatcodeApp.Submission.user
+        # beatcodeApp.Submission.problem
+        # beatcodeApp.Submission.sub_date
+        # beatcodeApp.Submission.runtime
+        # beatcodeApp.Submission.mem_used
+        # beatcodeApp.Submission.success
+
+        #context['category'] = category_dict
+
+        return render(request, 'beatcodeApp/category.html', context)
