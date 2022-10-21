@@ -41,7 +41,7 @@ class Chart(View):
         submissions = Submission.objects.filter(user=request.user, success=True)
         categories = {}
         for submission in submissions:
-            categories[submission.problem.category] = categories.get(submission.problem.category, 0) + 1
+            categories[submission.problem.category.category] = categories.get(submission.problem.category, 0) + 1
 
 
         print(categories)
