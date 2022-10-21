@@ -39,7 +39,7 @@ class Category(models.Model):
 
 class Problem(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    category = models.ManyToManyField(Category)
+    category = models.ForeignKey(to=Category, on_delete=models.CASCADE, blank=True, null=True)
     name = models.TextField()
     ## difficulty = models. what are the difficulty levels? 
 
