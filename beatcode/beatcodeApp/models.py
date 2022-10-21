@@ -28,7 +28,7 @@ class Category(models.Model):
         (HEAP, 'Heap')
     ]
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    category = models.TextField(
+    category = models.CharField(
         max_length=255,
         choices=CATEGORY_CHOICES,
         unique=True)
@@ -39,8 +39,8 @@ class Category(models.Model):
 
 class Problem(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    name = models.CharField(max_length=255)
     category = models.ForeignKey(to=Category, on_delete=models.CASCADE, blank=True, null=True)
-    name = models.TextField()
     ## difficulty = models. what are the difficulty levels? 
 
     def __str__(self):
@@ -48,7 +48,7 @@ class Problem(models.Model):
 
 class ProblemSet(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    name = models.TextField()
+    name = models.CharField(unique=True, max_length=255)
 
     def __str__(self):
         return self.name
@@ -69,4 +69,4 @@ class Submission(models.Model):
 class ToDo(models.Model):
     user = models.ManyToManyField(User)
     problem = models.ManyToManyField(Problem)
-    progress = models.TextField()
+    progress = models.CharField(max_length=255)
