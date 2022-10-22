@@ -67,6 +67,6 @@ class Submission(models.Model):
     success = models.BooleanField()
 
 class ToDo(models.Model):
-    user = models.ManyToManyField(User)
-    problem = models.ManyToManyField(Problem)
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE, blank=True, null=True)
+    problem = models.ForeignKey(to=Problem, on_delete=models.CASCADE, blank=True, null=True)
     progress = models.TextField()
