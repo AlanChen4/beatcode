@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views import View
 import json
 
-from .models import ProblemSet, ProblemToProblemSet, Submission, Category, Problem
+from .models import ProblemSet, ProblemToProblemSet, Submission
 
 class Home(View):
 
