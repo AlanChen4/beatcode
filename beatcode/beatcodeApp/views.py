@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views import View
 import json
 
-from .models import ProblemSet, ProblemToProblemSet, Submission
+from .models import ProblemSet, ProblemToProblemSet, Submission, ToDo
 
 
 class Home(View):
@@ -49,3 +49,20 @@ class Chart(View):
         context['categories'] = json.dumps(list(categories.keys()))
         context['problem_freq'] = json.dumps(list(categories.values()))
         return render(request, 'beatcodeApp/chart.html', context)
+
+
+class Todo(View):
+    #get all to do items from a specific user
+
+    def get(self,request, *args, **kwargs):
+        context = {}
+
+        todo_problems = ToDo.objects.filter(user=request.user, success=True)
+        #context['ToDo List'] = todolist # not really sure how to obtain list like numbering? 
+        #i'm thinking to display like a table like this:
+        #  Todo # | Problem
+        #   1     | DP problem 1
+        #   2     | Binary Tree problem 3 
+        # ... 
+        context['problems'] = todo_problems
+        return render(request, 'beatcodeApp/todos.html',context)
