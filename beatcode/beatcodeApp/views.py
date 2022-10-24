@@ -1,4 +1,3 @@
-from django.http import JsonResponse
 from django.shortcuts import render
 from django.views import View
 import json
@@ -9,7 +8,7 @@ from .models import ProblemSet, ProblemToProblemSet, Submission, ToDo
 class Home(View):
 
     def get(self, request, *args, **kwargs):
-        return JsonResponse({'foo': 'bar'})
+        return render(request, 'beatcodeApp/home.html')
 
 
 class ProblemSetView(View):
