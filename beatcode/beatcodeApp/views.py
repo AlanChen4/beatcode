@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views import View
 import json
 
-from .models import ProblemSet, ProblemToProblemSet, Submission
+from .models import ProblemSet, ProblemToProblemSet, Submission, User, Category
 
 
 class Home(View):
@@ -49,3 +49,46 @@ class Chart(View):
         context['categories'] = json.dumps(list(categories.keys()))
         context['problem_freq'] = json.dumps(list(categories.values()))
         return render(request, 'beatcodeApp/chart.html', context)
+    
+    
+class UserSubmissionView(View):
+    #view is user, search category, show 5 most recent successful submissions
+    #uid: b72cf06f-a26c-40d5-b9e1-6d5455cdb514
+    def get(self, request, *args, **kwargs):
+        context = {}
+        
+        user_id = kwargs['user_id']
+        user = User.objects.get(id=user_id)
+        all_subs = Submission.objects.filter(user_id=user_id)
+        
+        query= '''SELECT S.id, P.category_id, C.category 
+                    FROM beatcodeApp_submission S, beatcodeApp_problem P, beatcodeApp_category C 
+                    WHERE S.problem_id = P.id AND C.id=P.category_id AND S.success=1
+                    ORDER BY sub_date LIMIT 5'''
+             
+        
+        submissions = all_subs.raw(query)
+        
+        desired_category = request.GET.get('category')
+        
+        print(Category.objects)
+        
+        filtered_subs = []
+        if desired_category == None or desired_category =='':
+            filtered_subs = all_subs
+        else:
+            for sub in submissions:
+                print(sub.category)
+                
+                #categories = [c.get_category_display().lower() for c in set(sub.category)]
+                # if desired_category.lower() in categories:
+                #     filtered_subs.append(sub)
+                if desired_category.lower() == sub.category.lower():
+                    filtered_subs.append(sub)
+            print(filtered_subs)
+            
+        context['user'] = user
+        context['submissions'] = filtered_subs
+                
+        return render(request, 'beatcodeApp/user-submissions.html', context)
+                

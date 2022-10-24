@@ -1,0 +1,32 @@
+{% extends 'beatcodeApp/main.html' %}
+{% block content %}
+<div class="container">
+    <h1>{{ user.first_name }}</h1>
+    <form action="." method="GET" class="row"> {% csrf_token %}
+        <div class="col-auto">
+            <input type="text" name="category" placeholder="Category" class="form-control">
+        </div>
+        <div class="col-auto">
+            <input type="submit" class="btn btn-dark">
+        </div>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Problem</th>
+                <th scope="col">Submission Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sub in submissions %}
+                <tr>
+                    <td>{{ sub.problem }}</td>
+                    <td>{{ sub.sub_date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+</div>
+{% endblock %}
