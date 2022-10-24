@@ -72,8 +72,9 @@ class CategoryView(View):
         category_to_activity = {}
 
         query = """SELECT C.category, C.id, MAX(sub_date) AS recent_activity
-                    FROM beatcodeApp_submission S JOIN beatcodeApp_problem P ON S.problem_id = P.id
-                    JOIN beatcodeApp_category C ON P.category_id = C.id
+                    FROM beatcodeApp_category C LEFT OUTER JOIN
+                    (beatcodeApp_problem P LEFT OUTER JOIN beatcodeApp_submission S ON P.id = S.problem_id)
+                    ON C.id = P.category_id
                     GROUP BY P.category_id
                     ORDER BY recent_activity ASC"""
 

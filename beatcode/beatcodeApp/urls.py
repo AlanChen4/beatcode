@@ -7,5 +7,5 @@ urlpatterns = [
     path('problem-set/<uuid:problem_set_id>/', ProblemSetView.as_view(), name='problem-set'),
     path('chart/', Chart.as_view(), name='chart'),
     path('todos/', Todo.as_view(), name='todos'),
-    path('category-suggestions', CategoryView.as_view(), name="category-suggestions"),
+    path('category-suggestions/', CategoryView.as_view(), name="category-suggestions"),
 ]
