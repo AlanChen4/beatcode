@@ -55,13 +55,19 @@ class Todo(View):
     def get(self,request, *args, **kwargs):
         context = {}
 
-        todo_problems = ToDo.objects.filter(user=request.user, success=True)
+        #using ORM filter since it would be redundant to query by user as all the problems are created by a super user
+        # will potentially replace with raw SQL query. 
+        todo_problems = ToDo.objects.filter(user=request.user)
+       
+        #print(todo_problems)
         #context['ToDo List'] = todolist # not really sure how to obtain list like numbering? 
         #i'm thinking to display like a table like this:
         #  Todo # | Problem
         #   1     | DP problem 1
         #   2     | Binary Tree problem 3 
         # ... 
+        
+        #problems are displayed in the orde that they are added. 
         context['problems'] = todo_problems
         return render(request, 'beatcodeApp/todos.html',context)
 
