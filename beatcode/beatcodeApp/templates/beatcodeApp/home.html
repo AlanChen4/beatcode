@@ -1,0 +1,27 @@
+{% extends 'beatcodeApp/main.html' %}
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-center mb-3">
+        <form method="get" action="." class="row">
+            <div class="col-8">
+                <input type="text" name="username" placeholder="Enter your LC username" class="form-control">
+            </div>
+            <div class="col-4">
+                <input type="submit" class="btn btn-outline-dark">
+            </div>
+        </form>
+    </div>
+    <ul>
+        {% if problems|length > 0 %}
+
+        {% for problem in problems %}
+        <li>{{problem.name}}</li>
+        {% endfor %}
+
+        {% else %}
+        <h3 class="text-center">No submissions matching this username</h3>
+
+        {% endif %}
+    </ul>
+</div>
+{% endblock%}

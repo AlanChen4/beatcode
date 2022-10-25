@@ -1,0 +1,22 @@
+{% extends 'beatcodeApp/main.html' %}
+{% block content %}
+<div class="container">
+   
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">Todo #</th>
+              <th scope="col">Problem</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for p in problems %}
+                <tr>
+                    <td>{{ forloop.counter}} </td>
+                    <td>{{ p.problem }}</td>
+                </tr>
+            {% endfor %}
+          </tbody>
+    </table>
+</div>
+{% endblock %}

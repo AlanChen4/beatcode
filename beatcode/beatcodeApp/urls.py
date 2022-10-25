@@ -7,4 +7,6 @@ urlpatterns = [
     path('problem-set/<uuid:problem_set_id>/', ProblemSetView.as_view(), name='problem-set'),
     path('chart/', Chart.as_view(), name='chart'),
     path('user-submissions/<uuid:user_id>/', UserSubmissionView.as_view(), name='submissions')
+    path('todos/', Todo.as_view(), name='todos'),
+    path('category-suggestions/', CategoryView.as_view(), name="category-suggestions"),
 ]
