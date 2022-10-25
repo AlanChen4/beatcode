@@ -3,12 +3,22 @@ from django.views import View
 import json
 
 from .models import ProblemSet, ProblemToProblemSet, Submission, ToDo
+from authentication.models import CustomUser
 
 
 class Home(View):
 
     def get(self, request, *args, **kwargs):
-        return render(request, 'beatcodeApp/home.html')
+        context = {}
+        leetcode_username = request.GET.get('username', None)
+        if CustomUser.objects.filter(leetcode_username=leetcode_username).exists():
+            user = CustomUser.objects.get(leetcode_username=leetcode_username)
+            submissions = Submission.objects.filter(user=user)
+            problems = [submission.problem for submission in submissions]
+            context['problems'] = problems
+        else:
+            context['problems'] = []
+        return render(request, 'beatcodeApp/home.html', context)
 
 
 class ProblemSetView(View):

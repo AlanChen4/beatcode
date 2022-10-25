@@ -43,6 +43,7 @@ class CustomUser(AbstractUser):
     email = models.EmailField('email address', unique=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
+    leetcode_username = models.CharField(max_length=255, unique=True, blank=True, null=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name']
