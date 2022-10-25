@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 import json
 
-from .models import ProblemSet, ProblemToProblemSet, Submission, User, Category, Todo
+from .models import ProblemSet, ProblemToProblemSet, Submission, User, Category, ToDo
 
 from authentication.models import CustomUser
 
