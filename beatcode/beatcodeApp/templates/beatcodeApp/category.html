@@ -1,0 +1,21 @@
+{% extends 'beatcodeApp/main.html' %}
+{% block content %}
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">Category</th>
+              <th scope="col">Most Recent Submission</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, value in category_to_activity.items %}
+            <tr>
+                <td> {{ key }} </td>
+                <td> {{ value }} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

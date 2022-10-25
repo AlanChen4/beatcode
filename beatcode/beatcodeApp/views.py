@@ -5,7 +5,6 @@ import json
 from .models import ProblemSet, ProblemToProblemSet, Submission, ToDo
 from authentication.models import CustomUser
 
-
 class Home(View):
 
     def get(self, request, *args, **kwargs):
@@ -19,7 +18,6 @@ class Home(View):
         else:
             context['problems'] = []
         return render(request, 'beatcodeApp/home.html', context)
-
 
 class ProblemSetView(View):
 
@@ -54,6 +52,7 @@ class Chart(View):
         for submission in submissions:
             categories[submission.problem.category.category] = categories.get(submission.problem.category, 0) + 1
 
+
         print(categories)
         context['categories'] = json.dumps(list(categories.keys()))
         context['problem_freq'] = json.dumps(list(categories.values()))
@@ -66,12 +65,38 @@ class Todo(View):
     def get(self,request, *args, **kwargs):
         context = {}
 
-        todo_problems = ToDo.objects.filter(user=request.user, success=True)
+        #using ORM filter since it would be redundant to query by user as all the problems are created by a super user
+        # will potentially replace with raw SQL query. 
+        todo_problems = ToDo.objects.filter(user=request.user)
+       
+        #print(todo_problems)
         #context['ToDo List'] = todolist # not really sure how to obtain list like numbering? 
         #i'm thinking to display like a table like this:
         #  Todo # | Problem
         #   1     | DP problem 1
         #   2     | Binary Tree problem 3 
         # ... 
+        
+        #problems are displayed in the orde that they are added. 
         context['problems'] = todo_problems
         return render(request, 'beatcodeApp/todos.html',context)
+
+class CategoryView(View):
+
+    def get(self, request, *args, **kwargs):
+        context = {}
+        category_to_activity = {}
+
+        query = """SELECT C.category, C.id, MAX(sub_date) AS recent_activity
+                    FROM beatcodeApp_category C LEFT OUTER JOIN
+                    (beatcodeApp_problem P LEFT OUTER JOIN beatcodeApp_submission S ON P.id = S.problem_id)
+                    ON C.id = P.category_id
+                    GROUP BY P.category_id
+                    ORDER BY recent_activity ASC"""
+
+        for cat in Submission.objects.raw(query):
+            category_to_activity[cat.category] = cat.recent_activity
+
+        context['category_to_activity'] = category_to_activity
+
+        return render(request, 'beatcodeApp/category.html', context)
