@@ -1,7 +1,49 @@
 {% extends 'beatcodeApp/main.html' %}
 {% block content %}
 <div class="container">
-    <div class="d-flex justify-content-center mb-3">
+    <div class="d-flex">
+        <div class="row">
+            <div class="col">
+                <canvas id="doughnut-chart" width="800" height="450"></canvas>
+            </div>
+            <div class="col">
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Category</th>
+                            <th scope="col">Last Practiced</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Filler</td>
+                            <td>Today</td>
+                        </tr>
+                        <tr>
+                            <td>More Filler</td>
+                            <td>Yesterday</td>
+                        </tr>
+                        <tr>
+                            <td>These are not real categories</td>
+                            <td>Tuesday</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="dflex mt-5">
+        <div class="row">
+            <div class="col text-center">
+                task list placeholder
+            </div>
+            <div class="col text-center">
+                streaks calendar placeholder
+            </div>
+        </div>
+    </div>
+
+    {% comment %} <div class="d-flex justify-content-center mb-3">
         <form method="get" action="." class="row">
             <div class="col-8">
                 <input type="text" name="username" placeholder="Enter your LC username" class="form-control">
@@ -22,6 +64,33 @@
         <h3 class="text-center">No submissions matching this username</h3>
 
         {% endif %}
-    </ul>
+    </ul> {% endcomment %}
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<script>
+    new Chart(document.getElementById("doughnut-chart"), {
+        type: 'doughnut',
+        data: {
+        labels: JSON.parse('{{ categories|escapejs }}'),
+        datasets: [
+            {
+            label: "Problems",
+            backgroundColor: ["#F94144", "#F3722C","#F8961E","#F9844A","#F9C74F", "#90BE6D", 
+            "#43AA8B", "#4D908E", "#577590", "#277DA1"],
+            data: JSON.parse('{{ problem_freq|escapejs }}')
+            }
+        ]
+        },
+        options: {
+        title: {
+            display: true,
+            text: 'Completed Problems Sorted by Category Type'
+        }
+        }
+    });
+</script>
+
+
 {% endblock%}

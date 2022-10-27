@@ -10,14 +10,26 @@ class Home(View):
 
     def get(self, request, *args, **kwargs):
         context = {}
-        leetcode_username = request.GET.get('username', None)
-        if CustomUser.objects.filter(leetcode_username=leetcode_username).exists():
-            user = CustomUser.objects.get(leetcode_username=leetcode_username)
-            submissions = Submission.objects.filter(user=user)
-            problems = [submission.problem for submission in submissions]
-            context['problems'] = problems
-        else:
-            context['problems'] = []
+        # leetcode_username = request.GET.get('username', None)
+        # if CustomUser.objects.filter(leetcode_username=leetcode_username).exists():
+        #     user = CustomUser.objects.get(leetcode_username=leetcode_username)
+        #     submissions = Submission.objects.filter(user=user)
+        #     problems = [submission.problem for submission in submissions]
+        #     context['problems'] = problems
+        # else:
+        #     context['problems'] = []
+            
+        submissions = Submission.objects.filter(user=request.user, success=True)
+        categories = {}
+        for submission in submissions:
+            categories[submission.problem.category.category] = categories.get(submission.problem.category, 0) + 1
+
+
+        print(categories)
+        context['categories'] = json.dumps(list(categories.keys()))
+        context['problem_freq'] = json.dumps(list(categories.values()))    
+        
+        
         return render(request, 'beatcodeApp/home.html', context)
 
 class ProblemSetView(View):
