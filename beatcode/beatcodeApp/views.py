@@ -8,6 +8,7 @@ from .models import ProblemSet, ProblemToProblemSet, Submission, User, Category,
 
 from authentication.models import CustomUser
 
+
 class Home(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
 
@@ -34,6 +35,7 @@ class Home(LoginRequiredMixin, View):
         
         
         return render(request, 'beatcodeApp/home.html', context)
+
 
 class ProblemSetView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
@@ -63,6 +65,7 @@ class ProblemSetView(LoginRequiredMixin, View):
         context['problems'] = filtered_problems
         return render(request, 'beatcodeApp/problemSet.html', context)
 
+
 class ProblemSetListView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
 
@@ -71,6 +74,7 @@ class ProblemSetListView(LoginRequiredMixin, View):
         problem_sets = ProblemSet.objects.all()
         context['problem_sets'] = problem_sets
         return render(request, 'beatcodeApp/problemSetList.html', context)
+
 
 class Chart(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
@@ -129,7 +133,6 @@ class UserSubmissionView(LoginRequiredMixin,View):
                 
         return render(request, 'beatcodeApp/user-submissions.html', context)
                 
-
 
 class Todo(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
