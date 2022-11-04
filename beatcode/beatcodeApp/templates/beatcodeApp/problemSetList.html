@@ -1,0 +1,22 @@
+{% extends 'beatcodeApp/main.html' %}
+{% block content %}
+<div class="container">
+    <h1>Problem Sets</h1>
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for problem_set in problem_sets %}
+                <tr>
+                    <td>
+                        <a href="{% url 'problem-set' problem_set.id %}">{{ problem_set.name }}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+          </tbody>
+    </table>
+</div>
+{% endblock %}

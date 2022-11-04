@@ -42,18 +42,29 @@ class ProblemSetView(View):
         problems = [ps.problem for ps in ProblemToProblemSet.objects.filter(problem_set=problem_set)]
 
         desired_category = request.GET.get('category')
+        """
         filtered_problems = []
         if desired_category == None or desired_category=='': 
             filtered_problems = problems
         else:  
+            categories = {}
             for problem in problems:
-                categories = [c.get_category_display().lower() for c in set(problem.category.all())]
+                categories[problem.category.category] = categories.get(problem.category, 0) + 1
+            
                 if desired_category.lower() in categories: 
                     filtered_problems.append(problem)
-            print(filtered_problems)
+        """
+
         context['problem_set'] = problem_set
         context['problems'] = filtered_problems
         return render(request, 'beatcodeApp/problemSet.html', context)
+
+class ProblemSetListView(View):
+    def get(self, request, *args, **kwargs):
+        context = {}
+        problem_sets = ProblemSet.objects.all()
+        context['problem_sets'] = problem_sets
+        return render(request, 'beatcodeApp/problemSetList.html', context)
 
 class Chart(View):
     #get all successful problems and their category
