@@ -1,3 +1,4 @@
+{% load static%}
 <!DOCTYPE html>
 <html>
 
@@ -12,18 +13,20 @@
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">BeatCode</a>
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{%  static 'beatcodeApp/images/beet.png' %}" alt="logo" width="64" height="64">
+            </a>
             <button class=" navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                {% comment %} <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'chart' %}">Summary</a>
+                        <a class="nav-link" href="{% url 'problem-sets' %}">Problem Sets</a>
                     </li>
-                </ul> {% endcomment %}
+                </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         {% if user.is_authenticated %}
