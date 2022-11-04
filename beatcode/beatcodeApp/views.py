@@ -1,4 +1,6 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import View
 import json
 
@@ -6,7 +8,8 @@ from .models import ProblemSet, ProblemToProblemSet, Submission, User, Category,
 
 from authentication.models import CustomUser
 
-class Home(View):
+class Home(LoginRequiredMixin, View):
+    login_url = reverse_lazy('login')
 
     def get(self, request, *args, **kwargs):
         context = {}
@@ -32,7 +35,8 @@ class Home(View):
         
         return render(request, 'beatcodeApp/home.html', context)
 
-class ProblemSetView(View):
+class ProblemSetView(LoginRequiredMixin, View):
+    login_url = reverse_lazy('login')
 
     def get(self, request, *args, **kwargs):
         context = {}
@@ -59,16 +63,22 @@ class ProblemSetView(View):
         context['problems'] = filtered_problems
         return render(request, 'beatcodeApp/problemSet.html', context)
 
-class ProblemSetListView(View):
+class ProblemSetListView(LoginRequiredMixin, View):
+    login_url = reverse_lazy('login')
+
     def get(self, request, *args, **kwargs):
         context = {}
         problem_sets = ProblemSet.objects.all()
         context['problem_sets'] = problem_sets
         return render(request, 'beatcodeApp/problemSetList.html', context)
 
-class Chart(View):
-    #get all successful problems and their category
+class Chart(LoginRequiredMixin, View):
+    login_url = reverse_lazy('login')
+
     def get(self, request, *args, **kwargs):
+        """
+        return all successful problems and their category
+        """
         context = {}
 
         submissions = Submission.objects.filter(user=request.user, success=True)
@@ -83,7 +93,9 @@ class Chart(View):
         return render(request, 'beatcodeApp/chart.html', context)
     
     
-class UserSubmissionView(View):
+class UserSubmissionView(LoginRequiredMixin,View):
+    login_url = reverse_lazy('login')
+
     def get(self, request, *args, **kwargs):
         context = {}
         
@@ -119,10 +131,13 @@ class UserSubmissionView(View):
                 
 
 
-class Todo(View):
-    #get all to do items from a specific user
+class Todo(LoginRequiredMixin, View):
+    login_url = reverse_lazy('login')
 
     def get(self,request, *args, **kwargs):
+        """
+        return all to do items from a specific user
+        """
         context = {}
 
         #using ORM filter since it would be redundant to query by user as all the problems are created by a super user
@@ -141,7 +156,9 @@ class Todo(View):
         context['problems'] = todo_problems
         return render(request, 'beatcodeApp/todos.html',context)
 
-class CategoryView(View):
+
+class CategoryView(LoginRequiredMixin, View):
+    login_url = reverse_lazy('login')
 
     def get(self, request, *args, **kwargs):
         context = {}
