@@ -1,70 +1,57 @@
 {% extends 'beatcodeApp/main.html' %}
 {% block content %}
 <div class="container">
-    <div class="d-flex">
-        <div class="row">
-            <div class="col">
-                <canvas id="doughnut-chart" width="800" height="450"></canvas>
+    <h1><strong>Welcome back, {{ user.first_name }}.</strong></h1>
+    <h5 class="text-secondary mb-3">Here you'll find a breakdown of problems completed, overall progress, and more.</h5>
+    <div class="row gx-5">
+        <div class="col-md-7">
+            <div class="row mb-3">
+                <!-- chart showing problems completed by user -->
+                <h5>Problems Completed</h5>
+                <div class="bg-white rounded-4">
+                    <canvas id="doughnut-chart" width="800" height="450"></canvas>
+                </div>
             </div>
-            <div class="col">
-                <table class="table table-bordered">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Category</th>
-                            <th scope="col">Last Practiced</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Filler</td>
-                            <td>Today</td>
-                        </tr>
-                        <tr>
-                            <td>More Filler</td>
-                            <td>Yesterday</td>
-                        </tr>
-                        <tr>
-                            <td>These are not real categories</td>
-                            <td>Tuesday</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="row mb-3">
+                <!-- table showing categories least recently practiced -->
+                <h5>Least Practiced</h5>
+                <div class="bg-white rounded-4">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Name</th>
+                                <th>Last Practiced</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for category, date in least_practiced %}
+                            <tr>
+                                <td>{{ category }}</td>
+                                <td>{{ date }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="row mb-3">
+                <!-- Show the current streak -->
+                <h5>Problem Streak</h5>
+                <div class="bg-white rounded-4 text-center p-4">
+                    <h1>Insert Streak</h1>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <!-- Todo component -->
+                <h5>Todo</h5>
+                <div class="bg-white rounded-4 text-center p-4">
+                    <h1>Insert Todo Form</h1>
+                </div>
             </div>
         </div>
     </div>
-    <div class="dflex mt-5">
-        <div class="row">
-            <div class="col text-center">
-                task list placeholder
-            </div>
-            <div class="col text-center">
-                streaks calendar placeholder
-            </div>
-        </div>
-    </div>
-
-    {% comment %} <div class="d-flex justify-content-center mb-3">
-        <form method="get" action="." class="row">
-            <div class="col-8">
-                <input type="text" name="username" placeholder="Enter your LC username" class="form-control">
-            </div>
-            <div class="col-4">
-                <input type="submit" class="btn btn-outline-dark">
-            </div>
-        </form>
-    </div>
-    <ul>
-        {% if problems|length > 0 %}
-
-        {% for problem in problems %}
-        <li>{{problem.name}}</li>
-        {% endfor %}
-
-        {% else %}
-        <h3 class="text-center">No submissions matching this username</h3>
-
-        {% endif %}
-    </ul> {% endcomment %}
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -73,21 +60,20 @@
     new Chart(document.getElementById("doughnut-chart"), {
         type: 'doughnut',
         data: {
-        labels: JSON.parse('{{ categories|escapejs }}'),
-        datasets: [
-            {
-            label: "Problems",
-            backgroundColor: ["#F94144", "#F3722C","#F8961E","#F9844A","#F9C74F", "#90BE6D", 
-            "#43AA8B", "#4D908E", "#577590", "#277DA1"],
-            data: JSON.parse('{{ problem_freq|escapejs }}')
-            }
-        ]
+            labels: JSON.parse('{{ categories|escapejs }}'),
+            datasets: [
+                {
+                    label: "Problems",
+                    backgroundColor: ["#F94144", "#F3722C", "#F8961E", "#F9844A", "#F9C74F", "#90BE6D",
+                        "#43AA8B", "#4D908E", "#577590", "#277DA1"],
+                    data: JSON.parse('{{ problem_freq|escapejs }}')
+                }
+            ]
         },
         options: {
-        title: {
-            display: true,
-            text: 'Completed Problems Sorted by Category Type'
-        }
+            title: {
+                display: false,
+            }
         }
     });
 </script>

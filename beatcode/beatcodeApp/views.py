@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.views import View
 import json
 
-from .models import ProblemSet, ProblemToProblemSet, Submission, User, Category, ToDo
+from .models import *
 
 from authentication.models import CustomUser
 
@@ -14,25 +14,39 @@ class Home(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         context = {}
-        # leetcode_username = request.GET.get('username', None)
-        # if CustomUser.objects.filter(leetcode_username=leetcode_username).exists():
-        #     user = CustomUser.objects.get(leetcode_username=leetcode_username)
-        #     submissions = Submission.objects.filter(user=user)
-        #     problems = [submission.problem for submission in submissions]
-        #     context['problems'] = problems
-        # else:
-        #     context['problems'] = []
-            
+
+        # context variables for the "Problems Completed" component
+        # use submissions by user to collect problems and categories completed
         submissions = Submission.objects.filter(user=request.user, success=True)
-        categories = {}
+        category_count = {}
         for submission in submissions:
-            categories[submission.problem.category.category] = categories.get(submission.problem.category, 0) + 1
+            # categories belonging to submission's problem
+            categories = submission.problem.category.all()
 
+            # count each category that the problem belongs to
+            for category in categories:
+                category_count[category.get_name_display()] = category_count.get(category.name, 0) + 1
+        context['categories'] = json.dumps(list(category_count.keys()))
+        context['problem_freq'] = json.dumps(list(category_count.values()))    
 
-        print(categories)
-        context['categories'] = json.dumps(list(categories.keys()))
-        context['problem_freq'] = json.dumps(list(categories.values()))    
-        
+        # context variables for the "Least Practiced" component
+        # use submissions with their associated submission date to determine the least practiced categories
+        category_dates = {c.get_name_display():'0' for c in Category.objects.all()}
+        for submission in submissions.order_by('sub_date'):
+            for category in submission.problem.category.all():
+                category_dates[category.get_name_display()] = str(submission.sub_date)
+        category_dates_sorted = sorted(category_dates.items(), key=lambda item: item[1])
+        # select the bottom 3 results - these are the least practiced
+        least_practiced = category_dates_sorted[:3]
+        # replace '0' with 'N/A' since this means that the category has never been practiced
+        for i in range(len(least_practiced)):
+            if least_practiced[i][1] == '0':
+                # having to construct new tuple since tuples are immutable
+                least_practiced[i] = (least_practiced[i][0], 'N/A')
+        context['least_practiced'] = least_practiced
+
+        # TODO: context variables for the "Streak" component
+        # TODO: context variables for the "Todo" component
         
         return render(request, 'beatcodeApp/home.html', context)
 
@@ -43,26 +57,23 @@ class ProblemSetView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         context = {}
 
+        # get the problem set corresponding to the kwarg argument
         problem_set_id = kwargs['problem_set_id']
         problem_set = ProblemSet.objects.get(id=problem_set_id)
-        problems = [ps.problem for ps in ProblemToProblemSet.objects.filter(problem_set=problem_set)]
 
-        desired_category = request.GET.get('category')
-        """
-        filtered_problems = []
-        if desired_category == None or desired_category=='': 
-            filtered_problems = problems
-        else:  
-            categories = {}
-            for problem in problems:
-                categories[problem.category.category] = categories.get(problem.category, 0) + 1
-            
-                if desired_category.lower() in categories: 
-                    filtered_problems.append(problem)
-        """
+        # only add problems that are a part of the specified problem set
+        problems = []
+        for problem in Problem.objects.all().order_by('name'):
+            if problem_set in problem.problem_set.all():
+                problems.append(problem)
 
-        context['problem_set'] = problem_set
-        context['problems'] = filtered_problems
+        # filter problems based on searched category
+        searched_category = request.GET.get('category', None)
+        if searched_category != None and searched_category != '':
+            problems = list(filter(lambda x: searched_category.lower() in set(c.get_name_display().lower() for c in x.category.all()), problems))
+
+        context['problems'] = problems
+
         return render(request, 'beatcodeApp/problemSet.html', context)
 
 
@@ -89,8 +100,6 @@ class Chart(LoginRequiredMixin, View):
         categories = {}
         for submission in submissions:
             categories[submission.problem.category.category] = categories.get(submission.problem.category, 0) + 1
-
-
         print(categories)
         context['categories'] = json.dumps(list(categories.keys()))
         context['problem_freq'] = json.dumps(list(categories.values()))

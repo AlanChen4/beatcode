@@ -10,11 +10,12 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="background-color: #f5f5f5;">
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">
+            <a class="flex navbar-brand" href="{% url 'home' %}">
                 <img src="{%  static 'beatcodeApp/images/beet.png' %}" alt="logo" width="64" height="64">
+                <strong>beatcode</strong>
             </a>
             <button class=" navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

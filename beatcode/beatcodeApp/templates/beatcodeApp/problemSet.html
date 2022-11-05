@@ -13,22 +13,22 @@
     <table class="table">
         <thead>
             <tr>
-              <th scope="col">Problem</th>
-              <th scope="col">Category</th>
+                <th scope="col">Problem</th>
+                <th scope="col">Category</th>
             </tr>
-          </thead>
-          <tbody>
+        </thead>
+        <tbody>
             {% for problem in problems %}
-                <tr>
-                    <td>{{ problem.name }}</td>
-                    <td>
-                        {% for category in problem.category.all %}
-                            {{ category.get_category_display }}
-                        {% endfor %}
-                    </td>
-                </tr>
+            <tr>
+                <td>{{ problem.name }}</td>
+                <td>
+                    {% for category in problem.category.all %}
+                    {{ category.get_name_display }}
+                    {% endfor %}
+                </td>
+            </tr>
             {% endfor %}
-          </tbody>
+        </tbody>
     </table>
 </div>
 {% endblock %}
