@@ -175,18 +175,22 @@ class CategoryView(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         context = {}
-        category_to_activity = {}
-
-        query = """SELECT C.category, C.id, MAX(sub_date) AS recent_activity
-                    FROM beatcodeApp_category C LEFT OUTER JOIN
-                    (beatcodeApp_problem P LEFT OUTER JOIN beatcodeApp_submission S ON P.id = S.problem_id)
-                    ON C.id = P.category_id
-                    GROUP BY P.category_id
-                    ORDER BY recent_activity ASC"""
-
-        for cat in Submission.objects.raw(query):
-            category_to_activity[cat.category] = cat.recent_activity
-
-        context['category_to_activity'] = category_to_activity
+        
+        # use submissions with their associated submission date to determine the least practiced categories
+        submissions = Submission.objects.filter(user=request.user, success=True)
+        category_dates = {c.get_name_display():'0' for c in Category.objects.all()}
+        for submission in submissions.order_by('sub_date'):
+            for category in submission.problem.category.all():
+                category_dates[category.get_name_display()] = str(submission.sub_date)
+        category_dates_sorted = sorted(category_dates.items(), key=lambda item: item[1])
+        # select the bottom 3 results - these are the least practiced
+        least_practiced = category_dates_sorted[:3]
+        # replace '0' with 'N/A' since this means that the category has never been practiced
+        for i in range(len(least_practiced)):
+            if least_practiced[i][1] == '0':
+                # having to construct new tuple since tuples are immutable
+                least_practiced[i] = (least_practiced[i][0], 'N/A')
+        
+        context['least_practiced'] = least_practiced
 
         return render(request, 'beatcodeApp/category.html', context)
