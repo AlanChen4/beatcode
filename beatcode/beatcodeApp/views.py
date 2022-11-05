@@ -46,7 +46,8 @@ class Home(LoginRequiredMixin, View):
         context['least_practiced'] = least_practiced
 
         # TODO: context variables for the "Streak" component
-        # TODO: context variables for the "Todo" component
+        todo_problems = ToDo.objects.filter(user=request.user)
+        context['todo_problems'] = todo_problems
         
         return render(request, 'beatcodeApp/home.html', context)
 
@@ -147,22 +148,10 @@ class Todo(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
 
     def get(self,request, *args, **kwargs):
-        """
-        return all to do items from a specific user
-        """
         context = {}
 
-        #using ORM filter since it would be redundant to query by user as all the problems are created by a super user
-        # will potentially replace with raw SQL query. 
+        # using ORM filter since it would be redundant to query by user as all the problems are created by a super user
         todo_problems = ToDo.objects.filter(user=request.user)
-       
-        #print(todo_problems)
-        #context['ToDo List'] = todolist # not really sure how to obtain list like numbering? 
-        #i'm thinking to display like a table like this:
-        #  Todo # | Problem
-        #   1     | DP problem 1
-        #   2     | Binary Tree problem 3 
-        # ... 
         
         #problems are displayed in the orde that they are added. 
         context['problems'] = todo_problems
