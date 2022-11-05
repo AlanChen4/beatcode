@@ -1,6 +1,6 @@
 Madeleine Jones: Read documentation on Django models and translated relational schemas into Python (models.py) with Alice and Rachel; Figma mockup; created/set up the Django app
 
-Rachel Qian: Read documentation on Django models and translated relational schemas into Python (models.py) with Alice and Madeleine; worked on proposal and meeting notes
+Rachel Qian: Implemented the category suggestions feature which lists the categories the user has least recently worked on
 
 Alice Wu: Read documentation on Django models and translated relational schemas into Python (models.py) with Madeleine and Rachel
 
