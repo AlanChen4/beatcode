@@ -28,34 +28,29 @@ class Category(models.Model):
         (HEAP, 'Heap')
     ]
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    category = models.TextField(
-        max_length=255,
-        choices=CATEGORY_CHOICES,
-        unique=True)
-    last_done = models.DateField()
+    name = models.CharField(max_length=255, choices=CATEGORY_CHOICES, unique=True)
 
     def __str__(self):
-        return self.category
+        return self.get_name_display()
 
-class Problem(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    category = models.ForeignKey(to=Category, on_delete=models.CASCADE, blank=True, null=True)
-    name = models.TextField()
-    ## difficulty = models. what are the difficulty levels? 
-
-    def __str__(self):
-        return self.name  
 
 class ProblemSet(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    name = models.TextField()
+    name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
 
-class ProblemToProblemSet(models.Model):
-    problem = models.ForeignKey(to=Problem, on_delete=models.CASCADE)
-    problem_set = models.ForeignKey(to=ProblemSet, on_delete=models.CASCADE)
+
+class Problem(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    category = models.ManyToManyField(Category)
+    name = models.CharField(max_length=255)
+    problem_set = models.ManyToManyField(ProblemSet, blank=True)
+
+    def __str__(self):
+        return self.name  
+
 
 class Submission(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
@@ -66,7 +61,14 @@ class Submission(models.Model):
     mem_used = models.IntegerField()
     success = models.BooleanField()
 
+    def __str__(self):
+        return f"{self.user.email}: {self.problem.name}"
+
+
 class ToDo(models.Model):
     user = models.ForeignKey(to=User, on_delete=models.CASCADE, blank=True, null=True)
     problem = models.ForeignKey(to=Problem, on_delete=models.CASCADE, blank=True, null=True)
-    progress = models.TextField()
+    complete = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.user.email}: {self.problem.name}: {'Complete' if self.complete else 'Incomplete'}"
