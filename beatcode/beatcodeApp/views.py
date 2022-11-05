@@ -25,7 +25,8 @@ class Home(LoginRequiredMixin, View):
 
             # count each category that the problem belongs to
             for category in categories:
-                category_count[category.get_name_display()] = category_count.get(category.name, 0) + 1
+                category_count[category.get_name_display()] = category_count.get(category.get_name_display(), 0) + 1
+                
         context['categories'] = json.dumps(list(category_count.keys()))
         context['problem_freq'] = json.dumps(list(category_count.values()))    
 
