@@ -1,7 +1,6 @@
 from django.db import models
 from authentication.models import CustomUser as User
 import uuid
-
  
 class Category(models.Model):
     ARRAY = 'AR'
