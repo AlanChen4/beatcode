@@ -1,0 +1,39 @@
+.calendar {
+    width: 98%;
+    margin: auto;
+    font-size: 13px;
+}
+  
+.calendar th {
+    padding: 10px;
+    text-align: center;
+    vertical-align: top;
+    font-size: 18px;
+}
+
+.calendar td {
+    height: 60px;
+    width: 60px;
+    border: black;
+    border-width: 1px;
+    border-style: solid;
+    vertical-align: top;
+}
+
+.calendar td span {
+    text-align: left;
+    margin-top: 0px;
+    font-size: 10px;
+    padding-left: 3px;
+    float: left;
+}
+.today {
+    background-color:rgb(194, 60, 89);
+}
+
+.calender td img {
+    display: block;
+}
+.month {
+    font-size: 18px;
+}

@@ -21,14 +21,12 @@ class Calendar(HTMLCalendar):
             dayHasSub=len(submissions.filter(sub_date=currentDate))!=0
             
             if datetime.today().date()==currentDate:
-                print("aslkdfjalskdfjalskdfj")
                 return f"<td class='today'><span class='date'>{day}</span></td>"
             
             if dayHasSub:
-               
-                return f"<td><span class='date'>{day}</span><img src='static/beatcodeApp/images/beet.png' alt='logo' width='50' height='50'></td>"
+               return f"<td><span class='date'>{day}</span><img src='static/beatcodeApp/images/beet.png' alt='logo' width='50' height='50'></td>"
             return f"<td><span class='date'>{day}</span></td>"
-            
+ 
         return '<td></td>'
         
 
@@ -36,7 +34,7 @@ class Calendar(HTMLCalendar):
         week = ''
         for d, weekday in theweek:
             week += self.formatday(d, submissions)
-        return f'<tr> {week} </tr>'
+        return f'<tr style=" textAlign:center "> {week} </tr>'
 
     # formats a month as a table
     def formatmonth(self):

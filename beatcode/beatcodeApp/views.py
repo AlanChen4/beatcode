@@ -52,7 +52,7 @@ class Home(LoginRequiredMixin, View):
         #Streaks yuh
         d = get_date(self.request.GET.get('day', None))
         cal = Calendar(d.year, d.month)
-        html_cal = cal.formatmonth() #returns cal as a table w new methods
+        html_cal = cal.formatmonth() #returns cal as a table w new methods in utils.py
         context['calendar'] = mark_safe(html_cal)     
         
         streak = 0
