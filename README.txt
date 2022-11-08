@@ -1,4 +1,4 @@
-Madeleine Jones: Read documentation on Django models and translated relational schemas into Python (models.py) with Alice and Rachel; Figma mockup; created/set up the Django app
+Madeleine Jones: Set up basic frontend, implemented calendar to track streak/submissions
 
 Rachel Qian: Implemented the category suggestions feature which lists the categories the user has least recently worked on
 
