@@ -2,6 +2,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import View
+from django.utils.safestring import mark_safe
+from .utils import Calendar
+from datetime import datetime, timedelta
 import json
 
 from .models import *
@@ -46,11 +49,41 @@ class Home(LoginRequiredMixin, View):
                 least_practiced[i] = (least_practiced[i][0], 'N/A')
         context['least_practiced'] = least_practiced
 
-        # TODO: context variables for the "Streak" component
+        #Streaks yuh
+        d = get_date(self.request.GET.get('day', None))
+        cal = Calendar(d.year, d.month)
+        html_cal = cal.formatmonth() #returns cal as a table w new methods
+        context['calendar'] = mark_safe(html_cal)     
+        
+        streak = 0
+        currDate=d.date()
+        while(True):
+            if len(Submission.objects.filter(sub_date=currDate))!=0:
+                streak+=1
+                currDate=currDate-timedelta(days=1)
+            else:
+                break
+
+        context['streak']= str(streak) + {True: " day", False: " days"} [streak==1]
+        
+        # TODO: context variables for the "Todo" component
         todo_problems = ToDo.objects.filter(user=request.user)
         context['todo_problems'] = todo_problems
         
         return render(request, 'beatcodeApp/home.html', context)
+
+
+def get_date(req_day):
+    if req_day:
+        year, month = (int(x) for x in req_day.split('-'))
+        return date(year, month, day=1)
+    return datetime.today()
+
+
+
+
+
+
 
 
 class ProblemSetView(LoginRequiredMixin, View):
