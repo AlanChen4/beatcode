@@ -28,7 +28,8 @@ class Home(LoginRequiredMixin, View):
 
             # count each category that the problem belongs to
             for category in categories:
-                category_count[category.get_name_display()] = category_count.get(category.name, 0) + 1
+                category_count[category.get_name_display()] = category_count.get(category.get_name_display(), 0) + 1
+                
         context['categories'] = json.dumps(list(category_count.keys()))
         context['problem_freq'] = json.dumps(list(category_count.values()))    
 
@@ -48,7 +49,7 @@ class Home(LoginRequiredMixin, View):
                 least_practiced[i] = (least_practiced[i][0], 'N/A')
         context['least_practiced'] = least_practiced
 
-        
+        #Streaks yuh
         d = get_date(self.request.GET.get('day', None))
         cal = Calendar(d.year, d.month)
         html_cal = cal.formatmonth() #returns cal as a table w new methods
@@ -66,6 +67,8 @@ class Home(LoginRequiredMixin, View):
         context['streak']= str(streak) + {True: " day", False: " days"} [streak==1]
         
         # TODO: context variables for the "Todo" component
+        todo_problems = ToDo.objects.filter(user=request.user)
+        context['todo_problems'] = todo_problems
         
         return render(request, 'beatcodeApp/home.html', context)
 
@@ -179,22 +182,10 @@ class Todo(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
 
     def get(self,request, *args, **kwargs):
-        """
-        return all to do items from a specific user
-        """
         context = {}
 
-        #using ORM filter since it would be redundant to query by user as all the problems are created by a super user
-        # will potentially replace with raw SQL query. 
+        # using ORM filter since it would be redundant to query by user as all the problems are created by a super user
         todo_problems = ToDo.objects.filter(user=request.user)
-       
-        #print(todo_problems)
-        #context['ToDo List'] = todolist # not really sure how to obtain list like numbering? 
-        #i'm thinking to display like a table like this:
-        #  Todo # | Problem
-        #   1     | DP problem 1
-        #   2     | Binary Tree problem 3 
-        # ... 
         
         #problems are displayed in the orde that they are added. 
         context['problems'] = todo_problems
@@ -206,18 +197,22 @@ class CategoryView(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         context = {}
-        category_to_activity = {}
-
-        query = """SELECT C.category, C.id, MAX(sub_date) AS recent_activity
-                    FROM beatcodeApp_category C LEFT OUTER JOIN
-                    (beatcodeApp_problem P LEFT OUTER JOIN beatcodeApp_submission S ON P.id = S.problem_id)
-                    ON C.id = P.category_id
-                    GROUP BY P.category_id
-                    ORDER BY recent_activity ASC"""
-
-        for cat in Submission.objects.raw(query):
-            category_to_activity[cat.category] = cat.recent_activity
-
-        context['category_to_activity'] = category_to_activity
+        
+        # use submissions with their associated submission date to determine the least practiced categories
+        submissions = Submission.objects.filter(user=request.user, success=True)
+        category_dates = {c.get_name_display():'0' for c in Category.objects.all()}
+        for submission in submissions.order_by('sub_date'):
+            for category in submission.problem.category.all():
+                category_dates[category.get_name_display()] = str(submission.sub_date)
+        category_dates_sorted = sorted(category_dates.items(), key=lambda item: item[1])
+        # select the bottom 3 results - these are the least practiced
+        least_practiced = category_dates_sorted[:3]
+        # replace '0' with 'N/A' since this means that the category has never been practiced
+        for i in range(len(least_practiced)):
+            if least_practiced[i][1] == '0':
+                # having to construct new tuple since tuples are immutable
+                least_practiced[i] = (least_practiced[i][0], 'N/A')
+        
+        context['least_practiced'] = least_practiced
 
         return render(request, 'beatcodeApp/category.html', context)

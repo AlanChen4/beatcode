@@ -14,13 +14,13 @@
             </div>
             <div class="row mb-3">
                 <!-- table showing categories least recently practiced -->
-                <h5>Least Practiced</h5>
+                <h5>Least Practiced Categories</h5>
                 <div class="bg-white rounded-4">
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
-                                <th>Name</th>
-                                <th>Last Practiced</th>
+                                <th>Category</th>
+                                <th>Most Recent Submission</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -38,9 +38,24 @@
         <div class="col-md-5">
             <div class="row mb-3">
                 <!-- Todo component -->
-                <h5>Todo</h5>
+                <h5>TODOs</h5>
                 <div class="bg-white rounded-4 text-center p-4">
-                    <h1>Insert Todo Form</h1>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                              <th scope="col">TODO #</th>
+                              <th scope="col">Problem</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for p in todo_problems %}
+                                <tr>
+                                    <td>{{ forloop.counter}} </td>
+                                    <td>{{ p.problem }}</td>
+                                </tr>
+                            {% endfor %}
+                          </tbody>
+                    </table>
                 </div>
             </div>
             <div class="row mb-3">
