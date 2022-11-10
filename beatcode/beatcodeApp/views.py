@@ -8,9 +8,7 @@ from datetime import datetime, timedelta
 import json
 
 from .models import *
-
 from authentication.models import CustomUser
-
 
 class Home(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
@@ -49,7 +47,7 @@ class Home(LoginRequiredMixin, View):
                 least_practiced[i] = (least_practiced[i][0], 'N/A')
         context['least_practiced'] = least_practiced
 
-        #Streaks yuh
+        # context variables for the "Streaks" component
         d = get_date(self.request.GET.get('day', None))
         cal = Calendar(d.year, d.month)
         html_cal = cal.formatmonth() #returns cal as a table w new methods in utils.py
@@ -66,25 +64,17 @@ class Home(LoginRequiredMixin, View):
 
         context['streak']= str(streak) + {True: " day", False: " days"} [streak==1]
         
-        # TODO: context variables for the "Todo" component
-        todo_problems = ToDo.objects.filter(user=request.user)
+        # context variables for the "TODO" component
+        todo_problems = ToDo.objects.filter(user=request.user, complete=False)
         context['todo_problems'] = todo_problems
         
         return render(request, 'beatcodeApp/home.html', context)
-
 
 def get_date(req_day):
     if req_day:
         year, month = (int(x) for x in req_day.split('-'))
         return date(year, month, day=1)
     return datetime.today()
-
-
-
-
-
-
-
 
 class ProblemSetView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
@@ -111,7 +101,6 @@ class ProblemSetView(LoginRequiredMixin, View):
 
         return render(request, 'beatcodeApp/problemSet.html', context)
 
-
 class ProblemSetListView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
 
@@ -121,25 +110,19 @@ class ProblemSetListView(LoginRequiredMixin, View):
         context['problem_sets'] = problem_sets
         return render(request, 'beatcodeApp/problemSetList.html', context)
 
-
 class Chart(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
 
     def get(self, request, *args, **kwargs):
-        """
-        return all successful problems and their category
-        """
         context = {}
 
         submissions = Submission.objects.filter(user=request.user, success=True)
         categories = {}
         for submission in submissions:
             categories[submission.problem.category.category] = categories.get(submission.problem.category, 0) + 1
-        print(categories)
         context['categories'] = json.dumps(list(categories.keys()))
         context['problem_freq'] = json.dumps(list(categories.values()))
         return render(request, 'beatcodeApp/chart.html', context)
-    
     
 class UserSubmissionView(LoginRequiredMixin,View):
     login_url = reverse_lazy('login')
@@ -156,7 +139,6 @@ class UserSubmissionView(LoginRequiredMixin,View):
                     WHERE S.problem_id = P.id AND C.id=P.category_id AND S.success=1
                     ORDER BY sub_date DESC'''
              
-        
         submissions = all_subs.raw(query)
         
         desired_category = request.GET.get('category')
@@ -170,13 +152,11 @@ class UserSubmissionView(LoginRequiredMixin,View):
                     filtered_subs.append(sub)
                     if len(filtered_subs)==5:
                         break
-            print(filtered_subs)
             
         context['user'] = user
         context['submissions'] = filtered_subs
                 
         return render(request, 'beatcodeApp/user-submissions.html', context)
-                
 
 class Todo(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
@@ -187,10 +167,9 @@ class Todo(LoginRequiredMixin, View):
         # using ORM filter since it would be redundant to query by user as all the problems are created by a super user
         todo_problems = ToDo.objects.filter(user=request.user)
         
-        #problems are displayed in the orde that they are added. 
+        # problems are displayed in the order that they are added
         context['problems'] = todo_problems
         return render(request, 'beatcodeApp/todos.html',context)
-
 
 class CategoryView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')

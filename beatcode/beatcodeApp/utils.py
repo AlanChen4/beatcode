@@ -21,7 +21,6 @@ class Calendar(HTMLCalendar):
             dayHasSub=len(submissions.filter(sub_date=currentDate))!=0
             today = {True: 'today', False: ' '} [datetime.today().date()==currentDate]
             
-            
             if dayHasSub:
                return f"<td class={today}><span class='date'>{day}</span><img src='static/beatcodeApp/images/beet.png' alt='logo' width='50' height='50'></td>"
             return f"<td class={today}><span class='date'>{day}</span></td>"
