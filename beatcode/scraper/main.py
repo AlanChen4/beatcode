@@ -1,11 +1,4 @@
-import json
-import leetcode
-
-
-CONFIG = leetcode.Configuration()
-CONFIG.api_key["Referer"] = "https://leetcode.com"
-CONFIG.debug = False
-API_INSTANCE = leetcode.DefaultApi(leetcode.ApiClient(CONFIG))
+import requests
 
 
 def get_problem_info(problem_name):
@@ -16,38 +9,40 @@ def get_problem_info(problem_name):
     ex. {'difficulty': 'Hard', 'categories': ['Array', 'Backtracking']}
     """
     graphql_query = """
-    query questionData($titleSlug: String!) {
-        question(titleSlug: $titleSlug) {
-            questionId
+    query problemsetQuestionList($categorySlug: String, $limit: Int, $skip: Int, $filters: QuestionListFilterInput) {
+        problemsetQuestionList: questionList(
+            categorySlug: $categorySlug
+            limit: $limit
+            skip: $skip
+            filters: $filters
+        ) {
+            total: totalNum
+            questions: data {
+                difficulty
+                status
                 title
                 titleSlug
-                difficulty
-                likes
-                dislikes
-                isLiked
-                categoryTitle
-            topicTags {
-                name
-                slug
+                topicTags {
+                    name
+                    id
+                    slug
+                }
             }
-            status
         }
     }
     """
-    graphql_request = leetcode.GraphqlQuery(
-        query=graphql_query,
-        variables=leetcode.GraphqlQueryGetQuestionDetailVariables(title_slug=problem_name),
-        operation_name='questionData',
-    )
-    try:
-        res = API_INSTANCE.graphql_post(body=graphql_request).data.question
-    except KeyError:
-        return None
+    graphql_variables = {'categorySlug': '', 'limit': 1, 'skip': 0, 'filters': {'searchKeywords': problem_name}}
+    res = requests.post(
+        url='https://leetcode.com/graphql/',
+        json={'query': graphql_query, 'variables': graphql_variables}
+    ).json()
+    if 'errors' not in res:
+        problem_data = res['data']['problemsetQuestionList']['questions'][0]
 
-    # query res for the information we need
-    problem_info = {
-        'difficulty': res.difficulty,
-        'categories': [topic.name for topic in res.topic_tags]
-    }
-
-    return problem_info
+        # query res for the information we need
+        problem_info = {
+            'difficulty': problem_data['difficulty'],
+            'categories': [topic['name'] for topic in problem_data['topicTags']]
+        }
+        return problem_info
+    return -1

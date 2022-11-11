@@ -1,6 +1,8 @@
+import time
 from datetime import datetime, timedelta
 from calendar import HTMLCalendar
-from .models import Submission
+from .models import Category, Problem, Submission
+from scraper import get_problem_info
 
 class Calendar(HTMLCalendar):
     def __init__(self, year=None, month=None):
@@ -44,3 +46,29 @@ class Calendar(HTMLCalendar):
         for week in self.monthdays2calendar(self.year, self.month):
             cal += f'{self.formatweek(week, submissions)}\n'
         return cal
+
+
+def update_problems():
+    """
+    For every problem, update/populate all of their information if not already in there (difficulty, categories, etc.)
+    """
+    problems = Problem.objects.all()
+
+    for problem in problems:
+        while True:
+            problem_info = get_problem_info(problem.name)
+            if problem_info == -1:
+                continue
+            # create new categories if found category that doesn't already exist
+            for category in problem_info['categories']:
+                if not Category.objects.filter(name=category).exists():
+                    Category.objects.create(name=category)
+            
+            # get the categories that the problem belongs to
+            for category in problem_info['categories']:
+                problem.category.add(Category.objects.get(name=category))
+            problem.difficulty=problem_info['difficulty']
+            problem.save()
+            print(f"Updated {problem.name}")
+            time.sleep(1)
+            break
