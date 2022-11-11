@@ -1,96 +1,53 @@
-from collections import Counter
-import time
-import leetcode.auth
+import json
 import leetcode
-#from .auth import Authentication
-
-#authhelper = Authentication(username="", password="")
-#cookies = authhelper.get_auth_info()
-
-# Get the next two values from your browser cookies
-
-## leetcode_session = cookies.get
-##
 
 
-#leetcode_session = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfYXV0aF91c2VyX2lkIjoiMzIxMjc0MiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiMmY1MmQ5ZGM3MjhmNGQwNDdmZmM1MDY4MDIwNzQ3MzRkOWMzZWI4ZiIsImlkIjozMjEyNzQyLCJlbWFpbCI6ImxvdWlzZXRhbmc4QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoibG91aXNldGFuZzgiLCJ1c2VyX3NsdWciOiJsb3Vpc2V0YW5nOCIsImF2YXRhciI6Imh0dHBzOi8vczMtdXMtd2VzdC0xLmFtYXpvbmF3cy5jb20vczMtbGMtdXBsb2FkL2Fzc2V0cy9kZWZhdWx0X2F2YXRhci5qcGciLCJyZWZyZXNoZWRfYXQiOjE2Njc2NzY1NzYsImlwIjoiMTUyLjMuNDMuNDkiLCJpZGVudGl0eSI6Ijc5MmRlNTFlNGQ1YmU1MmEzNWY1NWYzNTcwMTkzZmMzIiwic2Vzc2lvbl9pZCI6MzA0MzYxNjEsIl9zZXNzaW9uX2V4cGlyeSI6MTIwOTYwMH0.9z0OkW3qP_-a5phVyrT_Y0UEL3C32fAewoWUA8v9klM"
-##csrf_token = "LKhTQMKJbAXtklynq8xvGX8lJEfSV3SHXyjM0L6GKxjESjGROAbtDff5vn0dyUpq"
-
-# Experimental: Or CSRF token can be obtained automatically
-#csrf_token = leetcode.auth.get_csrf_cookie(leetcode_session)
-
-configuration = leetcode.Configuration()
-
-# configuration.api_key["x-csrftoken"] = csrf_token
-# configuration.api_key["csrftoken"] = csrf_token
-# configuration.api_key["LEETCODE_SESSION"] = leetcode_session
-configuration.api_key["Referer"] = "https://leetcode.com"
-configuration.debug = False
-
-api_instance = leetcode.DefaultApi(leetcode.ApiClient(configuration))
-
-# Calculate % of problems solved by topic
-
-# api_response = api_instance.api_problems_topic_get(topic="algorithms")
-# print(api_response.category_slug)
-# slug_to_solved_status = {
-#     pair.stat.question__title_slug: True if pair.status == "ac" else False
-#     for pair in api_response.stat_status_pairs
-# }
+CONFIG = leetcode.Configuration()
+CONFIG.api_key["Referer"] = "https://leetcode.com"
+CONFIG.debug = False
+API_INSTANCE = leetcode.DefaultApi(leetcode.ApiClient(CONFIG))
 
 
-# topic_to_accepted = Counter()
-# topic_to_total = Counter()
+def get_problem_info(problem_name):
+    """
+    :param problem_name: problem name slug associated with problem (i.e. N Queens => "n-queens")
 
-
-# # Take only the first 10 for test purposes
-# for slug in list(slug_to_solved_status.keys())[:10]:
-#     time.sleep(1)  # Leetcode has a rate limiter
-
-  
-
-#     for topic in (tag.slug for tag in api_response.data.question.topic_tags):
-#         topic_to_accepted[topic] += int(slug_to_solved_status[slug])
-#         topic_to_total[topic] += 1
-# print(topic_to_total)
-
-# print(
-#     list(
-#         sorted(
-#             ((topic, accepted / topic_to_total[topic]) for topic, accepted in topic_to_accepted.items()),
-#             key=lambda x: x[1]
-#         )
-#     )
-# )
-def get_problem(slug):
-  graphql_request = leetcode.GraphqlQuery(
-        query="""
-            query questionData($titleSlug: String!) {
-
-  question(titleSlug: $titleSlug) {
-    questionId
-    title
-    titleSlug
-    difficulty
-    likes
-    dislikes
-    isLiked
-    categoryTitle
-
-    topicTags {
-      name
-      slug
-      translatedName
-      __typename
+    returns information related to problem such as the difficulty and categories
+    ex. {'difficulty': 'Hard', 'categories': ['Array', 'Backtracking']}
+    """
+    graphql_query = """
+    query questionData($titleSlug: String!) {
+        question(titleSlug: $titleSlug) {
+            questionId
+                title
+                titleSlug
+                difficulty
+                likes
+                dislikes
+                isLiked
+                categoryTitle
+            topicTags {
+                name
+                slug
+            }
+            status
+        }
     }
-    status
-  }
-}
-
-        """,
-        variables=leetcode.GraphqlQueryGetQuestionDetailVariables(
-            title_slug=slug),
-        operation_name="questionData",
+    """
+    graphql_request = leetcode.GraphqlQuery(
+        query=graphql_query,
+        variables=leetcode.GraphqlQueryGetQuestionDetailVariables(title_slug=problem_name),
+        operation_name='questionData',
     )
-  api_response = api_instance.graphql_post(body=graphql_request)
-  return api_response
+    try:
+        res = API_INSTANCE.graphql_post(body=graphql_request).data.question
+    except KeyError:
+        return None
+
+    # query res for the information we need
+    problem_info = {
+        'difficulty': res.difficulty,
+        'categories': [topic.name for topic in res.topic_tags]
+    }
+
+    return problem_info
