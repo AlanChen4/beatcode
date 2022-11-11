@@ -3,34 +3,11 @@ from authentication.models import CustomUser as User
 import uuid
  
 class Category(models.Model):
-    ARRAY = 'AR'
-    BINARY = 'BI'
-    DYN_PROG = 'DP'
-    GRAPH = 'GR'
-    INTERVAL = 'IN'
-    LINKED_LIST = 'LL'
-    MATRIX = 'MX'
-    STRING = 'ST'
-    TREE = 'TR'
-    HEAP = 'HE'
-    
-    CATEGORY_CHOICES = [
-        (ARRAY, 'Array'),
-        (BINARY, 'Binary'),
-        (DYN_PROG, 'Dynamic Programming'),
-        (GRAPH, 'Graph'),
-        (INTERVAL, 'Interval'),
-        (LINKED_LIST, 'Linked List'),
-        (MATRIX, 'Matrix'),
-        (STRING, 'String'),
-        (TREE, 'Tree'),
-        (HEAP, 'Heap')
-    ]
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    name = models.CharField(max_length=255, choices=CATEGORY_CHOICES, unique=True)
+    name = models.CharField(max_length=255, unique=True)
 
     def __str__(self):
-        return self.get_name_display()
+        return self.name
 
 
 class ProblemSet(models.Model):
