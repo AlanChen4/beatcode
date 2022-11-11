@@ -30,17 +30,17 @@ class Home(LoginRequiredMixin, View):
 
             # count each category that the problem belongs to
             for category in categories:
-                category_count[category.get_name_display()] = category_count.get(category.get_name_display(), 0) + 1
+                category_count[category.name] = category_count.get(category.name, 0) + 1
                 
         context['categories'] = json.dumps(list(category_count.keys()))
         context['problem_freq'] = json.dumps(list(category_count.values()))    
 
         # context variables for the "Least Practiced" component
         # use submissions with their associated submission date to determine the least practiced categories
-        category_dates = {c.get_name_display():'0' for c in Category.objects.all()}
+        category_dates = {c.name:'0' for c in Category.objects.all()}
         for submission in submissions.order_by('sub_date'):
             for category in submission.problem.category.all():
-                category_dates[category.get_name_display()] = str(submission.sub_date)
+                category_dates[category.name] = str(submission.sub_date)
         category_dates_sorted = sorted(category_dates.items(), key=lambda item: item[1])
         # select the bottom 3 results - these are the least practiced
         least_practiced = category_dates_sorted[:3]
@@ -99,7 +99,7 @@ class ProblemSetView(LoginRequiredMixin, View):
         # filter problems based on searched category
         searched_category = request.GET.get('category', None)
         if searched_category != None and searched_category != '':
-            problems = list(filter(lambda x: searched_category.lower() in set(c.get_name_display().lower() for c in x.category.all()), problems))
+            problems = list(filter(lambda x: searched_category.lower() in set(c.name.lower() for c in x.category.all()), problems))
 
         context['problems'] = problems
 
@@ -205,10 +205,10 @@ class CategoryView(LoginRequiredMixin, View):
         
         # use submissions with their associated submission date to determine the least practiced categories
         submissions = Submission.objects.filter(user=request.user, success=True)
-        category_dates = {c.get_name_display():'0' for c in Category.objects.all()}
+        category_dates = {c.name:'0' for c in Category.objects.all()}
         for submission in submissions.order_by('sub_date'):
             for category in submission.problem.category.all():
-                category_dates[category.get_name_display()] = str(submission.sub_date)
+                category_dates[category.name] = str(submission.sub_date)
         category_dates_sorted = sorted(category_dates.items(), key=lambda item: item[1])
         # select the bottom 3 results - these are the least practiced
         least_practiced = category_dates_sorted[:3]
