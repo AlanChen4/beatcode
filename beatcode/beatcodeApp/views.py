@@ -5,6 +5,10 @@ from django.views import View
 from django.utils.safestring import mark_safe
 from .utils import Calendar
 from datetime import datetime, timedelta
+from django.views.generic import (
+    CreateView,
+    UpdateView,
+)
 import json
 
 from .models import *
@@ -101,6 +105,28 @@ class ProblemSetView(LoginRequiredMixin, View):
 
         return render(request, 'beatcodeApp/problemSet.html', context)
 
+class ProblemView(LoginRequiredMixin, View):
+    login_url = reverse_lazy('login')
+
+    def get(self, request, *args, **kwargs):
+        context = {}
+
+        problem_id = kwargs['problem_id']
+        problem = Problem.objects.get(id=problem_id)
+
+        context['problem'] = problem
+        return render(request, 'beatcodeApp/problem.html', context)
+
+    def post(self, request, *args, **kwargs):
+        context = {}
+
+        problem_id = kwargs['problem_id']
+        problem = Problem.objects.get(id=problem_id)
+        ToDo.objects.create(user=request.user,problem=problem)
+        
+        context['problem'] = problem
+        return render(request, 'beatcodeApp/problem.html', context)
+
 class ProblemSetListView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
 
@@ -161,7 +187,7 @@ class UserSubmissionView(LoginRequiredMixin,View):
 class Todo(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
 
-    def get(self,request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         context = {}
 
         # using ORM filter since it would be redundant to query by user as all the problems are created by a super user

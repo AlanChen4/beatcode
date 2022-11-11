@@ -1,0 +1,10 @@
+{% extends 'beatcodeApp/main.html' %}
+{% block content %}
+<div class="container">
+    <h1>{{ problem.name }}</h1>
+    <form action="." method="POST">
+        {% csrf_token %}
+        <button type="submit" value="{{ problem.id }}" class="btn btn-dark">Move to TODO</button>
+    </form>
+</div>
+{% endblock %}

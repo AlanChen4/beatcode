@@ -17,5 +17,14 @@
             {% endfor %}
           </tbody>
     </table>
+    <form action="." method="GET" class="row"> {% csrf_token %}
+      <div class="col-auto">
+          <input
+          value="Add a New Problem"
+          class="btn btn-dark"
+          type="button"
+          onclick="location.href='{% url list-add %}'"/>
+      </div>
+    </form>
 </div>
 {% endblock %}
