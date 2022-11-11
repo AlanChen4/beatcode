@@ -4,12 +4,10 @@ Rachel Qian: Implemented the category suggestions feature which lists the catego
 
 Alice Wu: Created doughnut chart that displays problems completed by category on homepage
 
-Sean Li: Designed and worked on the Leetcode scraper with Alan; communicated with project TA for technical support
+Sean Li: Worked on the Leetcode scraper with Alan; worked on the TODO list feature
 
-Alan Chen: Designed and worked on the Leetcode scraper with Sean; implemented authentication and basic routing for the app
+Alan Chen: Worked on the Leetcode scraper with Sean; implemented authentication and basic routing for the app; created fixtures file
 
-Lulu Tang: Created system context and container infrastructure diagrams
-
-ALL: Finished designing relational schemas and brainstormed/finalized the app’s feature list
+Lulu Tang: Worked on the TODO list feature to allow users to add problems and added a new tab to the homepage
 
 [Github Repo](https://github.com/AlanChen4/beatcode)
