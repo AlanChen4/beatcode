@@ -194,8 +194,21 @@ class Todo(LoginRequiredMixin, View):
         todo_problems = ToDo.objects.filter(user=request.user)
         
         # problems are displayed in the order that they are added
-        context['problems'] = todo_problems
+        context['todos'] = todo_problems
         return render(request, 'beatcodeApp/todos.html',context)
+        
+    def post(self, request, *args, **kwargs):
+        context = {}
+
+        problem_id = request.POST['problem_id']
+        problem = Problem.objects.get(id=problem_id)
+        #print(problem)
+        ToDo.objects.filter(user=request.user,problem=problem).delete()
+        
+        todo_problems = ToDo.objects.filter(user=request.user)
+        context['todos'] = todo_problems
+        return render(request, 'beatcodeApp/todos.html', context)
+
 
 class CategoryView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
