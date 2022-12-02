@@ -160,9 +160,9 @@ class UserSubmissionView(LoginRequiredMixin,View):
         user = User.objects.get(id=user_id)
         all_subs = Submission.objects.filter(user_id=user_id)
         
-        query= '''SELECT S.id, P.category_id, C.category 
+        query = '''SELECT S.id, P.category_id, C.category 
                     FROM beatcodeApp_submission S, beatcodeApp_problem P, beatcodeApp_category C 
-                    WHERE S.problem_id = P.id AND C.id=P.category_id AND S.success=1
+                    WHERE S.problem_id = P.id AND C.id = P.category_id AND S.success = 1
                     ORDER BY sub_date DESC'''
              
         submissions = all_subs.raw(query)
@@ -190,12 +190,18 @@ class Todo(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         context = {}
 
-        # using ORM filter since it would be redundant to query by user as all the problems are created by a super user
-        todo_problems = ToDo.objects.filter(user=request.user)
+        query = '''SELECT P.id, P.name, T.complete, S.success
+                    FROM (beatcodeApp_todo T LEFT OUTER JOIN beatcodeApp_problem P
+                    ON T.problem_id = P.id AND T.complete = 0)
+                    LEFT OUTER JOIN beatcodeApp_submission S
+                    ON (T.problem_id = S.problem_id AND S.success = 0)'''
+             
+        todo_problems = ToDo.objects.raw(query)
+        ToDo.objects = todo_problems
         
         # problems are displayed in the order that they are added
         context['problems'] = todo_problems
-        return render(request, 'beatcodeApp/todos.html',context)
+        return render(request, 'beatcodeApp/todos.html', context)
 
 class CategoryView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
