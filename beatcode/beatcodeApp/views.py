@@ -69,7 +69,7 @@ class Home(LoginRequiredMixin, View):
         context['streak']= str(streak) + {True: " day", False: " days"} [streak==1]
         
         # context variables for the "TODO" component
-        todo_problems = ToDo.objects.filter(user=request.user, complete=False)
+        todo_problems = ToDo.objects.filter(user=request.user)
         context['todo_problems'] = todo_problems
         
         return render(request, 'beatcodeApp/home.html', context)
@@ -190,18 +190,35 @@ class Todo(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         context = {}
 
-        query = '''SELECT P.id, P.name, T.complete, S.success
-                    FROM (beatcodeApp_todo T LEFT OUTER JOIN beatcodeApp_problem P
-                    ON T.problem_id = P.id AND T.complete = 0)
-                    LEFT OUTER JOIN beatcodeApp_submission S
-                    ON (T.problem_id = S.problem_id AND S.success = 0)'''
-             
-        todo_problems = ToDo.objects.raw(query)
-        ToDo.objects = todo_problems
+        query_to_delete_problem = '''SELECT P.id
+                    FROM (beatcodeApp_todo T JOIN beatcodeApp_problem P
+                    ON T.problem_id = P.id)
+                    JOIN beatcodeApp_submission S
+                    ON (T.problem_id = S.problem_id AND S.success = 1)'''
+
+        for p in ToDo.objects.raw(query_to_delete_problem):
+            ToDo.objects.filter(problem_id = p.id).delete()
         
+        query_to_add_name = '''SELECT P.id, P.name
+                                FROM beatcodeApp_todo T JOIN beatcodeApp_problem P
+                                ON T.problem_id = P.id'''
+
         # problems are displayed in the order that they are added
-        context['problems'] = todo_problems
+        context['todos'] = ToDo.objects.raw(query_to_add_name)
         return render(request, 'beatcodeApp/todos.html', context)
+        
+    def post(self, request, *args, **kwargs):
+        context = {}
+
+        problem_id = request.POST['problem_id']
+        problem = Problem.objects.get(id=problem_id)
+        #print(problem)
+        ToDo.objects.filter(user=request.user,problem=problem).delete()
+        
+        todo_problems = ToDo.objects.filter(user=request.user)
+        context['todos'] = todo_problems
+        return render(request, 'beatcodeApp/todos.html', context)
+
 
 class CategoryView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')

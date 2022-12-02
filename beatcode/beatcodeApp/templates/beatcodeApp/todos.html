@@ -9,10 +9,17 @@
             </tr>
           </thead>
           <tbody>
-            {% for p in problems %}
+            {% for todo in todos %}
                 <tr>
-                    <td>{{ forloop.counter}} </td>
-                    <td>{{ p.name }}</td>
+                    <td>{{ forloop.counter}}</td>
+                    <td>{{ todo.name }}</td>
+                    <td><td>
+                      <form action = "." method = "POST">
+                        {% csrf_token %}
+                        <input class="btn btn-default btn-danger" name="delete" type="submit" value = "DELETE"/>
+                        <input type="hidden" value="{{ todo.name.id }}" name="problem_id">
+                      </form>
+                    </td></td>
                 </tr>
             {% endfor %}
           </tbody>
