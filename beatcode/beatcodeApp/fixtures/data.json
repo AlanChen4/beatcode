@@ -1,1 +1,3358 @@
-[{"model": "admin.logentry", "pk": 1, "fields": {"action_time": "2022-11-04T21:53:42.872Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 6, "object_id": "7246228e-b323-4136-96b1-38b8becf3854", "object_repr": "bob joe", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 2, "fields": {"action_time": "2022-11-04T21:53:56.124Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 11, "object_id": "3c801653-455e-43f9-a01b-685223c0ef60", "object_repr": "test@gmail.com: Super Hard Problem", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 3, "fields": {"action_time": "2022-11-04T21:54:07.860Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 11, "object_id": "21e78ab3-b9d0-443e-904a-59570d1fb5f5", "object_repr": "test@gmail.com: Course Schedule", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 4, "fields": {"action_time": "2022-11-04T21:57:28.601Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 10, "object_id": "1", "object_repr": "ToDo object (1)", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 5, "fields": {"action_time": "2022-11-10T05:02:35.955Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "6ea24765-860b-4b27-8d1b-186a0a899828", "object_repr": "Super Hard Problem", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 6, "fields": {"action_time": "2022-11-10T05:02:49.393Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "84974d83-c370-4bed-84d8-3f97e8cbfb9e", "object_repr": "Two Sum", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 7, "fields": {"action_time": "2022-11-10T05:03:02.749Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "fccc7018-3bf2-45d0-8a2a-10544f52f110", "object_repr": "Best Time to Buy and Sell Stock", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 8, "fields": {"action_time": "2022-11-10T05:03:15.734Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "0d478c47-068b-459f-8e26-aaf183b56e9d", "object_repr": "Contains Duplicate", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 9, "fields": {"action_time": "2022-11-10T05:03:27.423Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "72248610-df54-46f1-915f-ba80708d5056", "object_repr": "Product of Array Except Self", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 10, "fields": {"action_time": "2022-11-10T05:03:39.043Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "b5c81329-5784-462f-b28b-83925f5c4b7e", "object_repr": "Maximum Subarray", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 11, "fields": {"action_time": "2022-11-10T05:03:50.934Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "5572f4fc-e5ed-43dc-a495-a9dea4847465", "object_repr": "Maximum Product Subarray", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 12, "fields": {"action_time": "2022-11-10T05:04:02.988Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "0d9f499b-ffc5-4339-b88a-812c436313f7", "object_repr": "Find Minimum in Rotated Sorted Array", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 13, "fields": {"action_time": "2022-11-10T05:04:16.208Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "0006e995-0897-46a6-9c84-766fa55b2ec2", "object_repr": "Search in Rotated Sorted Array", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 14, "fields": {"action_time": "2022-11-10T05:04:23.451Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "03e92e2c-ea6d-4e01-9b4a-716af70c1901", "object_repr": "3 Sum", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 15, "fields": {"action_time": "2022-11-10T05:04:33.224Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "19d22875-8cba-43e0-bb76-74c015042c8d", "object_repr": "Container With Most Water", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 16, "fields": {"action_time": "2022-11-10T05:04:43.340Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "852da3ab-eb83-4cfe-98d6-bed4520f33e5", "object_repr": "Sum of Two Integers", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 17, "fields": {"action_time": "2022-11-10T05:04:51.671Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "807f42d0-66e0-44d0-b480-ce161e36094e", "object_repr": "Number of 1 Bits", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 18, "fields": {"action_time": "2022-11-10T05:05:00.740Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "968f0cb1-1fda-4a0c-b3b6-db55aa68216f", "object_repr": "Counting Bits", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 19, "fields": {"action_time": "2022-11-10T05:05:08.893Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "1ac8ca8f-5b4a-411a-81bd-1663c3bfd8a3", "object_repr": "Missing Number", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 20, "fields": {"action_time": "2022-11-10T05:05:17.978Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "1b7a5ebd-0257-42da-a418-9d72f6b31d7c", "object_repr": "Reverse Bits", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 21, "fields": {"action_time": "2022-11-10T05:05:38.432Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 9, "object_id": "ff726e0c-495a-4506-8652-c5b6e02455df", "object_repr": "Grind 75", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 22, "fields": {"action_time": "2022-11-10T05:06:08.299Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "6d7cc0d9-6dac-41aa-bac5-50fc562e0110", "object_repr": "Climbing Stairs", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 23, "fields": {"action_time": "2022-11-10T05:06:17.611Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "b31846ab-6a2b-4cc4-b48d-92c89d87ad76", "object_repr": "Coin Change", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 24, "fields": {"action_time": "2022-11-10T05:06:38.300Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "d2122176-9517-44b4-b126-1372249002de", "object_repr": "Longest Increasing Subsequence", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 25, "fields": {"action_time": "2022-11-10T05:06:48.331Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "20adf938-ccad-4c4a-8bae-87b4e8685789", "object_repr": "Longest Common Subsequence", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 26, "fields": {"action_time": "2022-11-10T05:07:05.746Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "fc0af646-d513-4748-a37b-a83a6fefa65c", "object_repr": "Word Break", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 27, "fields": {"action_time": "2022-11-10T05:07:35.685Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "75b81836-c2de-4e28-a200-2f5820cf025b", "object_repr": "Combination Sum", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 28, "fields": {"action_time": "2022-11-10T05:07:44.912Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "2adc047b-873e-4b8b-82b1-3b3fcbfd1142", "object_repr": "House Robber", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 29, "fields": {"action_time": "2022-11-10T05:08:00.891Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "cee2565f-d51a-4895-a81f-7407f9742005", "object_repr": "House Robber II", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 30, "fields": {"action_time": "2022-11-10T05:08:08.627Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "293d8b35-4351-4670-8136-319b658c5f36", "object_repr": "Decode Ways", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 31, "fields": {"action_time": "2022-11-10T05:08:17.447Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "1059a589-221c-4cd4-9eb6-ba5a73c1c19a", "object_repr": "Unique Paths", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 32, "fields": {"action_time": "2022-11-10T05:08:28.305Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "b3f2b4b4-ec21-4a1a-b413-b8c87ed50489", "object_repr": "Clone Graph", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 33, "fields": {"action_time": "2022-11-10T05:08:42.149Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "01031df2-acf3-4a8d-95da-dca8ae8cae59", "object_repr": "Pacific Atlantic Water Flow", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 34, "fields": {"action_time": "2022-11-10T05:08:52.193Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "0ab5c0bd-05ba-42ee-8af8-5ceeb54befe6", "object_repr": "Number of Islands", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 35, "fields": {"action_time": "2022-11-10T05:09:05.668Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "7d857971-af4e-4555-9000-d0c25d5cbcf7", "object_repr": "Longest Consecutive Sequence", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 36, "fields": {"action_time": "2022-11-10T05:09:14.553Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "ff05f255-ef7a-4712-86d9-a532f9a86826", "object_repr": "Alien Dictionary", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 37, "fields": {"action_time": "2022-11-10T05:09:24.073Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "a6268512-21ed-4c5a-aa99-56e92be88c16", "object_repr": "Graph Valid Tree", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 38, "fields": {"action_time": "2022-11-10T05:09:43.010Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "62b6ba2c-056a-4bf2-b4db-ac8c467aece3", "object_repr": "Number of Connected Components in an Undirected Graph", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 39, "fields": {"action_time": "2022-11-10T05:09:53.305Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "ce83b9cb-2580-4d62-b7e7-0524ec089034", "object_repr": "Insert Interval", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 40, "fields": {"action_time": "2022-11-10T05:10:03.056Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "5b6fe6fe-8648-4d22-bcdd-508ec44a902a", "object_repr": "Merge Interval", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 41, "fields": {"action_time": "2022-11-10T05:10:10.206Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "5b6fe6fe-8648-4d22-bcdd-508ec44a902a", "object_repr": "Merge Intervals", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"}}, {"model": "admin.logentry", "pk": 42, "fields": {"action_time": "2022-11-10T05:10:28.318Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "9ee4c143-5e07-4896-bcaa-19dcd4a2f0f4", "object_repr": "Non-overlapping Intervals", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 43, "fields": {"action_time": "2022-11-10T05:10:37.632Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "4383b739-6e1e-4039-9590-3d7bd3de2e91", "object_repr": "Meeting Rooms", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 44, "fields": {"action_time": "2022-11-10T05:10:45.923Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "214119e7-4f27-41b5-98d6-f245ead8c67b", "object_repr": "Meeting Rooms II", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 45, "fields": {"action_time": "2022-11-10T05:10:57.312Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "c397f46a-a56b-443e-b316-0bad267765f6", "object_repr": "Reverse a Linked List", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 46, "fields": {"action_time": "2022-11-10T05:11:08.419Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "2852db61-a0da-4a92-a7b1-3f89d05bb591", "object_repr": "Detect Cycle in a Linked List", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 47, "fields": {"action_time": "2022-11-10T05:11:20.240Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "7feb65cb-3804-4693-979b-07d090bf1b60", "object_repr": "Merge Two Sorted Lists", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 48, "fields": {"action_time": "2022-11-10T05:11:43.459Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "ebf5e8e3-3049-46f1-9525-02495c46c2d5", "object_repr": "Merge k Sorted Lists", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 49, "fields": {"action_time": "2022-11-10T05:11:55.476Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "303e6702-32e0-4374-9812-360ee3c451e6", "object_repr": "Remove Nth Node From End of List", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 50, "fields": {"action_time": "2022-11-10T05:12:03.223Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "715d218c-7f42-4a36-9ca0-ee9ecb335faa", "object_repr": "Reorder List", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 51, "fields": {"action_time": "2022-11-10T05:12:12.643Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "61cc9568-dd2a-4ed2-bc25-39d065cdfed7", "object_repr": "Set Matrix Zeroes", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 52, "fields": {"action_time": "2022-11-10T05:12:19.862Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "f50874f2-4260-412a-86ed-5918be0f9c1a", "object_repr": "Spiral Matrix", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 53, "fields": {"action_time": "2022-11-10T05:12:27.251Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "34f52dbf-6839-451c-b3ca-0aeaeb1fd594", "object_repr": "Rotate Image", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 54, "fields": {"action_time": "2022-11-10T05:12:34.919Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "25964434-5959-4761-8d7b-809e65335420", "object_repr": "Word Search", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 55, "fields": {"action_time": "2022-11-10T05:12:43.491Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "53a4f9bc-18f1-42de-b8fb-19459e26f64e", "object_repr": "Longest Substring Without Repeating Characters", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 56, "fields": {"action_time": "2022-11-10T05:12:49.267Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "b9be2037-89d2-4f9a-800b-47d9eef8eb16", "object_repr": "Longest Repeating Character Replacement", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 57, "fields": {"action_time": "2022-11-10T05:12:57.153Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "70f55cee-282c-48b8-b3b5-73c8ace9bae0", "object_repr": "Minimum Window Substring", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 58, "fields": {"action_time": "2022-11-10T05:13:03.531Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "ac81e32c-e4a1-4e40-9344-def1da71ec87", "object_repr": "Valid Anagram", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 59, "fields": {"action_time": "2022-11-10T05:13:09.014Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "f80c4ae1-aaf4-4817-beb5-98355d7e7a31", "object_repr": "Group Anagrams", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 60, "fields": {"action_time": "2022-11-10T05:13:13.688Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "01f12d0d-912c-4611-8f91-57a9bf2fe6ff", "object_repr": "Valid Parentheses", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 61, "fields": {"action_time": "2022-11-10T05:13:21.923Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "0819e362-2233-4b24-aaae-83c793b282a1", "object_repr": "Valid Palindrome", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 62, "fields": {"action_time": "2022-11-10T05:13:28.036Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "16729d34-4edf-43ab-b1bf-e09421ae6405", "object_repr": "Longest Palindromic Substring", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 63, "fields": {"action_time": "2022-11-10T05:13:33.934Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "6049c3f4-7a3e-43f0-8be0-247a2fff908a", "object_repr": "Palindromic Substrings", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 64, "fields": {"action_time": "2022-11-10T05:13:42.362Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "93bcb335-c940-4727-b653-a1e1cc357006", "object_repr": "Encode and Decode Strings", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 65, "fields": {"action_time": "2022-11-10T05:13:51.377Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "c1806b2d-b77b-4a38-b588-679f7c6a4581", "object_repr": "Maximum Depth of Binary Tree", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 66, "fields": {"action_time": "2022-11-10T05:14:01.177Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "7da53ae1-51ec-4989-8a9e-daa2a8765580", "object_repr": "Same Tree", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 67, "fields": {"action_time": "2022-11-10T05:14:11.809Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "a46b28f1-bb52-4a35-96ba-0670043d0e75", "object_repr": "Invert/Flip Binary Tree", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 68, "fields": {"action_time": "2022-11-10T05:14:18.251Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "a3398520-0aea-4d92-bb58-e680bce72c3c", "object_repr": "Binary Tree Maximum Path Sum", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 69, "fields": {"action_time": "2022-11-10T05:14:24.408Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "4816c885-b3a0-4a84-b789-9da149540b32", "object_repr": "Binary Tree Level Order Traversal", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 70, "fields": {"action_time": "2022-11-10T05:14:31.547Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "e6c052fc-e854-4321-8672-edff23927233", "object_repr": "Serialize and Deserialize Binary Tree", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 71, "fields": {"action_time": "2022-11-10T05:14:38.158Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "d2339cf3-9bd9-4a04-9bc8-cc4b4634e2a8", "object_repr": "Subtree of Another Tree", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 72, "fields": {"action_time": "2022-11-10T05:14:47.139Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "9a86997e-e2df-4da0-a3bc-fd8dfb90284d", "object_repr": "Construct Binary Tree from Preorder and Inorder Traversal", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 73, "fields": {"action_time": "2022-11-10T05:14:53.460Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "ccfc2259-1000-466f-adb6-faa4bd9e1813", "object_repr": "Validate Binary Search Tree", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 74, "fields": {"action_time": "2022-11-10T05:15:01.022Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "19f412c3-28d0-4855-962b-c511c1870d57", "object_repr": "Kth Smallest Element in a BST", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 75, "fields": {"action_time": "2022-11-10T05:15:07.899Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "23787747-39fd-45dc-88d6-d7f50290204c", "object_repr": "Lowest Common Ancestor of BST", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 76, "fields": {"action_time": "2022-11-10T05:15:20.164Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "a74c25f4-8293-4bed-9488-25b7266ad477", "object_repr": "Implement Trie (Prefix Tree)", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 77, "fields": {"action_time": "2022-11-10T05:15:32.373Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "1b1277ae-2dc5-4ac4-8b5d-c16f4ee9680f", "object_repr": "Add and Search Word", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 78, "fields": {"action_time": "2022-11-10T05:15:38.183Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "8bb75f9b-f44a-44c6-be1e-3db81760d0a6", "object_repr": "Word Search II", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 79, "fields": {"action_time": "2022-11-10T05:15:42.690Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "ecd5d225-305f-48b3-ba8d-edae61509384", "object_repr": "Merge K Sorted Lists", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 80, "fields": {"action_time": "2022-11-10T05:16:01.057Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "beb81f78-e848-4522-80d9-f15deaf8d63c", "object_repr": "Top K Frequent Elements", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 81, "fields": {"action_time": "2022-11-10T05:16:05.515Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "07cb1ee1-8e69-430f-b3d1-0085b38a8364", "object_repr": "Find Median from Data Stream", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 82, "fields": {"action_time": "2022-11-10T05:16:34.042Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "ecd5d225-305f-48b3-ba8d-edae61509384", "object_repr": "Merge K Sorted Lists", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 83, "fields": {"action_time": "2022-11-10T05:17:08.255Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "ebf5e8e3-3049-46f1-9525-02495c46c2d5", "object_repr": "Merge k Sorted Lists", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"}}, {"model": "admin.logentry", "pk": 84, "fields": {"action_time": "2022-11-10T05:21:04.148Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 8, "object_id": "6d7cc0d9-6dac-41aa-bac5-50fc562e0110", "object_repr": "Climbing Stairs", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Problem set\"]}}]"}}, {"model": "admin.logentry", "pk": 85, "fields": {"action_time": "2022-11-10T05:21:23.539Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 9, "object_id": "012d7e4f-9b5f-4778-bc40-5830e6ed46ec", "object_repr": "Grokking the Coding Interview", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 86, "fields": {"action_time": "2022-11-11T08:39:16.529Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 7, "object_id": "db6d7758-6a88-440e-a257-fb42f208977a", "object_repr": "Dynamic Programming", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"}}, {"model": "admin.logentry", "pk": 87, "fields": {"action_time": "2022-11-11T08:39:28.339Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 7, "object_id": "c5c3531f-733b-496a-a282-0ea648678d9c", "object_repr": "Linked List", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"}}, {"model": "admin.logentry", "pk": 88, "fields": {"action_time": "2022-11-11T08:43:50.599Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 7, "object_id": "db6d7758-6a88-440e-a257-fb42f208977a", "object_repr": "Dynamic Programming", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 89, "fields": {"action_time": "2022-11-11T08:43:50.758Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 7, "object_id": "c5c3531f-733b-496a-a282-0ea648678d9c", "object_repr": "Linked List", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 90, "fields": {"action_time": "2022-11-11T08:43:50.863Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 7, "object_id": "c4913ef0-9d36-4597-972e-6fa64f167fc1", "object_repr": "MX", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 91, "fields": {"action_time": "2022-11-11T08:43:50.975Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 7, "object_id": "8851f3fe-46a0-48b0-b37e-240a25b072bc", "object_repr": "AR", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 92, "fields": {"action_time": "2022-11-11T08:43:51.113Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 7, "object_id": "7b02405a-2e9c-4ef6-a762-f852872d444a", "object_repr": "TR", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 93, "fields": {"action_time": "2022-11-11T08:43:51.255Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 7, "object_id": "7a616e15-78e9-4b46-be2c-3afae049b182", "object_repr": "GR", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 94, "fields": {"action_time": "2022-11-11T08:43:51.379Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 7, "object_id": "54dc0d90-ad34-41b2-9684-5a6552cc6daf", "object_repr": "ST", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 95, "fields": {"action_time": "2022-11-11T08:43:51.484Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 7, "object_id": "4fcc33b4-4394-4eb8-8a45-5744dd6930a5", "object_repr": "BI", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 96, "fields": {"action_time": "2022-11-11T08:43:51.635Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 7, "object_id": "41d2a4f8-0e44-4f53-892f-888154406ce0", "object_repr": "HE", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 97, "fields": {"action_time": "2022-11-11T08:43:51.790Z", "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "content_type": 7, "object_id": "13ff63da-afec-47a5-8b74-c5b6ad315ac1", "object_repr": "IN", "action_flag": 3, "change_message": ""}}, {"model": "auth.permission", "pk": 1, "fields": {"name": "Can add log entry", "content_type": 1, "codename": "add_logentry"}}, {"model": "auth.permission", "pk": 2, "fields": {"name": "Can change log entry", "content_type": 1, "codename": "change_logentry"}}, {"model": "auth.permission", "pk": 3, "fields": {"name": "Can delete log entry", "content_type": 1, "codename": "delete_logentry"}}, {"model": "auth.permission", "pk": 4, "fields": {"name": "Can view log entry", "content_type": 1, "codename": "view_logentry"}}, {"model": "auth.permission", "pk": 5, "fields": {"name": "Can add permission", "content_type": 2, "codename": "add_permission"}}, {"model": "auth.permission", "pk": 6, "fields": {"name": "Can change permission", "content_type": 2, "codename": "change_permission"}}, {"model": "auth.permission", "pk": 7, "fields": {"name": "Can delete permission", "content_type": 2, "codename": "delete_permission"}}, {"model": "auth.permission", "pk": 8, "fields": {"name": "Can view permission", "content_type": 2, "codename": "view_permission"}}, {"model": "auth.permission", "pk": 9, "fields": {"name": "Can add group", "content_type": 3, "codename": "add_group"}}, {"model": "auth.permission", "pk": 10, "fields": {"name": "Can change group", "content_type": 3, "codename": "change_group"}}, {"model": "auth.permission", "pk": 11, "fields": {"name": "Can delete group", "content_type": 3, "codename": "delete_group"}}, {"model": "auth.permission", "pk": 12, "fields": {"name": "Can view group", "content_type": 3, "codename": "view_group"}}, {"model": "auth.permission", "pk": 13, "fields": {"name": "Can add content type", "content_type": 4, "codename": "add_contenttype"}}, {"model": "auth.permission", "pk": 14, "fields": {"name": "Can change content type", "content_type": 4, "codename": "change_contenttype"}}, {"model": "auth.permission", "pk": 15, "fields": {"name": "Can delete content type", "content_type": 4, "codename": "delete_contenttype"}}, {"model": "auth.permission", "pk": 16, "fields": {"name": "Can view content type", "content_type": 4, "codename": "view_contenttype"}}, {"model": "auth.permission", "pk": 17, "fields": {"name": "Can add session", "content_type": 5, "codename": "add_session"}}, {"model": "auth.permission", "pk": 18, "fields": {"name": "Can change session", "content_type": 5, "codename": "change_session"}}, {"model": "auth.permission", "pk": 19, "fields": {"name": "Can delete session", "content_type": 5, "codename": "delete_session"}}, {"model": "auth.permission", "pk": 20, "fields": {"name": "Can view session", "content_type": 5, "codename": "view_session"}}, {"model": "auth.permission", "pk": 21, "fields": {"name": "Can add user", "content_type": 6, "codename": "add_customuser"}}, {"model": "auth.permission", "pk": 22, "fields": {"name": "Can change user", "content_type": 6, "codename": "change_customuser"}}, {"model": "auth.permission", "pk": 23, "fields": {"name": "Can delete user", "content_type": 6, "codename": "delete_customuser"}}, {"model": "auth.permission", "pk": 24, "fields": {"name": "Can view user", "content_type": 6, "codename": "view_customuser"}}, {"model": "auth.permission", "pk": 25, "fields": {"name": "Can add category", "content_type": 7, "codename": "add_category"}}, {"model": "auth.permission", "pk": 26, "fields": {"name": "Can change category", "content_type": 7, "codename": "change_category"}}, {"model": "auth.permission", "pk": 27, "fields": {"name": "Can delete category", "content_type": 7, "codename": "delete_category"}}, {"model": "auth.permission", "pk": 28, "fields": {"name": "Can view category", "content_type": 7, "codename": "view_category"}}, {"model": "auth.permission", "pk": 29, "fields": {"name": "Can add problem", "content_type": 8, "codename": "add_problem"}}, {"model": "auth.permission", "pk": 30, "fields": {"name": "Can change problem", "content_type": 8, "codename": "change_problem"}}, {"model": "auth.permission", "pk": 31, "fields": {"name": "Can delete problem", "content_type": 8, "codename": "delete_problem"}}, {"model": "auth.permission", "pk": 32, "fields": {"name": "Can view problem", "content_type": 8, "codename": "view_problem"}}, {"model": "auth.permission", "pk": 33, "fields": {"name": "Can add problem set", "content_type": 9, "codename": "add_problemset"}}, {"model": "auth.permission", "pk": 34, "fields": {"name": "Can change problem set", "content_type": 9, "codename": "change_problemset"}}, {"model": "auth.permission", "pk": 35, "fields": {"name": "Can delete problem set", "content_type": 9, "codename": "delete_problemset"}}, {"model": "auth.permission", "pk": 36, "fields": {"name": "Can view problem set", "content_type": 9, "codename": "view_problemset"}}, {"model": "auth.permission", "pk": 37, "fields": {"name": "Can add to do", "content_type": 10, "codename": "add_todo"}}, {"model": "auth.permission", "pk": 38, "fields": {"name": "Can change to do", "content_type": 10, "codename": "change_todo"}}, {"model": "auth.permission", "pk": 39, "fields": {"name": "Can delete to do", "content_type": 10, "codename": "delete_todo"}}, {"model": "auth.permission", "pk": 40, "fields": {"name": "Can view to do", "content_type": 10, "codename": "view_todo"}}, {"model": "auth.permission", "pk": 41, "fields": {"name": "Can add submission", "content_type": 11, "codename": "add_submission"}}, {"model": "auth.permission", "pk": 42, "fields": {"name": "Can change submission", "content_type": 11, "codename": "change_submission"}}, {"model": "auth.permission", "pk": 43, "fields": {"name": "Can delete submission", "content_type": 11, "codename": "delete_submission"}}, {"model": "auth.permission", "pk": 44, "fields": {"name": "Can view submission", "content_type": 11, "codename": "view_submission"}}, {"model": "contenttypes.contenttype", "pk": 1, "fields": {"app_label": "admin", "model": "logentry"}}, {"model": "contenttypes.contenttype", "pk": 2, "fields": {"app_label": "auth", "model": "permission"}}, {"model": "contenttypes.contenttype", "pk": 3, "fields": {"app_label": "auth", "model": "group"}}, {"model": "contenttypes.contenttype", "pk": 4, "fields": {"app_label": "contenttypes", "model": "contenttype"}}, {"model": "contenttypes.contenttype", "pk": 5, "fields": {"app_label": "sessions", "model": "session"}}, {"model": "contenttypes.contenttype", "pk": 6, "fields": {"app_label": "authentication", "model": "customuser"}}, {"model": "contenttypes.contenttype", "pk": 7, "fields": {"app_label": "beatcodeApp", "model": "category"}}, {"model": "contenttypes.contenttype", "pk": 8, "fields": {"app_label": "beatcodeApp", "model": "problem"}}, {"model": "contenttypes.contenttype", "pk": 9, "fields": {"app_label": "beatcodeApp", "model": "problemset"}}, {"model": "contenttypes.contenttype", "pk": 10, "fields": {"app_label": "beatcodeApp", "model": "todo"}}, {"model": "contenttypes.contenttype", "pk": 11, "fields": {"app_label": "beatcodeApp", "model": "submission"}}, {"model": "sessions.session", "pk": "7hnrumw1pth6q31wt0ou1bhsxxvni724", "fields": {"session_data": ".eJxVzUsOgzAMBNC7ZF0inATidNl9z4Ds2Cn9CCQ-q6p3L0gs2vXMm3mbjtal79ZZp-4u5mwUpY4lt5VPOVWBWSoOhFVofU61QgH05vTLmPJTh93Kg4bbaPM4LNOd7V6xRzrb6yj6uhzdv4Ge5n7TBTGk0nhy0VF0ivV2HhxKYQcBvA8siQFDIVEQIIio3LDfSGJuzecLIB5BpQ:1orN7p:x5TR6G8JUN9zkSYKZWn8_Q_BH7FYITYsKs_G9PeFJi4", "expire_date": "2022-11-19T17:38:33.285Z"}}, {"model": "sessions.session", "pk": "bsim8nmpdfru361nde8fftdlyhl4zwqh", "fields": {"session_data": ".eJxVzUsOgzAMBNC7ZF0inATidNl9z4Ds2Cn9CCQ-q6p3L0gs2vXMm3mbjtal79ZZp-4u5mwUpY4lt5VPOVWBWSoOhFVofU61QgH05vTLmPJTh93Kg4bbaPM4LNOd7V6xRzrb6yj6uhzdv4Ge5n7TBTGk0nhy0VF0ivV2HhxKYQcBvA8siQFDIVEQIIio3LDfSGJuzecLIB5BpQ:1oszdD:fyAcWbhPhHCq5UJ1Hyx0Oaz-iHJ-m23_p05xG7X5cbw", "expire_date": "2022-11-24T04:57:39.684Z"}}, {"model": "sessions.session", "pk": "e5o47q62n82wilc8yl4rn5we4l75vss1", "fields": {"session_data": ".eJxVzUsOgzAMBNC7ZF0inATidNl9z4Ds2Cn9CCQ-q6p3L0gs2vXMm3mbjtal79ZZp-4u5mwUpY4lt5VPOVWBWSoOhFVofU61QgH05vTLmPJTh93Kg4bbaPM4LNOd7V6xRzrb6yj6uhzdv4Ge5n7TBTGk0nhy0VF0ivV2HhxKYQcBvA8siQFDIVEQIIio3LDfSGJuzecLIB5BpQ:1otQRM:3tceuZiHC3wBO7N-A5A8zOJyld52UruNzvnTH_S14T8", "expire_date": "2022-11-25T09:35:12.531Z"}}, {"model": "sessions.session", "pk": "e79ocn0so2194bztwh2l5jw833w62ytq", "fields": {"session_data": ".eJxVzUsOgzAMBNC7ZF0inATidNl9z4Ds2Cn9CCQ-q6p3L0gs2vXMm3mbjtal79ZZp-4u5mwUpY4lt5VPOVWBWSoOhFVofU61QgH05vTLmPJTh93Kg4bbaPM4LNOd7V6xRzrb6yj6uhzdv4Ge5n7TBTGk0nhy0VF0ivV2HhxKYQcBvA8siQFDIVEQIIio3LDfSGJuzecLIB5BpQ:1otPXD:HcbqkP948icJpJYTpEDrWLSbl8bAxMgXPBFMpg0UUGI", "expire_date": "2022-11-25T08:37:11.796Z"}}, {"model": "authentication.customuser", "pk": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "fields": {"password": "pbkdf2_sha256$390000$SHqlV37OIG8dcfF8uNw5Zk$uVemcKpkTmjDanxkFOTU50g3ZCeh8JsiX2Lrc1cY1Vg=", "last_login": "2022-11-11T09:35:12.417Z", "is_superuser": true, "is_staff": true, "is_active": true, "date_joined": "2022-11-04T21:53:10.804Z", "email": "test@gmail.com", "first_name": "test", "last_name": "test_last", "leetcode_username": null, "groups": [], "user_permissions": []}}, {"model": "beatcodeApp.category", "pk": "0a1021aa-4abd-4ed4-969a-a9c0fdc797c7", "fields": {"name": "Backtracking"}}, {"model": "beatcodeApp.category", "pk": "0ceda829-de29-412b-b999-26f900585d79", "fields": {"name": "Hash Function"}}, {"model": "beatcodeApp.category", "pk": "0e15bc8a-b1a1-4932-a95b-421ca83e2430", "fields": {"name": "Sorting"}}, {"model": "beatcodeApp.category", "pk": "0ff49265-135f-4431-baf5-b71b5b047b4a", "fields": {"name": "Combinatorics"}}, {"model": "beatcodeApp.category", "pk": "10b61cbd-501f-4da3-82a3-7e3c1a88176d", "fields": {"name": "Matrix"}}, {"model": "beatcodeApp.category", "pk": "16d26155-fb50-4542-93e9-bd4526a3e491", "fields": {"name": "Bit Manipulation"}}, {"model": "beatcodeApp.category", "pk": "1a8e6465-bb66-4d25-acfb-cc8cb47e0ec5", "fields": {"name": "Stack"}}, {"model": "beatcodeApp.category", "pk": "1cd26624-9e0e-480a-bb79-48155f195b27", "fields": {"name": "Prefix Sum"}}, {"model": "beatcodeApp.category", "pk": "1d3584b9-b6a4-4ab1-a90d-6e34e3598e51", "fields": {"name": "Topological Sort"}}, {"model": "beatcodeApp.category", "pk": "1e138010-e073-4b6a-896c-9f87867f4c2d", "fields": {"name": "Sliding Window"}}, {"model": "beatcodeApp.category", "pk": "1e74a43f-15d8-42ae-a14f-095ab87143df", "fields": {"name": "Math"}}, {"model": "beatcodeApp.category", "pk": "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "fields": {"name": "Hash Table"}}, {"model": "beatcodeApp.category", "pk": "270de8d6-b060-429a-8aaa-59c91a48990d", "fields": {"name": "Heap (Priority Queue)"}}, {"model": "beatcodeApp.category", "pk": "2a60c38b-c005-453f-9514-1d1c9284300f", "fields": {"name": "Data Stream"}}, {"model": "beatcodeApp.category", "pk": "31db7173-9ab6-4c1f-b137-4dc7ae8ed874", "fields": {"name": "Dynamic Programming"}}, {"model": "beatcodeApp.category", "pk": "3226de82-b948-407c-a565-b83b5bcee591", "fields": {"name": "Memoization"}}, {"model": "beatcodeApp.category", "pk": "3ab43586-edd5-4f52-b1bc-4dad94c9bca5", "fields": {"name": "String Matching"}}, {"model": "beatcodeApp.category", "pk": "49e06fbd-3c6f-462a-87e8-94f9113e6448", "fields": {"name": "Recursion"}}, {"model": "beatcodeApp.category", "pk": "4b8118c0-f244-49c8-8435-418a7ba57703", "fields": {"name": "Two Pointers"}}, {"model": "beatcodeApp.category", "pk": "4d47b283-ee50-46fc-86bb-0c4e049c3366", "fields": {"name": "Graph"}}, {"model": "beatcodeApp.category", "pk": "54c5dbfe-0805-4984-9478-27f6967db942", "fields": {"name": "Array"}}, {"model": "beatcodeApp.category", "pk": "5fe22573-6465-4f0a-9b52-8ca03d95aab2", "fields": {"name": "Greedy"}}, {"model": "beatcodeApp.category", "pk": "62592cc0-41dd-418e-851c-18a06ab70b2f", "fields": {"name": "Linked List"}}, {"model": "beatcodeApp.category", "pk": "62f07cbc-f75e-4d6b-9d8f-84745413d506", "fields": {"name": "Counting"}}, {"model": "beatcodeApp.category", "pk": "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83", "fields": {"name": "String"}}, {"model": "beatcodeApp.category", "pk": "7a94a426-ab50-414c-8c90-0e75779ef2ac", "fields": {"name": "Divide and Conquer"}}, {"model": "beatcodeApp.category", "pk": "7df4f768-e802-4fa6-9997-052fdeec24b0", "fields": {"name": "Simulation"}}, {"model": "beatcodeApp.category", "pk": "7f4503c3-5e0d-45b0-b944-971fe7612321", "fields": {"name": "Trie"}}, {"model": "beatcodeApp.category", "pk": "80091b8e-f68e-443f-a1b2-95fe9b1aeebd", "fields": {"name": "Quickselect"}}, {"model": "beatcodeApp.category", "pk": "849fb925-511a-41f3-ad52-40466b682459", "fields": {"name": "Bucket Sort"}}, {"model": "beatcodeApp.category", "pk": "a3d54b29-3c5b-47ad-a0b6-641d9fb65b38", "fields": {"name": "Union Find"}}, {"model": "beatcodeApp.category", "pk": "a75cff6a-be96-4f67-b63c-5c82df46964f", "fields": {"name": "Binary Search"}}, {"model": "beatcodeApp.category", "pk": "a8bffe7d-7b96-4794-8932-502899b3a9f6", "fields": {"name": "Binary Search Tree"}}, {"model": "beatcodeApp.category", "pk": "b09c6484-9d3a-4ce5-94be-c727b30ad649", "fields": {"name": "Depth-First Search"}}, {"model": "beatcodeApp.category", "pk": "b5eb9207-22f6-4a6f-96f8-03705fdb3887", "fields": {"name": "Tree"}}, {"model": "beatcodeApp.category", "pk": "b8d7677e-9052-4552-9aaf-683b4edbf617", "fields": {"name": "Merge Sort"}}, {"model": "beatcodeApp.category", "pk": "c674baa2-1290-44f6-8eba-317052e11ecf", "fields": {"name": "Breadth-First Search"}}, {"model": "beatcodeApp.category", "pk": "cb7e8a8d-a47c-4723-9633-b8dabe1b0455", "fields": {"name": "Binary Tree"}}, {"model": "beatcodeApp.category", "pk": "f93e9e8c-efd8-48e7-abba-63c9712da613", "fields": {"name": "Design"}}, {"model": "beatcodeApp.problemset", "pk": "012d7e4f-9b5f-4778-bc40-5830e6ed46ec", "fields": {"name": "Grokking the Coding Interview"}}, {"model": "beatcodeApp.problemset", "pk": "e39a7377-b164-49f4-a349-f25a271e2b4d", "fields": {"name": "Blind 75"}}, {"model": "beatcodeApp.problemset", "pk": "ff726e0c-495a-4506-8652-c5b6e02455df", "fields": {"name": "Grind 75"}}, {"model": "beatcodeApp.problem", "pk": "0006e995-0897-46a6-9c84-766fa55b2ec2", "fields": {"name": "Search in Rotated Sorted Array", "difficulty": "Medium", "category": ["54c5dbfe-0805-4984-9478-27f6967db942", "a75cff6a-be96-4f67-b63c-5c82df46964f"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "01031df2-acf3-4a8d-95da-dca8ae8cae59", "fields": {"name": "Pacific Atlantic Water Flow", "difficulty": "Medium", "category": ["10b61cbd-501f-4da3-82a3-7e3c1a88176d", "54c5dbfe-0805-4984-9478-27f6967db942", "b09c6484-9d3a-4ce5-94be-c727b30ad649", "c674baa2-1290-44f6-8eba-317052e11ecf"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "01f12d0d-912c-4611-8f91-57a9bf2fe6ff", "fields": {"name": "Valid Parentheses", "difficulty": "Easy", "category": ["1a8e6465-bb66-4d25-acfb-cc8cb47e0ec5", "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "03e92e2c-ea6d-4e01-9b4a-716af70c1901", "fields": {"name": "3 Sum", "difficulty": "Medium", "category": ["1e138010-e073-4b6a-896c-9f87867f4c2d", "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "07cb1ee1-8e69-430f-b3d1-0085b38a8364", "fields": {"name": "Find Median from Data Stream", "difficulty": "Hard", "category": ["0e15bc8a-b1a1-4932-a95b-421ca83e2430", "270de8d6-b060-429a-8aaa-59c91a48990d", "2a60c38b-c005-453f-9514-1d1c9284300f", "4b8118c0-f244-49c8-8435-418a7ba57703", "f93e9e8c-efd8-48e7-abba-63c9712da613"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "0819e362-2233-4b24-aaae-83c793b282a1", "fields": {"name": "Valid Palindrome", "difficulty": "Easy", "category": ["4b8118c0-f244-49c8-8435-418a7ba57703", "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "0ab5c0bd-05ba-42ee-8af8-5ceeb54befe6", "fields": {"name": "Number of Islands", "difficulty": "Medium", "category": ["10b61cbd-501f-4da3-82a3-7e3c1a88176d", "54c5dbfe-0805-4984-9478-27f6967db942", "a3d54b29-3c5b-47ad-a0b6-641d9fb65b38", "b09c6484-9d3a-4ce5-94be-c727b30ad649", "c674baa2-1290-44f6-8eba-317052e11ecf"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "0d478c47-068b-459f-8e26-aaf183b56e9d", "fields": {"name": "Contains Duplicate", "difficulty": "Easy", "category": ["0e15bc8a-b1a1-4932-a95b-421ca83e2430", "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "54c5dbfe-0805-4984-9478-27f6967db942"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "0d9f499b-ffc5-4339-b88a-812c436313f7", "fields": {"name": "Find Minimum in Rotated Sorted Array", "difficulty": "Medium", "category": ["54c5dbfe-0805-4984-9478-27f6967db942", "a75cff6a-be96-4f67-b63c-5c82df46964f"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "1059a589-221c-4cd4-9eb6-ba5a73c1c19a", "fields": {"name": "Unique Paths", "difficulty": "Medium", "category": ["0ff49265-135f-4431-baf5-b71b5b047b4a", "1e74a43f-15d8-42ae-a14f-095ab87143df", "31db7173-9ab6-4c1f-b137-4dc7ae8ed874"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "16729d34-4edf-43ab-b1bf-e09421ae6405", "fields": {"name": "Longest Palindromic Substring", "difficulty": "Medium", "category": ["31db7173-9ab6-4c1f-b137-4dc7ae8ed874", "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "19d22875-8cba-43e0-bb76-74c015042c8d", "fields": {"name": "Container With Most Water", "difficulty": "Medium", "category": ["4b8118c0-f244-49c8-8435-418a7ba57703", "54c5dbfe-0805-4984-9478-27f6967db942", "5fe22573-6465-4f0a-9b52-8ca03d95aab2"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "19f412c3-28d0-4855-962b-c511c1870d57", "fields": {"name": "Kth Smallest Element in a BST", "difficulty": "Medium", "category": ["a8bffe7d-7b96-4794-8932-502899b3a9f6", "b09c6484-9d3a-4ce5-94be-c727b30ad649", "b5eb9207-22f6-4a6f-96f8-03705fdb3887", "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "1ac8ca8f-5b4a-411a-81bd-1663c3bfd8a3", "fields": {"name": "Missing Number", "difficulty": "Easy", "category": ["0e15bc8a-b1a1-4932-a95b-421ca83e2430", "16d26155-fb50-4542-93e9-bd4526a3e491", "1e74a43f-15d8-42ae-a14f-095ab87143df", "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "54c5dbfe-0805-4984-9478-27f6967db942", "a75cff6a-be96-4f67-b63c-5c82df46964f"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "1b1277ae-2dc5-4ac4-8b5d-c16f4ee9680f", "fields": {"name": "Add and Search Word", "difficulty": "Medium", "category": ["6f2c7c0c-ba88-4dac-bf58-bb3419a54f83", "7f4503c3-5e0d-45b0-b944-971fe7612321", "b09c6484-9d3a-4ce5-94be-c727b30ad649", "f93e9e8c-efd8-48e7-abba-63c9712da613"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "1b7a5ebd-0257-42da-a418-9d72f6b31d7c", "fields": {"name": "Reverse Bits", "difficulty": "Easy", "category": ["16d26155-fb50-4542-93e9-bd4526a3e491", "7a94a426-ab50-414c-8c90-0e75779ef2ac"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "20adf938-ccad-4c4a-8bae-87b4e8685789", "fields": {"name": "Longest Common  Subsequence", "difficulty": "Medium", "category": ["31db7173-9ab6-4c1f-b137-4dc7ae8ed874", "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "214119e7-4f27-41b5-98d6-f245ead8c67b", "fields": {"name": "Meeting Rooms II", "difficulty": "Medium", "category": ["0e15bc8a-b1a1-4932-a95b-421ca83e2430", "1cd26624-9e0e-480a-bb79-48155f195b27", "270de8d6-b060-429a-8aaa-59c91a48990d", "4b8118c0-f244-49c8-8435-418a7ba57703", "54c5dbfe-0805-4984-9478-27f6967db942", "5fe22573-6465-4f0a-9b52-8ca03d95aab2"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "23787747-39fd-45dc-88d6-d7f50290204c", "fields": {"name": "Lowest Common Ancestor of BST", "difficulty": "Medium", "category": ["1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "b09c6484-9d3a-4ce5-94be-c727b30ad649", "b5eb9207-22f6-4a6f-96f8-03705fdb3887", "c674baa2-1290-44f6-8eba-317052e11ecf", "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "25964434-5959-4761-8d7b-809e65335420", "fields": {"name": "Word Search", "difficulty": "Medium", "category": ["0a1021aa-4abd-4ed4-969a-a9c0fdc797c7", "10b61cbd-501f-4da3-82a3-7e3c1a88176d", "54c5dbfe-0805-4984-9478-27f6967db942"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "2852db61-a0da-4a92-a7b1-3f89d05bb591", "fields": {"name": "Detect Cycle in a Linked List", "difficulty": "Easy", "category": ["1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "4b8118c0-f244-49c8-8435-418a7ba57703", "62592cc0-41dd-418e-851c-18a06ab70b2f"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "293d8b35-4351-4670-8136-319b658c5f36", "fields": {"name": "Decode Ways", "difficulty": "Medium", "category": ["31db7173-9ab6-4c1f-b137-4dc7ae8ed874", "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "2adc047b-873e-4b8b-82b1-3b3fcbfd1142", "fields": {"name": "House Robber", "difficulty": "Medium", "category": ["31db7173-9ab6-4c1f-b137-4dc7ae8ed874", "54c5dbfe-0805-4984-9478-27f6967db942"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "303e6702-32e0-4374-9812-360ee3c451e6", "fields": {"name": "Remove Nth Node From End of List", "difficulty": "Medium", "category": ["4b8118c0-f244-49c8-8435-418a7ba57703", "62592cc0-41dd-418e-851c-18a06ab70b2f"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "34f52dbf-6839-451c-b3ca-0aeaeb1fd594", "fields": {"name": "Rotate Image", "difficulty": "Medium", "category": ["10b61cbd-501f-4da3-82a3-7e3c1a88176d", "1e74a43f-15d8-42ae-a14f-095ab87143df", "54c5dbfe-0805-4984-9478-27f6967db942"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "4383b739-6e1e-4039-9590-3d7bd3de2e91", "fields": {"name": "Meeting Rooms", "difficulty": "Easy", "category": ["0e15bc8a-b1a1-4932-a95b-421ca83e2430", "54c5dbfe-0805-4984-9478-27f6967db942"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "4816c885-b3a0-4a84-b789-9da149540b32", "fields": {"name": "Binary Tree Level Order Traversal", "difficulty": "Medium", "category": ["b5eb9207-22f6-4a6f-96f8-03705fdb3887", "c674baa2-1290-44f6-8eba-317052e11ecf", "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "4a307092-127a-40ba-a69a-a097a40cfbf6", "fields": {"name": "Course Schedule", "difficulty": "Medium", "category": ["1d3584b9-b6a4-4ab1-a90d-6e34e3598e51", "4d47b283-ee50-46fc-86bb-0c4e049c3366", "b09c6484-9d3a-4ce5-94be-c727b30ad649", "c674baa2-1290-44f6-8eba-317052e11ecf"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "53a4f9bc-18f1-42de-b8fb-19459e26f64e", "fields": {"name": "Longest Substring Without Repeating Characters", "difficulty": "Medium", "category": ["1e138010-e073-4b6a-896c-9f87867f4c2d", "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "5572f4fc-e5ed-43dc-a495-a9dea4847465", "fields": {"name": "Maximum Product Subarray", "difficulty": "Medium", "category": ["31db7173-9ab6-4c1f-b137-4dc7ae8ed874", "54c5dbfe-0805-4984-9478-27f6967db942"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "5b6fe6fe-8648-4d22-bcdd-508ec44a902a", "fields": {"name": "Merge Intervals", "difficulty": "Medium", "category": ["0e15bc8a-b1a1-4932-a95b-421ca83e2430", "54c5dbfe-0805-4984-9478-27f6967db942"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "6049c3f4-7a3e-43f0-8be0-247a2fff908a", "fields": {"name": "Palindromic Substrings", "difficulty": "Medium", "category": ["31db7173-9ab6-4c1f-b137-4dc7ae8ed874", "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "61cc9568-dd2a-4ed2-bc25-39d065cdfed7", "fields": {"name": "Set Matrix Zeroes", "difficulty": "Medium", "category": ["10b61cbd-501f-4da3-82a3-7e3c1a88176d", "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "54c5dbfe-0805-4984-9478-27f6967db942"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "62b6ba2c-056a-4bf2-b4db-ac8c467aece3", "fields": {"name": "Number of Connected Components in an Undirected Graph", "difficulty": "Medium", "category": ["4d47b283-ee50-46fc-86bb-0c4e049c3366", "a3d54b29-3c5b-47ad-a0b6-641d9fb65b38", "b09c6484-9d3a-4ce5-94be-c727b30ad649", "c674baa2-1290-44f6-8eba-317052e11ecf"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "6d7cc0d9-6dac-41aa-bac5-50fc562e0110", "fields": {"name": "Climbing Stairs", "difficulty": "Easy", "category": ["1e74a43f-15d8-42ae-a14f-095ab87143df", "31db7173-9ab6-4c1f-b137-4dc7ae8ed874", "3226de82-b948-407c-a565-b83b5bcee591"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "6ea24765-860b-4b27-8d1b-186a0a899828", "fields": {"name": "Super Hard Problem", "difficulty": "Medium", "category": ["1e74a43f-15d8-42ae-a14f-095ab87143df", "7a94a426-ab50-414c-8c90-0e75779ef2ac"], "problem_set": []}}, {"model": "beatcodeApp.problem", "pk": "70f55cee-282c-48b8-b3b5-73c8ace9bae0", "fields": {"name": "Minimum Window Substring", "difficulty": "Hard", "category": ["1e138010-e073-4b6a-896c-9f87867f4c2d", "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "715d218c-7f42-4a36-9ca0-ee9ecb335faa", "fields": {"name": "Reorder List", "difficulty": "Medium", "category": ["1a8e6465-bb66-4d25-acfb-cc8cb47e0ec5", "49e06fbd-3c6f-462a-87e8-94f9113e6448", "4b8118c0-f244-49c8-8435-418a7ba57703", "62592cc0-41dd-418e-851c-18a06ab70b2f"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "72248610-df54-46f1-915f-ba80708d5056", "fields": {"name": "Product of Array Except Self", "difficulty": "Medium", "category": ["1cd26624-9e0e-480a-bb79-48155f195b27", "54c5dbfe-0805-4984-9478-27f6967db942"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "75b81836-c2de-4e28-a200-2f5820cf025b", "fields": {"name": "Combination Sum", "difficulty": "Medium", "category": ["0a1021aa-4abd-4ed4-969a-a9c0fdc797c7", "54c5dbfe-0805-4984-9478-27f6967db942"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "7d857971-af4e-4555-9000-d0c25d5cbcf7", "fields": {"name": "Longest Consecutive Sequence", "difficulty": "Medium", "category": ["1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "54c5dbfe-0805-4984-9478-27f6967db942", "a3d54b29-3c5b-47ad-a0b6-641d9fb65b38"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "7da53ae1-51ec-4989-8a9e-daa2a8765580", "fields": {"name": "Same Tree", "difficulty": "Easy", "category": ["b09c6484-9d3a-4ce5-94be-c727b30ad649", "b5eb9207-22f6-4a6f-96f8-03705fdb3887", "c674baa2-1290-44f6-8eba-317052e11ecf", "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "7feb65cb-3804-4693-979b-07d090bf1b60", "fields": {"name": "Merge Two Sorted Lists", "difficulty": "Easy", "category": ["49e06fbd-3c6f-462a-87e8-94f9113e6448", "62592cc0-41dd-418e-851c-18a06ab70b2f"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "807f42d0-66e0-44d0-b480-ce161e36094e", "fields": {"name": "Number of 1 Bits", "difficulty": "Easy", "category": ["1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "54c5dbfe-0805-4984-9478-27f6967db942"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "84974d83-c370-4bed-84d8-3f97e8cbfb9e", "fields": {"name": "Two Sum", "difficulty": "Easy", "category": ["1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "54c5dbfe-0805-4984-9478-27f6967db942"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "852da3ab-eb83-4cfe-98d6-bed4520f33e5", "fields": {"name": "Sum of Two Integers", "difficulty": "Medium", "category": ["16d26155-fb50-4542-93e9-bd4526a3e491", "1e74a43f-15d8-42ae-a14f-095ab87143df"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "8bb75f9b-f44a-44c6-be1e-3db81760d0a6", "fields": {"name": "Word Search II", "difficulty": "Hard", "category": ["0a1021aa-4abd-4ed4-969a-a9c0fdc797c7", "10b61cbd-501f-4da3-82a3-7e3c1a88176d", "54c5dbfe-0805-4984-9478-27f6967db942", "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83", "7f4503c3-5e0d-45b0-b944-971fe7612321"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "93bcb335-c940-4727-b653-a1e1cc357006", "fields": {"name": "Encode and Decode Strings", "difficulty": "Medium", "category": ["54c5dbfe-0805-4984-9478-27f6967db942", "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83", "f93e9e8c-efd8-48e7-abba-63c9712da613"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "968f0cb1-1fda-4a0c-b3b6-db55aa68216f", "fields": {"name": "Counting Bits", "difficulty": "Easy", "category": ["16d26155-fb50-4542-93e9-bd4526a3e491", "31db7173-9ab6-4c1f-b137-4dc7ae8ed874"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "9a86997e-e2df-4da0-a3bc-fd8dfb90284d", "fields": {"name": "Construct Binary Tree from Preorder and Inorder Traversal", "difficulty": "Medium", "category": ["1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "54c5dbfe-0805-4984-9478-27f6967db942", "7a94a426-ab50-414c-8c90-0e75779ef2ac", "b5eb9207-22f6-4a6f-96f8-03705fdb3887", "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "9ee4c143-5e07-4896-bcaa-19dcd4a2f0f4", "fields": {"name": "Non-overlapping Intervals", "difficulty": "Medium", "category": ["0e15bc8a-b1a1-4932-a95b-421ca83e2430", "31db7173-9ab6-4c1f-b137-4dc7ae8ed874", "54c5dbfe-0805-4984-9478-27f6967db942", "5fe22573-6465-4f0a-9b52-8ca03d95aab2"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "a3398520-0aea-4d92-bb58-e680bce72c3c", "fields": {"name": "Binary Tree Maximum Path Sum", "difficulty": "Hard", "category": ["31db7173-9ab6-4c1f-b137-4dc7ae8ed874", "b09c6484-9d3a-4ce5-94be-c727b30ad649", "b5eb9207-22f6-4a6f-96f8-03705fdb3887", "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "a46b28f1-bb52-4a35-96ba-0670043d0e75", "fields": {"name": "Invert/Flip Binary Tree", "difficulty": "Easy", "category": ["b09c6484-9d3a-4ce5-94be-c727b30ad649", "b5eb9207-22f6-4a6f-96f8-03705fdb3887", "c674baa2-1290-44f6-8eba-317052e11ecf", "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "a6268512-21ed-4c5a-aa99-56e92be88c16", "fields": {"name": "Graph Valid Tree", "difficulty": "Medium", "category": ["4d47b283-ee50-46fc-86bb-0c4e049c3366", "a3d54b29-3c5b-47ad-a0b6-641d9fb65b38", "b09c6484-9d3a-4ce5-94be-c727b30ad649", "c674baa2-1290-44f6-8eba-317052e11ecf"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "a74c25f4-8293-4bed-9488-25b7266ad477", "fields": {"name": "Implement Trie (Prefix Tree)", "difficulty": "Medium", "category": ["1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83", "7f4503c3-5e0d-45b0-b944-971fe7612321", "f93e9e8c-efd8-48e7-abba-63c9712da613"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "ac81e32c-e4a1-4e40-9344-def1da71ec87", "fields": {"name": "Valid Anagram", "difficulty": "Easy", "category": ["0e15bc8a-b1a1-4932-a95b-421ca83e2430", "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "b2bbd773-7db2-4908-82f2-3b93d7225afd", "fields": {"name": "Jump Game", "difficulty": "Medium", "category": ["31db7173-9ab6-4c1f-b137-4dc7ae8ed874", "54c5dbfe-0805-4984-9478-27f6967db942", "5fe22573-6465-4f0a-9b52-8ca03d95aab2"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "b31846ab-6a2b-4cc4-b48d-92c89d87ad76", "fields": {"name": "Coin Change", "difficulty": "Medium", "category": ["31db7173-9ab6-4c1f-b137-4dc7ae8ed874", "54c5dbfe-0805-4984-9478-27f6967db942", "c674baa2-1290-44f6-8eba-317052e11ecf"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "b3f2b4b4-ec21-4a1a-b413-b8c87ed50489", "fields": {"name": "Clone Graph", "difficulty": "Medium", "category": ["1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "4d47b283-ee50-46fc-86bb-0c4e049c3366", "b09c6484-9d3a-4ce5-94be-c727b30ad649", "c674baa2-1290-44f6-8eba-317052e11ecf"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "b5c81329-5784-462f-b28b-83925f5c4b7e", "fields": {"name": "Maximum Subarray", "difficulty": "Medium", "category": ["31db7173-9ab6-4c1f-b137-4dc7ae8ed874", "54c5dbfe-0805-4984-9478-27f6967db942", "7a94a426-ab50-414c-8c90-0e75779ef2ac"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "b9be2037-89d2-4f9a-800b-47d9eef8eb16", "fields": {"name": "Longest Repeating Character Replacement", "difficulty": "Medium", "category": ["1e138010-e073-4b6a-896c-9f87867f4c2d", "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "beb81f78-e848-4522-80d9-f15deaf8d63c", "fields": {"name": "Top K Frequent Elements", "difficulty": "Medium", "category": ["0e15bc8a-b1a1-4932-a95b-421ca83e2430", "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "270de8d6-b060-429a-8aaa-59c91a48990d", "54c5dbfe-0805-4984-9478-27f6967db942", "62f07cbc-f75e-4d6b-9d8f-84745413d506", "7a94a426-ab50-414c-8c90-0e75779ef2ac", "80091b8e-f68e-443f-a1b2-95fe9b1aeebd", "849fb925-511a-41f3-ad52-40466b682459"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "c1806b2d-b77b-4a38-b588-679f7c6a4581", "fields": {"name": "Maximum Depth of Binary Tree", "difficulty": "Easy", "category": ["b09c6484-9d3a-4ce5-94be-c727b30ad649", "b5eb9207-22f6-4a6f-96f8-03705fdb3887", "c674baa2-1290-44f6-8eba-317052e11ecf", "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "c397f46a-a56b-443e-b316-0bad267765f6", "fields": {"name": "Reverse a Linked List", "difficulty": "Easy", "category": ["49e06fbd-3c6f-462a-87e8-94f9113e6448", "62592cc0-41dd-418e-851c-18a06ab70b2f"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "ccfc2259-1000-466f-adb6-faa4bd9e1813", "fields": {"name": "Validate Binary Search Tree", "difficulty": "Medium", "category": ["a8bffe7d-7b96-4794-8932-502899b3a9f6", "b09c6484-9d3a-4ce5-94be-c727b30ad649", "b5eb9207-22f6-4a6f-96f8-03705fdb3887", "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "ce83b9cb-2580-4d62-b7e7-0524ec089034", "fields": {"name": "Insert Interval", "difficulty": "Medium", "category": ["54c5dbfe-0805-4984-9478-27f6967db942"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "cee2565f-d51a-4895-a81f-7407f9742005", "fields": {"name": "House Robber II", "difficulty": "Medium", "category": ["31db7173-9ab6-4c1f-b137-4dc7ae8ed874", "54c5dbfe-0805-4984-9478-27f6967db942"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "d2122176-9517-44b4-b126-1372249002de", "fields": {"name": "Longest Increasing Subsequence", "difficulty": "Medium", "category": ["31db7173-9ab6-4c1f-b137-4dc7ae8ed874", "54c5dbfe-0805-4984-9478-27f6967db942", "a75cff6a-be96-4f67-b63c-5c82df46964f"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "d2339cf3-9bd9-4a04-9bc8-cc4b4634e2a8", "fields": {"name": "Subtree of Another Tree", "difficulty": "Easy", "category": ["0ceda829-de29-412b-b999-26f900585d79", "3ab43586-edd5-4f52-b1bc-4dad94c9bca5", "b09c6484-9d3a-4ce5-94be-c727b30ad649", "b5eb9207-22f6-4a6f-96f8-03705fdb3887", "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "e6c052fc-e854-4321-8672-edff23927233", "fields": {"name": "Serialize and Deserialize Binary Tree", "difficulty": "Hard", "category": ["6f2c7c0c-ba88-4dac-bf58-bb3419a54f83", "b09c6484-9d3a-4ce5-94be-c727b30ad649", "b5eb9207-22f6-4a6f-96f8-03705fdb3887", "c674baa2-1290-44f6-8eba-317052e11ecf", "cb7e8a8d-a47c-4723-9633-b8dabe1b0455", "f93e9e8c-efd8-48e7-abba-63c9712da613"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "ebf5e8e3-3049-46f1-9525-02495c46c2d5", "fields": {"name": "Merge k Sorted Lists", "difficulty": "Hard", "category": ["270de8d6-b060-429a-8aaa-59c91a48990d", "62592cc0-41dd-418e-851c-18a06ab70b2f", "7a94a426-ab50-414c-8c90-0e75779ef2ac", "b8d7677e-9052-4552-9aaf-683b4edbf617"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "f50874f2-4260-412a-86ed-5918be0f9c1a", "fields": {"name": "Spiral Matrix", "difficulty": "Medium", "category": ["10b61cbd-501f-4da3-82a3-7e3c1a88176d", "54c5dbfe-0805-4984-9478-27f6967db942", "7df4f768-e802-4fa6-9997-052fdeec24b0"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "f80c4ae1-aaf4-4817-beb5-98355d7e7a31", "fields": {"name": "Group Anagrams", "difficulty": "Medium", "category": ["0e15bc8a-b1a1-4932-a95b-421ca83e2430", "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "54c5dbfe-0805-4984-9478-27f6967db942", "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "fc0af646-d513-4748-a37b-a83a6fefa65c", "fields": {"name": "Word Break", "difficulty": "Medium", "category": ["1f7d2aea-3b44-4879-8dbe-9ba60997d9e2", "31db7173-9ab6-4c1f-b137-4dc7ae8ed874", "3226de82-b948-407c-a565-b83b5bcee591", "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83", "7f4503c3-5e0d-45b0-b944-971fe7612321"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "fccc7018-3bf2-45d0-8a2a-10544f52f110", "fields": {"name": "Best Time to Buy and Sell Stock", "difficulty": "Easy", "category": ["31db7173-9ab6-4c1f-b137-4dc7ae8ed874", "54c5dbfe-0805-4984-9478-27f6967db942"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.problem", "pk": "ff05f255-ef7a-4712-86d9-a532f9a86826", "fields": {"name": "Alien Dictionary", "difficulty": "Hard", "category": ["1d3584b9-b6a4-4ab1-a90d-6e34e3598e51", "4d47b283-ee50-46fc-86bb-0c4e049c3366", "54c5dbfe-0805-4984-9478-27f6967db942", "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83", "b09c6484-9d3a-4ce5-94be-c727b30ad649", "c674baa2-1290-44f6-8eba-317052e11ecf"], "problem_set": ["e39a7377-b164-49f4-a349-f25a271e2b4d"]}}, {"model": "beatcodeApp.submission", "pk": "21e78ab3-b9d0-443e-904a-59570d1fb5f5", "fields": {"user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "problem": "4a307092-127a-40ba-a69a-a097a40cfbf6", "sub_date": "2022-11-04", "runtime": 1000, "mem_used": 1000, "success": true}}, {"model": "beatcodeApp.submission", "pk": "3c801653-455e-43f9-a01b-685223c0ef60", "fields": {"user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "problem": "6ea24765-860b-4b27-8d1b-186a0a899828", "sub_date": "2022-11-04", "runtime": 0, "mem_used": 0, "success": false}}, {"model": "beatcodeApp.todo", "pk": 1, "fields": {"user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183", "problem": "6ea24765-860b-4b27-8d1b-186a0a899828", "complete": false}}]
+[
+    {
+        "model": "admin.logentry",
+        "pk": 1,
+        "fields": {
+            "action_time": "2022-11-04T21:53:42.872Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 6,
+            "object_id": "7246228e-b323-4136-96b1-38b8becf3854",
+            "object_repr": "bob joe",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 2,
+        "fields": {
+            "action_time": "2022-11-04T21:53:56.124Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 11,
+            "object_id": "3c801653-455e-43f9-a01b-685223c0ef60",
+            "object_repr": "test@gmail.com: Super Hard Problem",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2022-11-04T21:54:07.860Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 11,
+            "object_id": "21e78ab3-b9d0-443e-904a-59570d1fb5f5",
+            "object_repr": "test@gmail.com: Course Schedule",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2022-11-04T21:57:28.601Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 10,
+            "object_id": "1",
+            "object_repr": "ToDo object (1)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2022-11-10T05:02:35.955Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "6ea24765-860b-4b27-8d1b-186a0a899828",
+            "object_repr": "Super Hard Problem",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2022-11-10T05:02:49.393Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "84974d83-c370-4bed-84d8-3f97e8cbfb9e",
+            "object_repr": "Two Sum",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2022-11-10T05:03:02.749Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "fccc7018-3bf2-45d0-8a2a-10544f52f110",
+            "object_repr": "Best Time to Buy and Sell Stock",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2022-11-10T05:03:15.734Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "0d478c47-068b-459f-8e26-aaf183b56e9d",
+            "object_repr": "Contains Duplicate",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2022-11-10T05:03:27.423Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "72248610-df54-46f1-915f-ba80708d5056",
+            "object_repr": "Product of Array Except Self",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2022-11-10T05:03:39.043Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "b5c81329-5784-462f-b28b-83925f5c4b7e",
+            "object_repr": "Maximum Subarray",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 11,
+        "fields": {
+            "action_time": "2022-11-10T05:03:50.934Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "5572f4fc-e5ed-43dc-a495-a9dea4847465",
+            "object_repr": "Maximum Product Subarray",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 12,
+        "fields": {
+            "action_time": "2022-11-10T05:04:02.988Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "0d9f499b-ffc5-4339-b88a-812c436313f7",
+            "object_repr": "Find Minimum in Rotated Sorted Array",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 13,
+        "fields": {
+            "action_time": "2022-11-10T05:04:16.208Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "0006e995-0897-46a6-9c84-766fa55b2ec2",
+            "object_repr": "Search in Rotated Sorted Array",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 14,
+        "fields": {
+            "action_time": "2022-11-10T05:04:23.451Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "03e92e2c-ea6d-4e01-9b4a-716af70c1901",
+            "object_repr": "3 Sum",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 15,
+        "fields": {
+            "action_time": "2022-11-10T05:04:33.224Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "19d22875-8cba-43e0-bb76-74c015042c8d",
+            "object_repr": "Container With Most Water",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 16,
+        "fields": {
+            "action_time": "2022-11-10T05:04:43.340Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "852da3ab-eb83-4cfe-98d6-bed4520f33e5",
+            "object_repr": "Sum of Two Integers",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 17,
+        "fields": {
+            "action_time": "2022-11-10T05:04:51.671Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "807f42d0-66e0-44d0-b480-ce161e36094e",
+            "object_repr": "Number of 1 Bits",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 18,
+        "fields": {
+            "action_time": "2022-11-10T05:05:00.740Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "968f0cb1-1fda-4a0c-b3b6-db55aa68216f",
+            "object_repr": "Counting Bits",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 19,
+        "fields": {
+            "action_time": "2022-11-10T05:05:08.893Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "1ac8ca8f-5b4a-411a-81bd-1663c3bfd8a3",
+            "object_repr": "Missing Number",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 20,
+        "fields": {
+            "action_time": "2022-11-10T05:05:17.978Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "1b7a5ebd-0257-42da-a418-9d72f6b31d7c",
+            "object_repr": "Reverse Bits",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 21,
+        "fields": {
+            "action_time": "2022-11-10T05:05:38.432Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 9,
+            "object_id": "ff726e0c-495a-4506-8652-c5b6e02455df",
+            "object_repr": "Grind 75",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 22,
+        "fields": {
+            "action_time": "2022-11-10T05:06:08.299Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "6d7cc0d9-6dac-41aa-bac5-50fc562e0110",
+            "object_repr": "Climbing Stairs",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 23,
+        "fields": {
+            "action_time": "2022-11-10T05:06:17.611Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "b31846ab-6a2b-4cc4-b48d-92c89d87ad76",
+            "object_repr": "Coin Change",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 24,
+        "fields": {
+            "action_time": "2022-11-10T05:06:38.300Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "d2122176-9517-44b4-b126-1372249002de",
+            "object_repr": "Longest Increasing Subsequence",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 25,
+        "fields": {
+            "action_time": "2022-11-10T05:06:48.331Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "20adf938-ccad-4c4a-8bae-87b4e8685789",
+            "object_repr": "Longest Common Subsequence",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 26,
+        "fields": {
+            "action_time": "2022-11-10T05:07:05.746Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "fc0af646-d513-4748-a37b-a83a6fefa65c",
+            "object_repr": "Word Break",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 27,
+        "fields": {
+            "action_time": "2022-11-10T05:07:35.685Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "75b81836-c2de-4e28-a200-2f5820cf025b",
+            "object_repr": "Combination Sum",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 28,
+        "fields": {
+            "action_time": "2022-11-10T05:07:44.912Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "2adc047b-873e-4b8b-82b1-3b3fcbfd1142",
+            "object_repr": "House Robber",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 29,
+        "fields": {
+            "action_time": "2022-11-10T05:08:00.891Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "cee2565f-d51a-4895-a81f-7407f9742005",
+            "object_repr": "House Robber II",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 30,
+        "fields": {
+            "action_time": "2022-11-10T05:08:08.627Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "293d8b35-4351-4670-8136-319b658c5f36",
+            "object_repr": "Decode Ways",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 31,
+        "fields": {
+            "action_time": "2022-11-10T05:08:17.447Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "1059a589-221c-4cd4-9eb6-ba5a73c1c19a",
+            "object_repr": "Unique Paths",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 32,
+        "fields": {
+            "action_time": "2022-11-10T05:08:28.305Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "b3f2b4b4-ec21-4a1a-b413-b8c87ed50489",
+            "object_repr": "Clone Graph",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 33,
+        "fields": {
+            "action_time": "2022-11-10T05:08:42.149Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "01031df2-acf3-4a8d-95da-dca8ae8cae59",
+            "object_repr": "Pacific Atlantic Water Flow",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 34,
+        "fields": {
+            "action_time": "2022-11-10T05:08:52.193Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "0ab5c0bd-05ba-42ee-8af8-5ceeb54befe6",
+            "object_repr": "Number of Islands",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 35,
+        "fields": {
+            "action_time": "2022-11-10T05:09:05.668Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "7d857971-af4e-4555-9000-d0c25d5cbcf7",
+            "object_repr": "Longest Consecutive Sequence",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 36,
+        "fields": {
+            "action_time": "2022-11-10T05:09:14.553Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "ff05f255-ef7a-4712-86d9-a532f9a86826",
+            "object_repr": "Alien Dictionary",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 37,
+        "fields": {
+            "action_time": "2022-11-10T05:09:24.073Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "a6268512-21ed-4c5a-aa99-56e92be88c16",
+            "object_repr": "Graph Valid Tree",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 38,
+        "fields": {
+            "action_time": "2022-11-10T05:09:43.010Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "62b6ba2c-056a-4bf2-b4db-ac8c467aece3",
+            "object_repr": "Number of Connected Components in an Undirected Graph",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 39,
+        "fields": {
+            "action_time": "2022-11-10T05:09:53.305Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "ce83b9cb-2580-4d62-b7e7-0524ec089034",
+            "object_repr": "Insert Interval",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 40,
+        "fields": {
+            "action_time": "2022-11-10T05:10:03.056Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "5b6fe6fe-8648-4d22-bcdd-508ec44a902a",
+            "object_repr": "Merge Interval",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 41,
+        "fields": {
+            "action_time": "2022-11-10T05:10:10.206Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "5b6fe6fe-8648-4d22-bcdd-508ec44a902a",
+            "object_repr": "Merge Intervals",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 42,
+        "fields": {
+            "action_time": "2022-11-10T05:10:28.318Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "9ee4c143-5e07-4896-bcaa-19dcd4a2f0f4",
+            "object_repr": "Non-overlapping Intervals",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 43,
+        "fields": {
+            "action_time": "2022-11-10T05:10:37.632Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "4383b739-6e1e-4039-9590-3d7bd3de2e91",
+            "object_repr": "Meeting Rooms",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 44,
+        "fields": {
+            "action_time": "2022-11-10T05:10:45.923Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "214119e7-4f27-41b5-98d6-f245ead8c67b",
+            "object_repr": "Meeting Rooms II",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 45,
+        "fields": {
+            "action_time": "2022-11-10T05:10:57.312Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "c397f46a-a56b-443e-b316-0bad267765f6",
+            "object_repr": "Reverse a Linked List",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 46,
+        "fields": {
+            "action_time": "2022-11-10T05:11:08.419Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "2852db61-a0da-4a92-a7b1-3f89d05bb591",
+            "object_repr": "Detect Cycle in a Linked List",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 47,
+        "fields": {
+            "action_time": "2022-11-10T05:11:20.240Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "7feb65cb-3804-4693-979b-07d090bf1b60",
+            "object_repr": "Merge Two Sorted Lists",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 48,
+        "fields": {
+            "action_time": "2022-11-10T05:11:43.459Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "ebf5e8e3-3049-46f1-9525-02495c46c2d5",
+            "object_repr": "Merge k Sorted Lists",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 49,
+        "fields": {
+            "action_time": "2022-11-10T05:11:55.476Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "303e6702-32e0-4374-9812-360ee3c451e6",
+            "object_repr": "Remove Nth Node From End of List",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 50,
+        "fields": {
+            "action_time": "2022-11-10T05:12:03.223Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "715d218c-7f42-4a36-9ca0-ee9ecb335faa",
+            "object_repr": "Reorder List",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 51,
+        "fields": {
+            "action_time": "2022-11-10T05:12:12.643Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "61cc9568-dd2a-4ed2-bc25-39d065cdfed7",
+            "object_repr": "Set Matrix Zeroes",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 52,
+        "fields": {
+            "action_time": "2022-11-10T05:12:19.862Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "f50874f2-4260-412a-86ed-5918be0f9c1a",
+            "object_repr": "Spiral Matrix",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 53,
+        "fields": {
+            "action_time": "2022-11-10T05:12:27.251Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "34f52dbf-6839-451c-b3ca-0aeaeb1fd594",
+            "object_repr": "Rotate Image",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 54,
+        "fields": {
+            "action_time": "2022-11-10T05:12:34.919Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "25964434-5959-4761-8d7b-809e65335420",
+            "object_repr": "Word Search",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 55,
+        "fields": {
+            "action_time": "2022-11-10T05:12:43.491Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "53a4f9bc-18f1-42de-b8fb-19459e26f64e",
+            "object_repr": "Longest Substring Without Repeating Characters",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 56,
+        "fields": {
+            "action_time": "2022-11-10T05:12:49.267Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "b9be2037-89d2-4f9a-800b-47d9eef8eb16",
+            "object_repr": "Longest Repeating Character Replacement",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 57,
+        "fields": {
+            "action_time": "2022-11-10T05:12:57.153Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "70f55cee-282c-48b8-b3b5-73c8ace9bae0",
+            "object_repr": "Minimum Window Substring",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 58,
+        "fields": {
+            "action_time": "2022-11-10T05:13:03.531Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "ac81e32c-e4a1-4e40-9344-def1da71ec87",
+            "object_repr": "Valid Anagram",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 59,
+        "fields": {
+            "action_time": "2022-11-10T05:13:09.014Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "f80c4ae1-aaf4-4817-beb5-98355d7e7a31",
+            "object_repr": "Group Anagrams",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 60,
+        "fields": {
+            "action_time": "2022-11-10T05:13:13.688Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "01f12d0d-912c-4611-8f91-57a9bf2fe6ff",
+            "object_repr": "Valid Parentheses",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 61,
+        "fields": {
+            "action_time": "2022-11-10T05:13:21.923Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "0819e362-2233-4b24-aaae-83c793b282a1",
+            "object_repr": "Valid Palindrome",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 62,
+        "fields": {
+            "action_time": "2022-11-10T05:13:28.036Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "16729d34-4edf-43ab-b1bf-e09421ae6405",
+            "object_repr": "Longest Palindromic Substring",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 63,
+        "fields": {
+            "action_time": "2022-11-10T05:13:33.934Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "6049c3f4-7a3e-43f0-8be0-247a2fff908a",
+            "object_repr": "Palindromic Substrings",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 64,
+        "fields": {
+            "action_time": "2022-11-10T05:13:42.362Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "93bcb335-c940-4727-b653-a1e1cc357006",
+            "object_repr": "Encode and Decode Strings",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 65,
+        "fields": {
+            "action_time": "2022-11-10T05:13:51.377Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "c1806b2d-b77b-4a38-b588-679f7c6a4581",
+            "object_repr": "Maximum Depth of Binary Tree",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 66,
+        "fields": {
+            "action_time": "2022-11-10T05:14:01.177Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "7da53ae1-51ec-4989-8a9e-daa2a8765580",
+            "object_repr": "Same Tree",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 67,
+        "fields": {
+            "action_time": "2022-11-10T05:14:11.809Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "a46b28f1-bb52-4a35-96ba-0670043d0e75",
+            "object_repr": "Invert/Flip Binary Tree",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 68,
+        "fields": {
+            "action_time": "2022-11-10T05:14:18.251Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "a3398520-0aea-4d92-bb58-e680bce72c3c",
+            "object_repr": "Binary Tree Maximum Path Sum",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 69,
+        "fields": {
+            "action_time": "2022-11-10T05:14:24.408Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "4816c885-b3a0-4a84-b789-9da149540b32",
+            "object_repr": "Binary Tree Level Order Traversal",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 70,
+        "fields": {
+            "action_time": "2022-11-10T05:14:31.547Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "e6c052fc-e854-4321-8672-edff23927233",
+            "object_repr": "Serialize and Deserialize Binary Tree",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 71,
+        "fields": {
+            "action_time": "2022-11-10T05:14:38.158Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "d2339cf3-9bd9-4a04-9bc8-cc4b4634e2a8",
+            "object_repr": "Subtree of Another Tree",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 72,
+        "fields": {
+            "action_time": "2022-11-10T05:14:47.139Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "9a86997e-e2df-4da0-a3bc-fd8dfb90284d",
+            "object_repr": "Construct Binary Tree from Preorder and Inorder Traversal",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 73,
+        "fields": {
+            "action_time": "2022-11-10T05:14:53.460Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "ccfc2259-1000-466f-adb6-faa4bd9e1813",
+            "object_repr": "Validate Binary Search Tree",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 74,
+        "fields": {
+            "action_time": "2022-11-10T05:15:01.022Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "19f412c3-28d0-4855-962b-c511c1870d57",
+            "object_repr": "Kth Smallest Element in a BST",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 75,
+        "fields": {
+            "action_time": "2022-11-10T05:15:07.899Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "23787747-39fd-45dc-88d6-d7f50290204c",
+            "object_repr": "Lowest Common Ancestor of BST",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 76,
+        "fields": {
+            "action_time": "2022-11-10T05:15:20.164Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "a74c25f4-8293-4bed-9488-25b7266ad477",
+            "object_repr": "Implement Trie (Prefix Tree)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 77,
+        "fields": {
+            "action_time": "2022-11-10T05:15:32.373Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "1b1277ae-2dc5-4ac4-8b5d-c16f4ee9680f",
+            "object_repr": "Add and Search Word",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 78,
+        "fields": {
+            "action_time": "2022-11-10T05:15:38.183Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "8bb75f9b-f44a-44c6-be1e-3db81760d0a6",
+            "object_repr": "Word Search II",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 79,
+        "fields": {
+            "action_time": "2022-11-10T05:15:42.690Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "ecd5d225-305f-48b3-ba8d-edae61509384",
+            "object_repr": "Merge K Sorted Lists",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 80,
+        "fields": {
+            "action_time": "2022-11-10T05:16:01.057Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "beb81f78-e848-4522-80d9-f15deaf8d63c",
+            "object_repr": "Top K Frequent Elements",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 81,
+        "fields": {
+            "action_time": "2022-11-10T05:16:05.515Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "07cb1ee1-8e69-430f-b3d1-0085b38a8364",
+            "object_repr": "Find Median from Data Stream",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 82,
+        "fields": {
+            "action_time": "2022-11-10T05:16:34.042Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "ecd5d225-305f-48b3-ba8d-edae61509384",
+            "object_repr": "Merge K Sorted Lists",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 83,
+        "fields": {
+            "action_time": "2022-11-10T05:17:08.255Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "ebf5e8e3-3049-46f1-9525-02495c46c2d5",
+            "object_repr": "Merge k Sorted Lists",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 84,
+        "fields": {
+            "action_time": "2022-11-10T05:21:04.148Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 8,
+            "object_id": "6d7cc0d9-6dac-41aa-bac5-50fc562e0110",
+            "object_repr": "Climbing Stairs",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Problem set\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 85,
+        "fields": {
+            "action_time": "2022-11-10T05:21:23.539Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 9,
+            "object_id": "012d7e4f-9b5f-4778-bc40-5830e6ed46ec",
+            "object_repr": "Grokking the Coding Interview",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 86,
+        "fields": {
+            "action_time": "2022-11-11T08:39:16.529Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 7,
+            "object_id": "db6d7758-6a88-440e-a257-fb42f208977a",
+            "object_repr": "Dynamic Programming",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 87,
+        "fields": {
+            "action_time": "2022-11-11T08:39:28.339Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 7,
+            "object_id": "c5c3531f-733b-496a-a282-0ea648678d9c",
+            "object_repr": "Linked List",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 88,
+        "fields": {
+            "action_time": "2022-11-11T08:43:50.599Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 7,
+            "object_id": "db6d7758-6a88-440e-a257-fb42f208977a",
+            "object_repr": "Dynamic Programming",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 89,
+        "fields": {
+            "action_time": "2022-11-11T08:43:50.758Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 7,
+            "object_id": "c5c3531f-733b-496a-a282-0ea648678d9c",
+            "object_repr": "Linked List",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 90,
+        "fields": {
+            "action_time": "2022-11-11T08:43:50.863Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 7,
+            "object_id": "c4913ef0-9d36-4597-972e-6fa64f167fc1",
+            "object_repr": "MX",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 91,
+        "fields": {
+            "action_time": "2022-11-11T08:43:50.975Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 7,
+            "object_id": "8851f3fe-46a0-48b0-b37e-240a25b072bc",
+            "object_repr": "AR",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 92,
+        "fields": {
+            "action_time": "2022-11-11T08:43:51.113Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 7,
+            "object_id": "7b02405a-2e9c-4ef6-a762-f852872d444a",
+            "object_repr": "TR",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 93,
+        "fields": {
+            "action_time": "2022-11-11T08:43:51.255Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 7,
+            "object_id": "7a616e15-78e9-4b46-be2c-3afae049b182",
+            "object_repr": "GR",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 94,
+        "fields": {
+            "action_time": "2022-11-11T08:43:51.379Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 7,
+            "object_id": "54dc0d90-ad34-41b2-9684-5a6552cc6daf",
+            "object_repr": "ST",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 95,
+        "fields": {
+            "action_time": "2022-11-11T08:43:51.484Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 7,
+            "object_id": "4fcc33b4-4394-4eb8-8a45-5744dd6930a5",
+            "object_repr": "BI",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 96,
+        "fields": {
+            "action_time": "2022-11-11T08:43:51.635Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 7,
+            "object_id": "41d2a4f8-0e44-4f53-892f-888154406ce0",
+            "object_repr": "HE",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 97,
+        "fields": {
+            "action_time": "2022-11-11T08:43:51.790Z",
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "content_type": 7,
+            "object_id": "13ff63da-afec-47a5-8b74-c5b6ad315ac1",
+            "object_repr": "IN",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 1,
+        "fields": {
+            "name": "Can add log entry",
+            "content_type": 1,
+            "codename": "add_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 2,
+        "fields": {
+            "name": "Can change log entry",
+            "content_type": 1,
+            "codename": "change_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 3,
+        "fields": {
+            "name": "Can delete log entry",
+            "content_type": 1,
+            "codename": "delete_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 4,
+        "fields": {
+            "name": "Can view log entry",
+            "content_type": 1,
+            "codename": "view_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 5,
+        "fields": {
+            "name": "Can add permission",
+            "content_type": 2,
+            "codename": "add_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 6,
+        "fields": {
+            "name": "Can change permission",
+            "content_type": 2,
+            "codename": "change_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 7,
+        "fields": {
+            "name": "Can delete permission",
+            "content_type": 2,
+            "codename": "delete_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 8,
+        "fields": {
+            "name": "Can view permission",
+            "content_type": 2,
+            "codename": "view_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 9,
+        "fields": {
+            "name": "Can add group",
+            "content_type": 3,
+            "codename": "add_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 10,
+        "fields": {
+            "name": "Can change group",
+            "content_type": 3,
+            "codename": "change_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 11,
+        "fields": {
+            "name": "Can delete group",
+            "content_type": 3,
+            "codename": "delete_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 12,
+        "fields": {
+            "name": "Can view group",
+            "content_type": 3,
+            "codename": "view_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 13,
+        "fields": {
+            "name": "Can add content type",
+            "content_type": 4,
+            "codename": "add_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 14,
+        "fields": {
+            "name": "Can change content type",
+            "content_type": 4,
+            "codename": "change_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 15,
+        "fields": {
+            "name": "Can delete content type",
+            "content_type": 4,
+            "codename": "delete_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 16,
+        "fields": {
+            "name": "Can view content type",
+            "content_type": 4,
+            "codename": "view_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 17,
+        "fields": {
+            "name": "Can add session",
+            "content_type": 5,
+            "codename": "add_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 18,
+        "fields": {
+            "name": "Can change session",
+            "content_type": 5,
+            "codename": "change_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 19,
+        "fields": {
+            "name": "Can delete session",
+            "content_type": 5,
+            "codename": "delete_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 20,
+        "fields": {
+            "name": "Can view session",
+            "content_type": 5,
+            "codename": "view_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 21,
+        "fields": {
+            "name": "Can add user",
+            "content_type": 6,
+            "codename": "add_customuser"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 22,
+        "fields": {
+            "name": "Can change user",
+            "content_type": 6,
+            "codename": "change_customuser"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 23,
+        "fields": {
+            "name": "Can delete user",
+            "content_type": 6,
+            "codename": "delete_customuser"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 24,
+        "fields": {
+            "name": "Can view user",
+            "content_type": 6,
+            "codename": "view_customuser"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 25,
+        "fields": {
+            "name": "Can add category",
+            "content_type": 7,
+            "codename": "add_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 26,
+        "fields": {
+            "name": "Can change category",
+            "content_type": 7,
+            "codename": "change_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 27,
+        "fields": {
+            "name": "Can delete category",
+            "content_type": 7,
+            "codename": "delete_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 28,
+        "fields": {
+            "name": "Can view category",
+            "content_type": 7,
+            "codename": "view_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 29,
+        "fields": {
+            "name": "Can add problem",
+            "content_type": 8,
+            "codename": "add_problem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 30,
+        "fields": {
+            "name": "Can change problem",
+            "content_type": 8,
+            "codename": "change_problem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 31,
+        "fields": {
+            "name": "Can delete problem",
+            "content_type": 8,
+            "codename": "delete_problem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 32,
+        "fields": {
+            "name": "Can view problem",
+            "content_type": 8,
+            "codename": "view_problem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 33,
+        "fields": {
+            "name": "Can add problem set",
+            "content_type": 9,
+            "codename": "add_problemset"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 34,
+        "fields": {
+            "name": "Can change problem set",
+            "content_type": 9,
+            "codename": "change_problemset"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 35,
+        "fields": {
+            "name": "Can delete problem set",
+            "content_type": 9,
+            "codename": "delete_problemset"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 36,
+        "fields": {
+            "name": "Can view problem set",
+            "content_type": 9,
+            "codename": "view_problemset"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 37,
+        "fields": {
+            "name": "Can add to do",
+            "content_type": 10,
+            "codename": "add_todo"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 38,
+        "fields": {
+            "name": "Can change to do",
+            "content_type": 10,
+            "codename": "change_todo"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 39,
+        "fields": {
+            "name": "Can delete to do",
+            "content_type": 10,
+            "codename": "delete_todo"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 40,
+        "fields": {
+            "name": "Can view to do",
+            "content_type": 10,
+            "codename": "view_todo"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 41,
+        "fields": {
+            "name": "Can add submission",
+            "content_type": 11,
+            "codename": "add_submission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 42,
+        "fields": {
+            "name": "Can change submission",
+            "content_type": 11,
+            "codename": "change_submission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 43,
+        "fields": {
+            "name": "Can delete submission",
+            "content_type": 11,
+            "codename": "delete_submission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 44,
+        "fields": {
+            "name": "Can view submission",
+            "content_type": 11,
+            "codename": "view_submission"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 1,
+        "fields": {
+            "app_label": "admin",
+            "model": "logentry"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 2,
+        "fields": {
+            "app_label": "auth",
+            "model": "permission"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 3,
+        "fields": {
+            "app_label": "auth",
+            "model": "group"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 4,
+        "fields": {
+            "app_label": "contenttypes",
+            "model": "contenttype"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 5,
+        "fields": {
+            "app_label": "sessions",
+            "model": "session"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 6,
+        "fields": {
+            "app_label": "authentication",
+            "model": "customuser"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 7,
+        "fields": {
+            "app_label": "beatcodeApp",
+            "model": "category"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 8,
+        "fields": {
+            "app_label": "beatcodeApp",
+            "model": "problem"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 9,
+        "fields": {
+            "app_label": "beatcodeApp",
+            "model": "problemset"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 10,
+        "fields": {
+            "app_label": "beatcodeApp",
+            "model": "todo"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 11,
+        "fields": {
+            "app_label": "beatcodeApp",
+            "model": "submission"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "7hnrumw1pth6q31wt0ou1bhsxxvni724",
+        "fields": {
+            "session_data": ".eJxVzUsOgzAMBNC7ZF0inATidNl9z4Ds2Cn9CCQ-q6p3L0gs2vXMm3mbjtal79ZZp-4u5mwUpY4lt5VPOVWBWSoOhFVofU61QgH05vTLmPJTh93Kg4bbaPM4LNOd7V6xRzrb6yj6uhzdv4Ge5n7TBTGk0nhy0VF0ivV2HhxKYQcBvA8siQFDIVEQIIio3LDfSGJuzecLIB5BpQ:1orN7p:x5TR6G8JUN9zkSYKZWn8_Q_BH7FYITYsKs_G9PeFJi4",
+            "expire_date": "2022-11-19T17:38:33.285Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "bsim8nmpdfru361nde8fftdlyhl4zwqh",
+        "fields": {
+            "session_data": ".eJxVzUsOgzAMBNC7ZF0inATidNl9z4Ds2Cn9CCQ-q6p3L0gs2vXMm3mbjtal79ZZp-4u5mwUpY4lt5VPOVWBWSoOhFVofU61QgH05vTLmPJTh93Kg4bbaPM4LNOd7V6xRzrb6yj6uhzdv4Ge5n7TBTGk0nhy0VF0ivV2HhxKYQcBvA8siQFDIVEQIIio3LDfSGJuzecLIB5BpQ:1oszdD:fyAcWbhPhHCq5UJ1Hyx0Oaz-iHJ-m23_p05xG7X5cbw",
+            "expire_date": "2022-11-24T04:57:39.684Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "e5o47q62n82wilc8yl4rn5we4l75vss1",
+        "fields": {
+            "session_data": ".eJxVzUsOgzAMBNC7ZF0inATidNl9z4Ds2Cn9CCQ-q6p3L0gs2vXMm3mbjtal79ZZp-4u5mwUpY4lt5VPOVWBWSoOhFVofU61QgH05vTLmPJTh93Kg4bbaPM4LNOd7V6xRzrb6yj6uhzdv4Ge5n7TBTGk0nhy0VF0ivV2HhxKYQcBvA8siQFDIVEQIIio3LDfSGJuzecLIB5BpQ:1otQRM:3tceuZiHC3wBO7N-A5A8zOJyld52UruNzvnTH_S14T8",
+            "expire_date": "2022-11-25T09:35:12.531Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "e79ocn0so2194bztwh2l5jw833w62ytq",
+        "fields": {
+            "session_data": ".eJxVzUsOgzAMBNC7ZF0inATidNl9z4Ds2Cn9CCQ-q6p3L0gs2vXMm3mbjtal79ZZp-4u5mwUpY4lt5VPOVWBWSoOhFVofU61QgH05vTLmPJTh93Kg4bbaPM4LNOd7V6xRzrb6yj6uhzdv4Ge5n7TBTGk0nhy0VF0ivV2HhxKYQcBvA8siQFDIVEQIIio3LDfSGJuzecLIB5BpQ:1otPXD:HcbqkP948icJpJYTpEDrWLSbl8bAxMgXPBFMpg0UUGI",
+            "expire_date": "2022-11-25T08:37:11.796Z"
+        }
+    },
+    {
+        "model": "authentication.customuser",
+        "pk": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+        "fields": {
+            "password": "pbkdf2_sha256$390000$SHqlV37OIG8dcfF8uNw5Zk$uVemcKpkTmjDanxkFOTU50g3ZCeh8JsiX2Lrc1cY1Vg=",
+            "last_login": "2022-11-11T09:35:12.417Z",
+            "is_superuser": true,
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2022-11-04T21:53:10.804Z",
+            "email": "test@gmail.com",
+            "first_name": "test",
+            "last_name": "test_last",
+            "leetcode_username": null,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "0a1021aa-4abd-4ed4-969a-a9c0fdc797c7",
+        "fields": {
+            "name": "Backtracking"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "0ceda829-de29-412b-b999-26f900585d79",
+        "fields": {
+            "name": "Hash Function"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "0e15bc8a-b1a1-4932-a95b-421ca83e2430",
+        "fields": {
+            "name": "Sorting"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "0ff49265-135f-4431-baf5-b71b5b047b4a",
+        "fields": {
+            "name": "Combinatorics"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "10b61cbd-501f-4da3-82a3-7e3c1a88176d",
+        "fields": {
+            "name": "Matrix"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "16d26155-fb50-4542-93e9-bd4526a3e491",
+        "fields": {
+            "name": "Bit Manipulation"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "1a8e6465-bb66-4d25-acfb-cc8cb47e0ec5",
+        "fields": {
+            "name": "Stack"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "1cd26624-9e0e-480a-bb79-48155f195b27",
+        "fields": {
+            "name": "Prefix Sum"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "1d3584b9-b6a4-4ab1-a90d-6e34e3598e51",
+        "fields": {
+            "name": "Topological Sort"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "1e138010-e073-4b6a-896c-9f87867f4c2d",
+        "fields": {
+            "name": "Sliding Window"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "1e74a43f-15d8-42ae-a14f-095ab87143df",
+        "fields": {
+            "name": "Math"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+        "fields": {
+            "name": "Hash Table"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "270de8d6-b060-429a-8aaa-59c91a48990d",
+        "fields": {
+            "name": "Heap (Priority Queue)"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "2a60c38b-c005-453f-9514-1d1c9284300f",
+        "fields": {
+            "name": "Data Stream"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "31db7173-9ab6-4c1f-b137-4dc7ae8ed874",
+        "fields": {
+            "name": "Dynamic Programming"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "3226de82-b948-407c-a565-b83b5bcee591",
+        "fields": {
+            "name": "Memoization"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "3ab43586-edd5-4f52-b1bc-4dad94c9bca5",
+        "fields": {
+            "name": "String Matching"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "49e06fbd-3c6f-462a-87e8-94f9113e6448",
+        "fields": {
+            "name": "Recursion"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "4b8118c0-f244-49c8-8435-418a7ba57703",
+        "fields": {
+            "name": "Two Pointers"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "4d47b283-ee50-46fc-86bb-0c4e049c3366",
+        "fields": {
+            "name": "Graph"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "54c5dbfe-0805-4984-9478-27f6967db942",
+        "fields": {
+            "name": "Array"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "5fe22573-6465-4f0a-9b52-8ca03d95aab2",
+        "fields": {
+            "name": "Greedy"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "62592cc0-41dd-418e-851c-18a06ab70b2f",
+        "fields": {
+            "name": "Linked List"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "62f07cbc-f75e-4d6b-9d8f-84745413d506",
+        "fields": {
+            "name": "Counting"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83",
+        "fields": {
+            "name": "String"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "7a94a426-ab50-414c-8c90-0e75779ef2ac",
+        "fields": {
+            "name": "Divide and Conquer"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "7df4f768-e802-4fa6-9997-052fdeec24b0",
+        "fields": {
+            "name": "Simulation"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "7f4503c3-5e0d-45b0-b944-971fe7612321",
+        "fields": {
+            "name": "Trie"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "80091b8e-f68e-443f-a1b2-95fe9b1aeebd",
+        "fields": {
+            "name": "Quickselect"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "849fb925-511a-41f3-ad52-40466b682459",
+        "fields": {
+            "name": "Bucket Sort"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "a3d54b29-3c5b-47ad-a0b6-641d9fb65b38",
+        "fields": {
+            "name": "Union Find"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "a75cff6a-be96-4f67-b63c-5c82df46964f",
+        "fields": {
+            "name": "Binary Search"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "a8bffe7d-7b96-4794-8932-502899b3a9f6",
+        "fields": {
+            "name": "Binary Search Tree"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+        "fields": {
+            "name": "Depth-First Search"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "b5eb9207-22f6-4a6f-96f8-03705fdb3887",
+        "fields": {
+            "name": "Tree"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "b8d7677e-9052-4552-9aaf-683b4edbf617",
+        "fields": {
+            "name": "Merge Sort"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "c674baa2-1290-44f6-8eba-317052e11ecf",
+        "fields": {
+            "name": "Breadth-First Search"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "cb7e8a8d-a47c-4723-9633-b8dabe1b0455",
+        "fields": {
+            "name": "Binary Tree"
+        }
+    },
+    {
+        "model": "beatcodeApp.category",
+        "pk": "f93e9e8c-efd8-48e7-abba-63c9712da613",
+        "fields": {
+            "name": "Design"
+        }
+    },
+    {
+        "model": "beatcodeApp.problemset",
+        "pk": "012d7e4f-9b5f-4778-bc40-5830e6ed46ec",
+        "fields": {
+            "name": "Grokking the Coding Interview"
+        }
+    },
+    {
+        "model": "beatcodeApp.problemset",
+        "pk": "e39a7377-b164-49f4-a349-f25a271e2b4d",
+        "fields": {
+            "name": "Blind 75"
+        }
+    },
+    {
+        "model": "beatcodeApp.problemset",
+        "pk": "ff726e0c-495a-4506-8652-c5b6e02455df",
+        "fields": {
+            "name": "Grind 75"
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "0006e995-0897-46a6-9c84-766fa55b2ec2",
+        "fields": {
+            "name": "Search in Rotated Sorted Array",
+            "difficulty": "Medium",
+            "category": [
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "a75cff6a-be96-4f67-b63c-5c82df46964f"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "01031df2-acf3-4a8d-95da-dca8ae8cae59",
+        "fields": {
+            "name": "Pacific Atlantic Water Flow",
+            "difficulty": "Medium",
+            "category": [
+                "10b61cbd-501f-4da3-82a3-7e3c1a88176d",
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+                "c674baa2-1290-44f6-8eba-317052e11ecf"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "01f12d0d-912c-4611-8f91-57a9bf2fe6ff",
+        "fields": {
+            "name": "Valid Parentheses",
+            "difficulty": "Easy",
+            "category": [
+                "1a8e6465-bb66-4d25-acfb-cc8cb47e0ec5",
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "03e92e2c-ea6d-4e01-9b4a-716af70c1901",
+        "fields": {
+            "name": "3 Sum",
+            "difficulty": "Medium",
+            "category": [
+                "1e138010-e073-4b6a-896c-9f87867f4c2d",
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "07cb1ee1-8e69-430f-b3d1-0085b38a8364",
+        "fields": {
+            "name": "Find Median from Data Stream",
+            "difficulty": "Hard",
+            "category": [
+                "0e15bc8a-b1a1-4932-a95b-421ca83e2430",
+                "270de8d6-b060-429a-8aaa-59c91a48990d",
+                "2a60c38b-c005-453f-9514-1d1c9284300f",
+                "4b8118c0-f244-49c8-8435-418a7ba57703",
+                "f93e9e8c-efd8-48e7-abba-63c9712da613"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "0819e362-2233-4b24-aaae-83c793b282a1",
+        "fields": {
+            "name": "Valid Palindrome",
+            "difficulty": "Easy",
+            "category": [
+                "4b8118c0-f244-49c8-8435-418a7ba57703",
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "0ab5c0bd-05ba-42ee-8af8-5ceeb54befe6",
+        "fields": {
+            "name": "Number of Islands",
+            "difficulty": "Medium",
+            "category": [
+                "10b61cbd-501f-4da3-82a3-7e3c1a88176d",
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "a3d54b29-3c5b-47ad-a0b6-641d9fb65b38",
+                "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+                "c674baa2-1290-44f6-8eba-317052e11ecf"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "0d478c47-068b-459f-8e26-aaf183b56e9d",
+        "fields": {
+            "name": "Contains Duplicate",
+            "difficulty": "Easy",
+            "category": [
+                "0e15bc8a-b1a1-4932-a95b-421ca83e2430",
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "54c5dbfe-0805-4984-9478-27f6967db942"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "0d9f499b-ffc5-4339-b88a-812c436313f7",
+        "fields": {
+            "name": "Find Minimum in Rotated Sorted Array",
+            "difficulty": "Medium",
+            "category": [
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "a75cff6a-be96-4f67-b63c-5c82df46964f"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "1059a589-221c-4cd4-9eb6-ba5a73c1c19a",
+        "fields": {
+            "name": "Unique Paths",
+            "difficulty": "Medium",
+            "category": [
+                "0ff49265-135f-4431-baf5-b71b5b047b4a",
+                "1e74a43f-15d8-42ae-a14f-095ab87143df",
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "16729d34-4edf-43ab-b1bf-e09421ae6405",
+        "fields": {
+            "name": "Longest Palindromic Substring",
+            "difficulty": "Medium",
+            "category": [
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874",
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "19d22875-8cba-43e0-bb76-74c015042c8d",
+        "fields": {
+            "name": "Container With Most Water",
+            "difficulty": "Medium",
+            "category": [
+                "4b8118c0-f244-49c8-8435-418a7ba57703",
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "5fe22573-6465-4f0a-9b52-8ca03d95aab2"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "19f412c3-28d0-4855-962b-c511c1870d57",
+        "fields": {
+            "name": "Kth Smallest Element in a BST",
+            "difficulty": "Medium",
+            "category": [
+                "a8bffe7d-7b96-4794-8932-502899b3a9f6",
+                "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+                "b5eb9207-22f6-4a6f-96f8-03705fdb3887",
+                "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "1ac8ca8f-5b4a-411a-81bd-1663c3bfd8a3",
+        "fields": {
+            "name": "Missing Number",
+            "difficulty": "Easy",
+            "category": [
+                "0e15bc8a-b1a1-4932-a95b-421ca83e2430",
+                "16d26155-fb50-4542-93e9-bd4526a3e491",
+                "1e74a43f-15d8-42ae-a14f-095ab87143df",
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "a75cff6a-be96-4f67-b63c-5c82df46964f"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "1b1277ae-2dc5-4ac4-8b5d-c16f4ee9680f",
+        "fields": {
+            "name": "Add and Search Word",
+            "difficulty": "Medium",
+            "category": [
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83",
+                "7f4503c3-5e0d-45b0-b944-971fe7612321",
+                "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+                "f93e9e8c-efd8-48e7-abba-63c9712da613"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "1b7a5ebd-0257-42da-a418-9d72f6b31d7c",
+        "fields": {
+            "name": "Reverse Bits",
+            "difficulty": "Easy",
+            "category": [
+                "16d26155-fb50-4542-93e9-bd4526a3e491",
+                "7a94a426-ab50-414c-8c90-0e75779ef2ac"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "20adf938-ccad-4c4a-8bae-87b4e8685789",
+        "fields": {
+            "name": "Longest Common  Subsequence",
+            "difficulty": "Medium",
+            "category": [
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874",
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "214119e7-4f27-41b5-98d6-f245ead8c67b",
+        "fields": {
+            "name": "Meeting Rooms II",
+            "difficulty": "Medium",
+            "category": [
+                "0e15bc8a-b1a1-4932-a95b-421ca83e2430",
+                "1cd26624-9e0e-480a-bb79-48155f195b27",
+                "270de8d6-b060-429a-8aaa-59c91a48990d",
+                "4b8118c0-f244-49c8-8435-418a7ba57703",
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "5fe22573-6465-4f0a-9b52-8ca03d95aab2"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "23787747-39fd-45dc-88d6-d7f50290204c",
+        "fields": {
+            "name": "Lowest Common Ancestor of BST",
+            "difficulty": "Medium",
+            "category": [
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+                "b5eb9207-22f6-4a6f-96f8-03705fdb3887",
+                "c674baa2-1290-44f6-8eba-317052e11ecf",
+                "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "25964434-5959-4761-8d7b-809e65335420",
+        "fields": {
+            "name": "Word Search",
+            "difficulty": "Medium",
+            "category": [
+                "0a1021aa-4abd-4ed4-969a-a9c0fdc797c7",
+                "10b61cbd-501f-4da3-82a3-7e3c1a88176d",
+                "54c5dbfe-0805-4984-9478-27f6967db942"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "2852db61-a0da-4a92-a7b1-3f89d05bb591",
+        "fields": {
+            "name": "Detect Cycle in a Linked List",
+            "difficulty": "Easy",
+            "category": [
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "4b8118c0-f244-49c8-8435-418a7ba57703",
+                "62592cc0-41dd-418e-851c-18a06ab70b2f"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "293d8b35-4351-4670-8136-319b658c5f36",
+        "fields": {
+            "name": "Decode Ways",
+            "difficulty": "Medium",
+            "category": [
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874",
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "2adc047b-873e-4b8b-82b1-3b3fcbfd1142",
+        "fields": {
+            "name": "House Robber",
+            "difficulty": "Medium",
+            "category": [
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874",
+                "54c5dbfe-0805-4984-9478-27f6967db942"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "303e6702-32e0-4374-9812-360ee3c451e6",
+        "fields": {
+            "name": "Remove Nth Node From End of List",
+            "difficulty": "Medium",
+            "category": [
+                "4b8118c0-f244-49c8-8435-418a7ba57703",
+                "62592cc0-41dd-418e-851c-18a06ab70b2f"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "34f52dbf-6839-451c-b3ca-0aeaeb1fd594",
+        "fields": {
+            "name": "Rotate Image",
+            "difficulty": "Medium",
+            "category": [
+                "10b61cbd-501f-4da3-82a3-7e3c1a88176d",
+                "1e74a43f-15d8-42ae-a14f-095ab87143df",
+                "54c5dbfe-0805-4984-9478-27f6967db942"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "4383b739-6e1e-4039-9590-3d7bd3de2e91",
+        "fields": {
+            "name": "Meeting Rooms",
+            "difficulty": "Easy",
+            "category": [
+                "0e15bc8a-b1a1-4932-a95b-421ca83e2430",
+                "54c5dbfe-0805-4984-9478-27f6967db942"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "4816c885-b3a0-4a84-b789-9da149540b32",
+        "fields": {
+            "name": "Binary Tree Level Order Traversal",
+            "difficulty": "Medium",
+            "category": [
+                "b5eb9207-22f6-4a6f-96f8-03705fdb3887",
+                "c674baa2-1290-44f6-8eba-317052e11ecf",
+                "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "4a307092-127a-40ba-a69a-a097a40cfbf6",
+        "fields": {
+            "name": "Course Schedule",
+            "difficulty": "Medium",
+            "category": [
+                "1d3584b9-b6a4-4ab1-a90d-6e34e3598e51",
+                "4d47b283-ee50-46fc-86bb-0c4e049c3366",
+                "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+                "c674baa2-1290-44f6-8eba-317052e11ecf"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "53a4f9bc-18f1-42de-b8fb-19459e26f64e",
+        "fields": {
+            "name": "Longest Substring Without Repeating Characters",
+            "difficulty": "Medium",
+            "category": [
+                "1e138010-e073-4b6a-896c-9f87867f4c2d",
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "5572f4fc-e5ed-43dc-a495-a9dea4847465",
+        "fields": {
+            "name": "Maximum Product Subarray",
+            "difficulty": "Medium",
+            "category": [
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874",
+                "54c5dbfe-0805-4984-9478-27f6967db942"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "5b6fe6fe-8648-4d22-bcdd-508ec44a902a",
+        "fields": {
+            "name": "Merge Intervals",
+            "difficulty": "Medium",
+            "category": [
+                "0e15bc8a-b1a1-4932-a95b-421ca83e2430",
+                "54c5dbfe-0805-4984-9478-27f6967db942"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "6049c3f4-7a3e-43f0-8be0-247a2fff908a",
+        "fields": {
+            "name": "Palindromic Substrings",
+            "difficulty": "Medium",
+            "category": [
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874",
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "61cc9568-dd2a-4ed2-bc25-39d065cdfed7",
+        "fields": {
+            "name": "Set Matrix Zeroes",
+            "difficulty": "Medium",
+            "category": [
+                "10b61cbd-501f-4da3-82a3-7e3c1a88176d",
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "54c5dbfe-0805-4984-9478-27f6967db942"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "62b6ba2c-056a-4bf2-b4db-ac8c467aece3",
+        "fields": {
+            "name": "Number of Connected Components in an Undirected Graph",
+            "difficulty": "Medium",
+            "category": [
+                "4d47b283-ee50-46fc-86bb-0c4e049c3366",
+                "a3d54b29-3c5b-47ad-a0b6-641d9fb65b38",
+                "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+                "c674baa2-1290-44f6-8eba-317052e11ecf"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "6d7cc0d9-6dac-41aa-bac5-50fc562e0110",
+        "fields": {
+            "name": "Climbing Stairs",
+            "difficulty": "Easy",
+            "category": [
+                "1e74a43f-15d8-42ae-a14f-095ab87143df",
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874",
+                "3226de82-b948-407c-a565-b83b5bcee591"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "6ea24765-860b-4b27-8d1b-186a0a899828",
+        "fields": {
+            "name": "Super Hard Problem",
+            "difficulty": "Medium",
+            "category": [
+                "1e74a43f-15d8-42ae-a14f-095ab87143df",
+                "7a94a426-ab50-414c-8c90-0e75779ef2ac"
+            ],
+            "problem_set": []
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "70f55cee-282c-48b8-b3b5-73c8ace9bae0",
+        "fields": {
+            "name": "Minimum Window Substring",
+            "difficulty": "Hard",
+            "category": [
+                "1e138010-e073-4b6a-896c-9f87867f4c2d",
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "715d218c-7f42-4a36-9ca0-ee9ecb335faa",
+        "fields": {
+            "name": "Reorder List",
+            "difficulty": "Medium",
+            "category": [
+                "1a8e6465-bb66-4d25-acfb-cc8cb47e0ec5",
+                "49e06fbd-3c6f-462a-87e8-94f9113e6448",
+                "4b8118c0-f244-49c8-8435-418a7ba57703",
+                "62592cc0-41dd-418e-851c-18a06ab70b2f"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "72248610-df54-46f1-915f-ba80708d5056",
+        "fields": {
+            "name": "Product of Array Except Self",
+            "difficulty": "Medium",
+            "category": [
+                "1cd26624-9e0e-480a-bb79-48155f195b27",
+                "54c5dbfe-0805-4984-9478-27f6967db942"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "75b81836-c2de-4e28-a200-2f5820cf025b",
+        "fields": {
+            "name": "Combination Sum",
+            "difficulty": "Medium",
+            "category": [
+                "0a1021aa-4abd-4ed4-969a-a9c0fdc797c7",
+                "54c5dbfe-0805-4984-9478-27f6967db942"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "7d857971-af4e-4555-9000-d0c25d5cbcf7",
+        "fields": {
+            "name": "Longest Consecutive Sequence",
+            "difficulty": "Medium",
+            "category": [
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "a3d54b29-3c5b-47ad-a0b6-641d9fb65b38"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "7da53ae1-51ec-4989-8a9e-daa2a8765580",
+        "fields": {
+            "name": "Same Tree",
+            "difficulty": "Easy",
+            "category": [
+                "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+                "b5eb9207-22f6-4a6f-96f8-03705fdb3887",
+                "c674baa2-1290-44f6-8eba-317052e11ecf",
+                "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "7feb65cb-3804-4693-979b-07d090bf1b60",
+        "fields": {
+            "name": "Merge Two Sorted Lists",
+            "difficulty": "Easy",
+            "category": [
+                "49e06fbd-3c6f-462a-87e8-94f9113e6448",
+                "62592cc0-41dd-418e-851c-18a06ab70b2f"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "807f42d0-66e0-44d0-b480-ce161e36094e",
+        "fields": {
+            "name": "Number of 1 Bits",
+            "difficulty": "Easy",
+            "category": [
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "54c5dbfe-0805-4984-9478-27f6967db942"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "84974d83-c370-4bed-84d8-3f97e8cbfb9e",
+        "fields": {
+            "name": "Two Sum",
+            "difficulty": "Easy",
+            "category": [
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "54c5dbfe-0805-4984-9478-27f6967db942"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "852da3ab-eb83-4cfe-98d6-bed4520f33e5",
+        "fields": {
+            "name": "Sum of Two Integers",
+            "difficulty": "Medium",
+            "category": [
+                "16d26155-fb50-4542-93e9-bd4526a3e491",
+                "1e74a43f-15d8-42ae-a14f-095ab87143df"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "8bb75f9b-f44a-44c6-be1e-3db81760d0a6",
+        "fields": {
+            "name": "Word Search II",
+            "difficulty": "Hard",
+            "category": [
+                "0a1021aa-4abd-4ed4-969a-a9c0fdc797c7",
+                "10b61cbd-501f-4da3-82a3-7e3c1a88176d",
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83",
+                "7f4503c3-5e0d-45b0-b944-971fe7612321"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "93bcb335-c940-4727-b653-a1e1cc357006",
+        "fields": {
+            "name": "Encode and Decode Strings",
+            "difficulty": "Medium",
+            "category": [
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83",
+                "f93e9e8c-efd8-48e7-abba-63c9712da613"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "968f0cb1-1fda-4a0c-b3b6-db55aa68216f",
+        "fields": {
+            "name": "Counting Bits",
+            "difficulty": "Easy",
+            "category": [
+                "16d26155-fb50-4542-93e9-bd4526a3e491",
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "9a86997e-e2df-4da0-a3bc-fd8dfb90284d",
+        "fields": {
+            "name": "Construct Binary Tree from Preorder and Inorder Traversal",
+            "difficulty": "Medium",
+            "category": [
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "7a94a426-ab50-414c-8c90-0e75779ef2ac",
+                "b5eb9207-22f6-4a6f-96f8-03705fdb3887",
+                "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "9ee4c143-5e07-4896-bcaa-19dcd4a2f0f4",
+        "fields": {
+            "name": "Non-overlapping Intervals",
+            "difficulty": "Medium",
+            "category": [
+                "0e15bc8a-b1a1-4932-a95b-421ca83e2430",
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874",
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "5fe22573-6465-4f0a-9b52-8ca03d95aab2"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "a3398520-0aea-4d92-bb58-e680bce72c3c",
+        "fields": {
+            "name": "Binary Tree Maximum Path Sum",
+            "difficulty": "Hard",
+            "category": [
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874",
+                "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+                "b5eb9207-22f6-4a6f-96f8-03705fdb3887",
+                "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "a46b28f1-bb52-4a35-96ba-0670043d0e75",
+        "fields": {
+            "name": "Invert/Flip Binary Tree",
+            "difficulty": "Easy",
+            "category": [
+                "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+                "b5eb9207-22f6-4a6f-96f8-03705fdb3887",
+                "c674baa2-1290-44f6-8eba-317052e11ecf",
+                "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "a6268512-21ed-4c5a-aa99-56e92be88c16",
+        "fields": {
+            "name": "Graph Valid Tree",
+            "difficulty": "Medium",
+            "category": [
+                "4d47b283-ee50-46fc-86bb-0c4e049c3366",
+                "a3d54b29-3c5b-47ad-a0b6-641d9fb65b38",
+                "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+                "c674baa2-1290-44f6-8eba-317052e11ecf"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "a74c25f4-8293-4bed-9488-25b7266ad477",
+        "fields": {
+            "name": "Implement Trie (Prefix Tree)",
+            "difficulty": "Medium",
+            "category": [
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83",
+                "7f4503c3-5e0d-45b0-b944-971fe7612321",
+                "f93e9e8c-efd8-48e7-abba-63c9712da613"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "ac81e32c-e4a1-4e40-9344-def1da71ec87",
+        "fields": {
+            "name": "Valid Anagram",
+            "difficulty": "Easy",
+            "category": [
+                "0e15bc8a-b1a1-4932-a95b-421ca83e2430",
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "b2bbd773-7db2-4908-82f2-3b93d7225afd",
+        "fields": {
+            "name": "Jump Game",
+            "difficulty": "Medium",
+            "category": [
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874",
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "5fe22573-6465-4f0a-9b52-8ca03d95aab2"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "b31846ab-6a2b-4cc4-b48d-92c89d87ad76",
+        "fields": {
+            "name": "Coin Change",
+            "difficulty": "Medium",
+            "category": [
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874",
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "c674baa2-1290-44f6-8eba-317052e11ecf"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "b3f2b4b4-ec21-4a1a-b413-b8c87ed50489",
+        "fields": {
+            "name": "Clone Graph",
+            "difficulty": "Medium",
+            "category": [
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "4d47b283-ee50-46fc-86bb-0c4e049c3366",
+                "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+                "c674baa2-1290-44f6-8eba-317052e11ecf"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "b5c81329-5784-462f-b28b-83925f5c4b7e",
+        "fields": {
+            "name": "Maximum Subarray",
+            "difficulty": "Medium",
+            "category": [
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874",
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "7a94a426-ab50-414c-8c90-0e75779ef2ac"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "b9be2037-89d2-4f9a-800b-47d9eef8eb16",
+        "fields": {
+            "name": "Longest Repeating Character Replacement",
+            "difficulty": "Medium",
+            "category": [
+                "1e138010-e073-4b6a-896c-9f87867f4c2d",
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "beb81f78-e848-4522-80d9-f15deaf8d63c",
+        "fields": {
+            "name": "Top K Frequent Elements",
+            "difficulty": "Medium",
+            "category": [
+                "0e15bc8a-b1a1-4932-a95b-421ca83e2430",
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "270de8d6-b060-429a-8aaa-59c91a48990d",
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "62f07cbc-f75e-4d6b-9d8f-84745413d506",
+                "7a94a426-ab50-414c-8c90-0e75779ef2ac",
+                "80091b8e-f68e-443f-a1b2-95fe9b1aeebd",
+                "849fb925-511a-41f3-ad52-40466b682459"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "c1806b2d-b77b-4a38-b588-679f7c6a4581",
+        "fields": {
+            "name": "Maximum Depth of Binary Tree",
+            "difficulty": "Easy",
+            "category": [
+                "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+                "b5eb9207-22f6-4a6f-96f8-03705fdb3887",
+                "c674baa2-1290-44f6-8eba-317052e11ecf",
+                "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "c397f46a-a56b-443e-b316-0bad267765f6",
+        "fields": {
+            "name": "Reverse a Linked List",
+            "difficulty": "Easy",
+            "category": [
+                "49e06fbd-3c6f-462a-87e8-94f9113e6448",
+                "62592cc0-41dd-418e-851c-18a06ab70b2f"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "ccfc2259-1000-466f-adb6-faa4bd9e1813",
+        "fields": {
+            "name": "Validate Binary Search Tree",
+            "difficulty": "Medium",
+            "category": [
+                "a8bffe7d-7b96-4794-8932-502899b3a9f6",
+                "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+                "b5eb9207-22f6-4a6f-96f8-03705fdb3887",
+                "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "ce83b9cb-2580-4d62-b7e7-0524ec089034",
+        "fields": {
+            "name": "Insert Interval",
+            "difficulty": "Medium",
+            "category": [
+                "54c5dbfe-0805-4984-9478-27f6967db942"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "cee2565f-d51a-4895-a81f-7407f9742005",
+        "fields": {
+            "name": "House Robber II",
+            "difficulty": "Medium",
+            "category": [
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874",
+                "54c5dbfe-0805-4984-9478-27f6967db942"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "d2122176-9517-44b4-b126-1372249002de",
+        "fields": {
+            "name": "Longest Increasing Subsequence",
+            "difficulty": "Medium",
+            "category": [
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874",
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "a75cff6a-be96-4f67-b63c-5c82df46964f"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "d2339cf3-9bd9-4a04-9bc8-cc4b4634e2a8",
+        "fields": {
+            "name": "Subtree of Another Tree",
+            "difficulty": "Easy",
+            "category": [
+                "0ceda829-de29-412b-b999-26f900585d79",
+                "3ab43586-edd5-4f52-b1bc-4dad94c9bca5",
+                "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+                "b5eb9207-22f6-4a6f-96f8-03705fdb3887",
+                "cb7e8a8d-a47c-4723-9633-b8dabe1b0455"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "e6c052fc-e854-4321-8672-edff23927233",
+        "fields": {
+            "name": "Serialize and Deserialize Binary Tree",
+            "difficulty": "Hard",
+            "category": [
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83",
+                "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+                "b5eb9207-22f6-4a6f-96f8-03705fdb3887",
+                "c674baa2-1290-44f6-8eba-317052e11ecf",
+                "cb7e8a8d-a47c-4723-9633-b8dabe1b0455",
+                "f93e9e8c-efd8-48e7-abba-63c9712da613"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "ebf5e8e3-3049-46f1-9525-02495c46c2d5",
+        "fields": {
+            "name": "Merge k Sorted Lists",
+            "difficulty": "Hard",
+            "category": [
+                "270de8d6-b060-429a-8aaa-59c91a48990d",
+                "62592cc0-41dd-418e-851c-18a06ab70b2f",
+                "7a94a426-ab50-414c-8c90-0e75779ef2ac",
+                "b8d7677e-9052-4552-9aaf-683b4edbf617"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "f50874f2-4260-412a-86ed-5918be0f9c1a",
+        "fields": {
+            "name": "Spiral Matrix",
+            "difficulty": "Medium",
+            "category": [
+                "10b61cbd-501f-4da3-82a3-7e3c1a88176d",
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "7df4f768-e802-4fa6-9997-052fdeec24b0"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "f80c4ae1-aaf4-4817-beb5-98355d7e7a31",
+        "fields": {
+            "name": "Group Anagrams",
+            "difficulty": "Medium",
+            "category": [
+                "0e15bc8a-b1a1-4932-a95b-421ca83e2430",
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "fc0af646-d513-4748-a37b-a83a6fefa65c",
+        "fields": {
+            "name": "Word Break",
+            "difficulty": "Medium",
+            "category": [
+                "1f7d2aea-3b44-4879-8dbe-9ba60997d9e2",
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874",
+                "3226de82-b948-407c-a565-b83b5bcee591",
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83",
+                "7f4503c3-5e0d-45b0-b944-971fe7612321"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "fccc7018-3bf2-45d0-8a2a-10544f52f110",
+        "fields": {
+            "name": "Best Time to Buy and Sell Stock",
+            "difficulty": "Easy",
+            "category": [
+                "31db7173-9ab6-4c1f-b137-4dc7ae8ed874",
+                "54c5dbfe-0805-4984-9478-27f6967db942"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.problem",
+        "pk": "ff05f255-ef7a-4712-86d9-a532f9a86826",
+        "fields": {
+            "name": "Alien Dictionary",
+            "difficulty": "Hard",
+            "category": [
+                "1d3584b9-b6a4-4ab1-a90d-6e34e3598e51",
+                "4d47b283-ee50-46fc-86bb-0c4e049c3366",
+                "54c5dbfe-0805-4984-9478-27f6967db942",
+                "6f2c7c0c-ba88-4dac-bf58-bb3419a54f83",
+                "b09c6484-9d3a-4ce5-94be-c727b30ad649",
+                "c674baa2-1290-44f6-8eba-317052e11ecf"
+            ],
+            "problem_set": [
+                "e39a7377-b164-49f4-a349-f25a271e2b4d"
+            ]
+        }
+    },
+    {
+        "model": "beatcodeApp.submission",
+        "pk": "21e78ab3-b9d0-443e-904a-59570d1fb5f5",
+        "fields": {
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "problem": "4a307092-127a-40ba-a69a-a097a40cfbf6",
+            "sub_date": "2022-11-04",
+            "runtime": 1000,
+            "mem_used": 1000,
+            "success": true
+        }
+    },
+    {
+        "model": "beatcodeApp.submission",
+        "pk": "3c801653-455e-43f9-a01b-685223c0ef60",
+        "fields": {
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "problem": "6ea24765-860b-4b27-8d1b-186a0a899828",
+            "sub_date": "2022-11-04",
+            "runtime": 0,
+            "mem_used": 0,
+            "success": false
+        }
+    },
+    {
+        "model": "beatcodeApp.todo",
+        "pk": 1,
+        "fields": {
+            "user": "e8d07fc6-39c9-4bbd-b4a8-463c90e1f183",
+            "problem": "6ea24765-860b-4b27-8d1b-186a0a899828"
+        }
+    }
+]
