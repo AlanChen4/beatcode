@@ -38,8 +38,7 @@ class Calendar(HTMLCalendar):
             week += self.formatday(d, submissions)
         return f'<tr style=" textAlign:center "> {week} </tr>'
 
-    # formats a month as a table
-    def formatmonth(self):
+    def get_as_html(self):
         submissions = Submission.objects.filter(sub_date__year=self.year, sub_date__month=self.month)
 
         cal = f'<table border="0" cellpadding="0" cellspacing="0" class="calendar">\n'

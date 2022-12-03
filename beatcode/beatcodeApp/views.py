@@ -21,65 +21,51 @@ class Home(LoginRequiredMixin, View):
         context = {}
 
         # context variables for the "Problems Completed" component
-        # use submissions by user to collect problems and categories completed
         submissions = Submission.objects.filter(user=request.user, success=True)
         category_count = {}
         for submission in submissions:
-            # categories belonging to submission's problem
             categories = submission.problem.category.all()
 
-            # count each category that the problem belongs to
             for category in categories:
                 category_count[category.name] = category_count.get(category.name, 0) + 1
-                
         context['categories'] = json.dumps(list(category_count.keys()))
         context['problem_freq'] = json.dumps(list(category_count.values()))    
 
         # context variables for the "Least Practiced" component
         least_practiced = {}
-
-        query = """SELECT C.name, C.id, MAX(S.sub_date) AS recent_activity
-                    FROM beatcodeApp_category C LEFT OUTER JOIN
-                    ((beatcodeApp_problem P JOIN beatcodeApp_problem_category PC ON P.id = PC.problem_id)
-                    JOIN beatcodeApp_submission S ON P.id = S.problem_id)
-                    ON C.id = PC.category_id
-                    GROUP BY C.id
-                    ORDER BY recent_activity ASC
-                    LIMIT 5"""
-        
-        for cat in Submission.objects.raw(query):
-            least_practiced[cat.name] = cat.recent_activity
-            
+        least_practiced_query = """
+            SELECT C.name, C.id, MAX(S.sub_date) AS recent_activity
+            FROM beatcodeApp_category C LEFT OUTER JOIN
+            ((beatcodeApp_problem P JOIN beatcodeApp_problem_category PC ON P.id = PC.problem_id)
+            JOIN beatcodeApp_submission S ON P.id = S.problem_id)
+            ON C.id = PC.category_id
+            GROUP BY C.id
+            ORDER BY recent_activity ASC
+            LIMIT 5
+        """
+        for category in Submission.objects.raw(least_practiced_query):
+            least_practiced[category.name] = category.recent_activity
         context['least_practiced'] = least_practiced
 
         # context variables for the "Streaks" component
-        d = get_date(self.request.GET.get('day', None))
-        cal = Calendar(d.year, d.month)
-        html_cal = cal.formatmonth() #returns cal as a table w new methods in utils.py
-        context['calendar'] = mark_safe(html_cal)     
-        
-        streak = 0
-        currDate=d.date()
-        while(True):
-            if len(Submission.objects.filter(sub_date=currDate))!=0:
-                streak+=1
-                currDate=currDate-timedelta(days=1)
-            else:
-                break
+        today = datetime.today()
+        calendar = Calendar(today.year, today.month)
+        html_calendar = calendar.get_as_html()
+        context['calendar'] = mark_safe(html_calendar)     
 
+        streak = 0
+        current_date = today.date()
+        while len(Submission.objects.filter(sub_date=current_date)) != 0:
+            streak+=1
+            current_date=current_date - timedelta(days=1)
         context['streak']= str(streak) + {True: " day", False: " days"} [streak==1]
         
-        # context variables for the "TODO" component
+        # context variables for the "Todo" component
         todo_problems = ToDo.objects.filter(user=request.user)
         context['todo_problems'] = todo_problems
         
         return render(request, 'beatcodeApp/home.html', context)
 
-def get_date(req_day):
-    if req_day:
-        year, month = (int(x) for x in req_day.split('-'))
-        return date(year, month, day=1)
-    return datetime.today()
 
 class ProblemSetView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
