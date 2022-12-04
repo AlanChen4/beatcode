@@ -33,7 +33,7 @@ class Home(LoginRequiredMixin, View):
 
         # context variables for the "Least Practiced" component
         least_practiced = {}
-        least_practiced_query = """
+        least_practiced_query = '''
             SELECT C.name, C.id, MAX(S.sub_date) AS recent_activity
             FROM beatcodeApp_category C LEFT OUTER JOIN
             ((beatcodeApp_problem P JOIN beatcodeApp_problem_category PC ON P.id = PC.problem_id)
@@ -41,8 +41,8 @@ class Home(LoginRequiredMixin, View):
             ON C.id = PC.category_id
             GROUP BY C.id
             ORDER BY recent_activity ASC
-            LIMIT 5
-        """
+            LIMIT 5'''
+            
         for category in Submission.objects.raw(least_practiced_query):
             least_practiced[category.name] = category.recent_activity
         context['least_practiced'] = least_practiced
@@ -55,7 +55,13 @@ class Home(LoginRequiredMixin, View):
 
         streak = 0
         current_date = today.date()
-        while len(Submission.objects.filter(sub_date=current_date)) != 0:
+        
+        streakQuery= '''SELECT S.id
+                        FROM beatcodeApp_submission S
+                        WHERE S.sub_date=%s
+                    '''
+        
+        while len(Submission.objects.raw(streakQuery, [current_date])) != 0:
             streak+=1
             current_date=current_date - timedelta(days=1)
         context['streak']= str(streak) + {True: " day", False: " days"} [streak==1]
