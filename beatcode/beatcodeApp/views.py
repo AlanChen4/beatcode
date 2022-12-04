@@ -61,7 +61,10 @@ class Home(LoginRequiredMixin, View):
         context['streak']= str(streak) + {True: " day", False: " days"} [streak==1]
         
         # context variables for the "Todo" component
-        todo_problems = ToDo.objects.filter(user=request.user)
+        todo_top5 = """
+            SELECT * FROM beatcodeApp_todo LIMIT 5
+        """
+        todo_problems = ToDo.objects.raw(todo_top5)
         context['todo_problems'] = todo_problems
         
         return render(request, 'beatcodeApp/home.html', context)
