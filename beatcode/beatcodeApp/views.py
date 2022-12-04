@@ -31,6 +31,10 @@ class Home(LoginRequiredMixin, View):
         context['categories'] = json.dumps(list(category_count.keys()))
         context['problem_freq'] = json.dumps(list(category_count.values()))    
 
+        #context variables for strongest and weakest card
+        context['strongest_category'] = max(category_count, key=category_count.get)
+        context['weakest_category'] = min(category_count, key=category_count.get)
+        
         # context variables for the "Least Practiced" component
         least_practiced = {}
         least_practiced_query = '''
