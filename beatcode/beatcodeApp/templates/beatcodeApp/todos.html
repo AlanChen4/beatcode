@@ -12,14 +12,14 @@
             {% for todo in todos %}
                 <tr>
                     <td>{{ forloop.counter}}</td>
-                    <td>{{ todo.name }}</td>
-                    <td><td>
+                    <td>{{ todo.problem.name }}</td>
+                    <td>
                       <form action = "." method = "POST">
                         {% csrf_token %}
                         <input class="btn btn-default btn-danger" name="delete" type="submit" value = "DELETE"/>
-                        <input type="hidden" value="{{ todo.name.id }}" name="problem_id">
+                        <input type="hidden" value="{{ todo.problem.id }}" name="problem_id">
                       </form>
-                    </td></td>
+                    </td>
                 </tr>
             {% endfor %}
           </tbody>

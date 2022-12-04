@@ -189,7 +189,7 @@ class Todo(LoginRequiredMixin, View):
         for p in ToDo.objects.raw(query_to_delete_problem):
             ToDo.objects.filter(problem_id = p.id).delete()
         
-        query_to_add_name = '''SELECT P.id, P.name
+        query_to_add_name = '''SELECT T.id, T.problem_id, T.user_id
                                 FROM beatcodeApp_todo T JOIN beatcodeApp_problem P
                                 ON T.problem_id = P.id'''
 
