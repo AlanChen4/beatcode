@@ -2,7 +2,7 @@ Madeleine Jones: Set up basic frontend, implemented calendar to track streak/sub
 
 Rachel Qian: Connected the TODO list to submissions, re-wrote logic in SQL
 
-Alice Wu: Created doughnut chart that displays problems completed by category on homepage
+Alice Wu: Created doughnut chart that displays problems completed by category on homepage, created card that shows strongest and weakest categories
 
 Sean Li: Worked on the Leetcode scraper with Alan; worked on the TODO list feature
 
