@@ -229,7 +229,9 @@ class Todo(LoginRequiredMixin, View):
         
         query_to_add_name = '''SELECT T.id, T.problem_id, T.user_id
                                 FROM beatcodeApp_todo T JOIN beatcodeApp_problem P
-                                ON T.problem_id = P.id'''
+                                ON T.problem_id = P.id
+                                JOIN authentication_customuser a
+                                ON T.user_id = a.id'''
 
         # problems are displayed in the order that they are added
         context['todos'] = ToDo.objects.raw(query_to_add_name)
