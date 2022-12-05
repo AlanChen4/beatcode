@@ -23,64 +23,67 @@ class Home(LoginRequiredMixin, View):
         context = {}
 
         # context variables for the "Problems Completed" component
-        # use submissions by user to collect problems and categories completed
         submissions = Submission.objects.filter(user=request.user, success=True)
         category_count = {}
         for submission in submissions:
-            # categories belonging to submission's problem
             categories = submission.problem.category.all()
 
-            # count each category that the problem belongs to
             for category in categories:
                 category_count[category.name] = category_count.get(category.name, 0) + 1
-                
         context['categories'] = json.dumps(list(category_count.keys()))
         context['problem_freq'] = json.dumps(list(category_count.values()))    
 
+        #context variables for strongest and weakest card
+        context['strongest_category'] = max(category_count, key=category_count.get)
+        context['weakest_category'] = min(category_count, key=category_count.get)
+        
         # context variables for the "Least Practiced" component
-        # use submissions with their associated submission date to determine the least practiced categories
-        category_dates = {c.name:'0' for c in Category.objects.all()}
-        for submission in submissions.order_by('sub_date'):
-            for category in submission.problem.category.all():
-                category_dates[category.name] = str(submission.sub_date)
-        category_dates_sorted = sorted(category_dates.items(), key=lambda item: item[1])
-        # select the bottom 3 results - these are the least practiced
-        least_practiced = category_dates_sorted[:3]
-        # replace '0' with 'N/A' since this means that the category has never been practiced
-        for i in range(len(least_practiced)):
-            if least_practiced[i][1] == '0':
-                # having to construct new tuple since tuples are immutable
-                least_practiced[i] = (least_practiced[i][0], 'N/A')
+        least_practiced = {}
+        least_practiced_query = '''
+            SELECT C.name, C.id, MAX(S.sub_date) AS recent_activity
+            FROM beatcodeApp_category C LEFT OUTER JOIN
+            ((beatcodeApp_problem P JOIN beatcodeApp_problem_category PC ON P.id = PC.problem_id)
+            JOIN beatcodeApp_submission S ON P.id = S.problem_id)
+            ON C.id = PC.category_id
+            GROUP BY C.id
+            ORDER BY recent_activity ASC
+            LIMIT 5'''
+            
+        for category in Submission.objects.raw(least_practiced_query):
+            least_practiced[category.name] = category.recent_activity
         context['least_practiced'] = least_practiced
 
         # context variables for the "Streaks" component
-        d = get_date(self.request.GET.get('day', None))
-        cal = Calendar(d.year, d.month)
-        html_cal = cal.formatmonth() #returns cal as a table w new methods in utils.py
-        context['calendar'] = mark_safe(html_cal)     
-        
-        streak = 0
-        currDate=d.date()
-        while(True):
-            if len(Submission.objects.filter(sub_date=currDate))!=0:
-                streak+=1
-                currDate=currDate-timedelta(days=1)
-            else:
-                break
+        today = datetime.today()
+        calendar = Calendar(today.year, today.month)
+        html_calendar = calendar.get_as_html()
+        context['calendar'] = mark_safe(html_calendar)     
 
+        streak = 0
+        current_date = today.date()
+        
+        streakQuery= '''SELECT S.id
+                        FROM beatcodeApp_submission S
+                        WHERE S.sub_date=%s
+                    '''
+        
+        while len(Submission.objects.raw(streakQuery, [current_date])) != 0:
+            streak+=1
+            current_date=current_date - timedelta(days=1)
         context['streak']= str(streak) + {True: " day", False: " days"} [streak==1]
         
-        # context variables for the "TODO" component
-        todo_problems = ToDo.objects.filter(user=request.user, complete=False)
+        # context variables for the "Todo" component
+        todo_top5 = '''
+            SELECT t.id, t.problem_id, t.user_id FROM beatcodeApp_todo t
+            JOIN authentication_customuser a
+            ON t.user_id = a.id
+            LIMIT 5
+        '''
+        todo_problems = ToDo.objects.raw(todo_top5)
         context['todo_problems'] = todo_problems
         
         return render(request, 'beatcodeApp/home.html', context)
 
-def get_date(req_day):
-    if req_day:
-        year, month = (int(x) for x in req_day.split('-'))
-        return date(year, month, day=1)
-    return datetime.today()
 
 class ProblemSetView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
@@ -124,7 +127,22 @@ class ProblemView(LoginRequiredMixin, View):
 
         problem_id = kwargs['problem_id']
         problem = Problem.objects.get(id=problem_id)
-        ToDo.objects.create(user=request.user,problem=problem)
+        #query to fetch everyone on the ToDo list
+        query = '''SELECT p.id, t.id, p.name, t.problem_id
+        FROM beatcodeApp_todo t, beatcodeApp_problem p, authentication_customuser a
+        WHERE t.problem_id = p.id AND a.id = t.user_id
+        '''
+        query_result = ToDo.objects.raw(query)
+        #print(problem.id)
+        #check to see if the problem is already on the todo list
+        flag = 0
+        for td in query_result:
+            if (td.problem_id == problem.id):
+                flag = 1
+        #print(flag)
+        #if (not ToDo.objects.filter(user = request.user, problem = problem)):
+        if (not flag):
+            ToDo.objects.create(user=request.user,problem=problem)
         
         context['problem'] = problem
         return render(request, 'beatcodeApp/problem.html', context)
@@ -162,9 +180,9 @@ class UserSubmissionView(LoginRequiredMixin,View):
         user = User.objects.get(id=user_id)
         all_subs = Submission.objects.filter(user_id=user_id)
         
-        query= '''SELECT S.id, P.category_id, C.category 
+        query = '''SELECT S.id, P.category_id, C.category 
                     FROM beatcodeApp_submission S, beatcodeApp_problem P, beatcodeApp_category C 
-                    WHERE S.problem_id = P.id AND C.id=P.category_id AND S.success=1
+                    WHERE S.problem_id = P.id AND C.id = P.category_id AND S.success = 1
                     ORDER BY sub_date DESC'''
              
         submissions = all_subs.raw(query)
@@ -192,33 +210,53 @@ class Todo(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         context = {}
 
-        # using ORM filter since it would be redundant to query by user as all the problems are created by a super user
-        todo_problems = ToDo.objects.filter(user=request.user)
+        query_to_delete_problem = '''SELECT P.id
+                    FROM (beatcodeApp_todo T JOIN beatcodeApp_problem P
+                    ON T.problem_id = P.id)
+                    JOIN beatcodeApp_submission S
+                    ON (T.problem_id = S.problem_id AND S.success = 1)'''
+
+        for p in ToDo.objects.raw(query_to_delete_problem):
+            ToDo.objects.filter(problem_id = p.id).delete()
         
+        query_to_add_name = '''SELECT T.id, T.problem_id, T.user_id
+                                FROM beatcodeApp_todo T JOIN beatcodeApp_problem P
+                                ON T.problem_id = P.id'''
+
         # problems are displayed in the order that they are added
-        context['problems'] = todo_problems
-        return render(request, 'beatcodeApp/todos.html',context)
+        context['todos'] = ToDo.objects.raw(query_to_add_name)
+        return render(request, 'beatcodeApp/todos.html', context)
+        
+    def post(self, request, *args, **kwargs):
+        context = {}
+
+        problem_id = request.POST['problem_id']
+        problem = Problem.objects.get(id=problem_id)
+        #print(problem)
+        ToDo.objects.filter(user=request.user,problem=problem).delete()
+        
+        todo_problems = ToDo.objects.filter(user=request.user)
+        context['todos'] = todo_problems
+        return render(request, 'beatcodeApp/todos.html', context)
+
 
 class CategoryView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
 
     def get(self, request, *args, **kwargs):
         context = {}
+        least_practiced = {}
+
+        query = """SELECT C.name, C.id, MAX(S.sub_date) AS recent_activity
+                    FROM beatcodeApp_category C LEFT OUTER JOIN
+                    ((beatcodeApp_problem P JOIN beatcodeApp_problem_category PC ON P.id = PC.problem_id)
+                    JOIN beatcodeApp_submission S ON P.id = S.problem_id)
+                    ON C.id = PC.category_id
+                    GROUP BY C.id
+                    ORDER BY recent_activity ASC"""
         
-        # use submissions with their associated submission date to determine the least practiced categories
-        submissions = Submission.objects.filter(user=request.user, success=True)
-        category_dates = {c.name:'0' for c in Category.objects.all()}
-        for submission in submissions.order_by('sub_date'):
-            for category in submission.problem.category.all():
-                category_dates[category.name] = str(submission.sub_date)
-        category_dates_sorted = sorted(category_dates.items(), key=lambda item: item[1])
-        # select the bottom 3 results - these are the least practiced
-        least_practiced = category_dates_sorted[:3]
-        # replace '0' with 'N/A' since this means that the category has never been practiced
-        for i in range(len(least_practiced)):
-            if least_practiced[i][1] == '0':
-                # having to construct new tuple since tuples are immutable
-                least_practiced[i] = (least_practiced[i][0], 'N/A')
+        for cat in Submission.objects.raw(query):
+            least_practiced[cat.name] = cat.recent_activity
         
         context['least_practiced'] = least_practiced
 

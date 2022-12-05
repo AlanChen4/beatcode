@@ -1,19 +1,27 @@
 {% extends 'beatcodeApp/main.html' %}
+{% load static%}
 {% block content %}
 <div class="container">
-    <table class="table">
+    <table class="table todo">
         <thead>
             <tr>
               <th scope="col">TODO #</th>
               <th scope="col">Problem</th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
-            {% for p in problems %}
+            {% for todo in todos %}
                 <tr>
-                    <td>{{ forloop.counter}} </td>
-                    <td>{{ p.problem }}</td>
-                    <td><td><a class="btn-danger">Delete</a></td></td>
+                    <td>{{ forloop.counter}}</td>
+                    <td>{{ todo.problem.name }}</td>
+                    <td>
+                      <form class="delete-form" action = "." method = "POST" style="height:20;">
+                        {% csrf_token %}
+                        <input class="trash" name="delete" type="image" src="{%  static 'beatcodeApp/images/trash.png' %}" width="20" height="20"/>
+                        <input type="hidden" value="{{ todo.problem.id }}" name="problem_id">
+                      </form>
+                    </td>
                 </tr>
             {% endfor %}
           </tbody>

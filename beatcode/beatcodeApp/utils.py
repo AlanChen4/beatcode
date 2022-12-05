@@ -1,6 +1,8 @@
+import uuid
 import time
 from datetime import datetime, timedelta
 from calendar import HTMLCalendar
+from authentication.models import CustomUser
 from .models import Category, Problem, Submission
 from scraper import get_problem_info
 
@@ -20,7 +22,11 @@ class Calendar(HTMLCalendar):
         
         if isValidDate:
             currentDate= datetime(self.year, self.month, day).date()
-            dayHasSub=len(submissions.filter(sub_date=currentDate))!=0
+            query = ''' SELECT S.id
+                        FROM beatcodeApp_submission S
+                        WHERE S.sub_date=%s
+                    '''
+            dayHasSub=len(Submission.objects.raw(query, [currentDate]))!=0
             today = {True: 'today', False: ' '} [datetime.today().date()==currentDate]
             
             if dayHasSub:
@@ -36,9 +42,12 @@ class Calendar(HTMLCalendar):
             week += self.formatday(d, submissions)
         return f'<tr style=" textAlign:center "> {week} </tr>'
 
-    # formats a month as a table
-    def formatmonth(self):
-        submissions = Submission.objects.filter(sub_date__year=self.year, sub_date__month=self.month)
+    def get_as_html(self):
+        query = ''' SELECT S.id
+                    FROM beatcodeApp_submission S
+                    WHERE S.sub_date__year=%s AND S.sub_date__month=%s
+                '''
+        submissions = Submission.objects.raw(query, [self.year, self.month])
 
         cal = f'<table border="0" cellpadding="0" cellspacing="0" class="calendar">\n'
         cal += f'{self.formatmonthname(self.year, self.month, withyear=True)}\n'
@@ -47,6 +56,42 @@ class Calendar(HTMLCalendar):
             cal += f'{self.formatweek(week, submissions)}\n'
         return cal
 
+
+def populate_dummy_data(number_of_accounts=100, number_of_submissions=100):
+    """
+    Populates the database with arbitrary number of accounts/submissions. Used to test scalability.
+    """
+    # generate accounts, use uuid4 for the username to avoid collisions
+    accounts = []
+    for _ in range(number_of_accounts):
+        account = CustomUser(
+            email=f'{uuid.uuid4()}@dummyemail.com',
+            first_name='fake_fname',
+            last_name='fake_lname',
+            password='password',
+            leetcode_username=f'fakeleetcodeusername-{uuid.uuid4()}',
+        )
+        accounts.append(account)
+    CustomUser.objects.bulk_create(accounts)
+
+    # generate submissions for each newly generate accounts
+    submissions = []
+    if len(Problem.objects.all()) <= 0:
+        raise Exception('Could not generate submissions since there are no valid problems in the database')
+    random_problem = Problem.objects.all()[0]
+    for account in accounts:
+        for _ in range(number_of_submissions):
+            submission = Submission(
+                user=account,
+                problem=random_problem,
+                sub_date=datetime.now(),
+                runtime=0,
+                mem_used=0,
+                success=False
+            )
+            submissions.append(submission)
+    Submission.objects.bulk_create(submissions)
+    
 
 def update_problems():
     """
