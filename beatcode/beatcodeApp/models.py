@@ -36,7 +36,7 @@ class Submission(models.Model):
     problem = models.ForeignKey(to=Problem, on_delete=models.CASCADE)
     sub_date = models.DateField()
     runtime = models.IntegerField()
-    mem_used = models.IntegerField()
+    mem_used = models.FloatField()
     success = models.BooleanField()
 
     def __str__(self):

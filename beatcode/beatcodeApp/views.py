@@ -279,12 +279,25 @@ class ScraperView(LoginRequiredMixin, View):
 
         submission_objects = []
         for submission in submissions:
+            problem_filter = Problem.objects.filter(title_slug=submission['title_slug'])
+            if not problem_filter.exists():
+                Problem.objects.create(
+                    name=submission['title'],
+                    title_slug=submission['title_slug'],
+                )
+            if 'N/A' in submission['runtime']:
+                runtime = 1000000
+                mem_used = 1000000
+            else:
+                runtime = int(submission['runtime'].split(' ')[0])
+                mem_used = float(submission['memory'].split(' ')[0])
             submission_objects.append(Submission(
                 user=request.user,
                 problem=Problem.objects.get(title_slug=submission['title_slug']),
-                sub_date=datetime.datetime.fromtimestamp(submission['timestamp']),
-                runtime=int(submission['runtime'].split(' ')[0]),
-                mem_used=int(submission['memory'].split(' ')[0]),
+                sub_date=datetime.fromtimestamp(submission['timestamp']),
+                runtime=runtime,
+                mem_used=mem_used,
                 success=True if submission['status_display'] == 'Accepted' else False,
             ))
+        Submission.objects.bulk_create(submission_objects)
         return redirect('home')

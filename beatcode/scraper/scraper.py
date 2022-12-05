@@ -36,15 +36,17 @@ class Scraper():
         offset, limit = 0, 20
         while offset == 0 or submissions_data['has_next']:
             try:
-                last_key = submissions_data.get('last_key', '')
+                if offset == 0:
+                    last_key = ''
+                else:
+                    last_key = submissions_data.get('last_key')
                 submissions_data = self._get_submissions_data(offset=offset, limit=limit, last_key=last_key)
+                print(f'Successfully fetched {offset}-{limit}')
                 offset += 20
                 limit += 20
-                print(f'Successfully fetched {offset}-{limit}')
             except RuntimeError:
                 # this runtime error is raised if we get a 403 (usually from LC rate limit)
                 time.sleep(1)
-                print(f'Trying again for {offset}-{limit}')
             all_submissions.extend(submissions_data['submissions_dump'])
 
         return all_submissions

@@ -41,7 +41,7 @@ def get_problem_info(problem_name):
 
         # query res for the information we need
         problem_info = {
-            'title-slug': problem_data['titleSlug'],
+            'title_slug': problem_data['titleSlug'],
             'difficulty': problem_data['difficulty'],
             'categories': [topic['name'] for topic in problem_data['topicTags']]
         }
