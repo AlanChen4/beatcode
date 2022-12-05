@@ -20,7 +20,7 @@ class ProblemSet(models.Model):
 
 class Problem(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    category = models.ManyToManyField(Category)
+    category = models.ManyToManyField(Category, blank=True)
     name = models.CharField(max_length=255)
     problem_set = models.ManyToManyField(ProblemSet, blank=True)
     difficulty = models.CharField(max_length=255, blank=True, null=True)
