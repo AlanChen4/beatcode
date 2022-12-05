@@ -24,6 +24,7 @@ class Problem(models.Model):
     name = models.CharField(max_length=255)
     problem_set = models.ManyToManyField(ProblemSet, blank=True)
     difficulty = models.CharField(max_length=255, blank=True, null=True)
+    title_slug = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return self.name  

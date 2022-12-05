@@ -112,7 +112,10 @@ def update_problems():
             # get the categories that the problem belongs to
             for category in problem_info['categories']:
                 problem.category.add(Category.objects.get(name=category))
-            problem.difficulty=problem_info['difficulty']
+
+            problem.difficulty = problem_info['difficulty']
+            problem.title_slug = problem_info['title_slug']
+
             problem.save()
             print(f"Updated {problem.name}")
             time.sleep(1)
