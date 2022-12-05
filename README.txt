@@ -2,13 +2,13 @@ Madeleine Jones: Set up basic frontend, implemented calendar to track streak/sub
 
 Rachel Qian: Connected the TODO list to submissions, re-wrote logic in SQL
 
-Alice Wu: Created doughnut chart that displays problems completed by category on homepage
+Alice Wu: Created doughnut chart that displays problems completed by category on homepage, created card that shows strongest and weakest categories
 
 Sean Li: Worked on the Leetcode scraper with Alan; worked on the TODO list feature
 
 Alan Chen: Worked on the Leetcode scraper with Sean; implemented authentication and basic routing for the app; created fixtures file
 
-Lulu Tang: Worked on feature to allow users to see info on problems and add problems to todolist; added a new tab to the homepage; added beet icon
+Lulu Tang: Worked on feature to allow users to see info on problems and add problems to todolist; added a new tab to the homepage; added beet icon; implemented notification system; populated problem sets with data
 
 [Github Repo](https://github.com/AlanChen4/beatcode)
 

@@ -22,7 +22,11 @@ class Calendar(HTMLCalendar):
         
         if isValidDate:
             currentDate= datetime(self.year, self.month, day).date()
-            dayHasSub=len(submissions.filter(sub_date=currentDate))!=0
+            query = ''' SELECT S.id
+                        FROM beatcodeApp_submission S
+                        WHERE S.sub_date=%s
+                    '''
+            dayHasSub=len(Submission.objects.raw(query, [currentDate]))!=0
             today = {True: 'today', False: ' '} [datetime.today().date()==currentDate]
             
             if dayHasSub:
@@ -39,7 +43,11 @@ class Calendar(HTMLCalendar):
         return f'<tr style=" textAlign:center "> {week} </tr>'
 
     def get_as_html(self):
-        submissions = Submission.objects.filter(sub_date__year=self.year, sub_date__month=self.month)
+        query = ''' SELECT S.id
+                    FROM beatcodeApp_submission S
+                    WHERE S.sub_date__year=%s AND S.sub_date__month=%s
+                '''
+        submissions = Submission.objects.raw(query, [self.year, self.month])
 
         cal = f'<table border="0" cellpadding="0" cellspacing="0" class="calendar">\n'
         cal += f'{self.formatmonthname(self.year, self.month, withyear=True)}\n'

@@ -5,6 +5,8 @@ from django.views import View
 from django.utils.safestring import mark_safe
 from .utils import Calendar
 from datetime import datetime, timedelta
+from django.conf import settings
+from django.core.mail import send_mail
 from django.views.generic import (
     CreateView,
     UpdateView,
@@ -32,9 +34,13 @@ class Home(LoginRequiredMixin, View):
         context['categories'] = json.dumps(list(category_count.keys()))
         context['problem_freq'] = json.dumps(list(category_count.values()))    
 
+        #context variables for strongest and weakest card
+        context['strongest_category'] = max(category_count, key=category_count.get)
+        context['weakest_category'] = min(category_count, key=category_count.get)
+        
         # context variables for the "Least Practiced" component
         least_practiced = {}
-        least_practiced_query = """
+        least_practiced_query = '''
             SELECT C.name, C.id, MAX(S.sub_date) AS recent_activity
             FROM beatcodeApp_category C LEFT OUTER JOIN
             ((beatcodeApp_problem P JOIN beatcodeApp_problem_category PC ON P.id = PC.problem_id)
@@ -42,8 +48,8 @@ class Home(LoginRequiredMixin, View):
             ON C.id = PC.category_id
             GROUP BY C.id
             ORDER BY recent_activity ASC
-            LIMIT 5
-        """
+            LIMIT 5'''
+            
         for category in Submission.objects.raw(least_practiced_query):
             least_practiced[category.name] = category.recent_activity
         context['least_practiced'] = least_practiced
@@ -56,13 +62,25 @@ class Home(LoginRequiredMixin, View):
 
         streak = 0
         current_date = today.date()
-        while len(Submission.objects.filter(sub_date=current_date)) != 0:
+        
+        streakQuery= '''SELECT S.id
+                        FROM beatcodeApp_submission S
+                        WHERE S.sub_date=%s
+                    '''
+        
+        while len(Submission.objects.raw(streakQuery, [current_date])) != 0:
             streak+=1
             current_date=current_date - timedelta(days=1)
         context['streak']= str(streak) + {True: " day", False: " days"} [streak==1]
         
         # context variables for the "Todo" component
-        todo_problems = ToDo.objects.filter(user=request.user)
+        todo_top5 = '''
+            SELECT t.id, t.problem_id, t.user_id FROM beatcodeApp_todo t
+            JOIN authentication_customuser a
+            ON t.user_id = a.id
+            LIMIT 5
+        '''
+        todo_problems = ToDo.objects.raw(todo_top5)
         context['todo_problems'] = todo_problems
         
         return render(request, 'beatcodeApp/home.html', context)
@@ -110,7 +128,22 @@ class ProblemView(LoginRequiredMixin, View):
 
         problem_id = kwargs['problem_id']
         problem = Problem.objects.get(id=problem_id)
-        ToDo.objects.create(user=request.user,problem=problem)
+        #query to fetch everyone on the ToDo list
+        query = '''SELECT p.id, t.id, p.name, t.problem_id
+        FROM beatcodeApp_todo t, beatcodeApp_problem p, authentication_customuser a
+        WHERE t.problem_id = p.id AND a.id = t.user_id
+        '''
+        query_result = ToDo.objects.raw(query)
+        #print(problem.id)
+        #check to see if the problem is already on the todo list
+        flag = 0
+        for td in query_result:
+            if (td.problem_id == problem.id):
+                flag = 1
+        #print(flag)
+        #if (not ToDo.objects.filter(user = request.user, problem = problem)):
+        if (not flag):
+            ToDo.objects.create(user=request.user,problem=problem)
         
         context['problem'] = problem
         return render(request, 'beatcodeApp/problem.html', context)
@@ -187,7 +220,7 @@ class Todo(LoginRequiredMixin, View):
         for p in ToDo.objects.raw(query_to_delete_problem):
             ToDo.objects.filter(problem_id = p.id).delete()
         
-        query_to_add_name = '''SELECT P.id, P.name
+        query_to_add_name = '''SELECT T.id, T.problem_id, T.user_id
                                 FROM beatcodeApp_todo T JOIN beatcodeApp_problem P
                                 ON T.problem_id = P.id'''
 
