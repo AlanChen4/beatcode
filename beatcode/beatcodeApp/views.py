@@ -293,7 +293,7 @@ class ScraperView(LoginRequiredMixin, View):
                 mem_used = float(submission['memory'].split(' ')[0])
             submission_objects.append(Submission(
                 user=request.user,
-                problem=Problem.objects.get(title_slug=submission['title_slug']),
+                problem=Problem.objects.filter(title_slug=submission['title_slug'])[0],
                 sub_date=datetime.fromtimestamp(submission['timestamp']),
                 runtime=runtime,
                 mem_used=mem_used,
