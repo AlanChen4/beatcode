@@ -35,8 +35,12 @@ class Home(LoginRequiredMixin, View):
         context['problem_freq'] = json.dumps(list(category_count.values()))    
 
         #context variables for strongest and weakest card
-        context['strongest_category'] = max(category_count, key=category_count.get)
-        context['weakest_category'] = min(category_count, key=category_count.get)
+        if len(category_count) > 0:
+            context['strongest_category'] = max(category_count, key=category_count.get)
+            context['weakest_category'] = min(category_count, key=category_count.get)
+        else:
+            context['strongest_category'] = 'N/A'
+            context['weakest_category'] = 'N/A'
         
         # context variables for the "Least Practiced" component
         least_practiced = {}
@@ -272,5 +276,15 @@ class ScraperView(LoginRequiredMixin, View):
             leetcode_username = request.user.leetcode_username
             scraper = Scraper(leetcode_username, leetcode_password, headless=False)
             submissions = scraper.get_all_submissions()
-            print(len(submissions))
+
+        submission_objects = []
+        for submission in submissions:
+            submission_objects.append(Submission(
+                user=request.user,
+                problem=Problem.objects.get(title_slug=submission['title_slug']),
+                sub_date=datetime.datetime.fromtimestamp(submission['timestamp']),
+                runtime=int(submission['runtime'].split(' ')[0]),
+                mem_used=int(submission['memory'].split(' ')[0]),
+                success=True if submission['status_display'] == 'Accepted' else False,
+            ))
         return redirect('home')
