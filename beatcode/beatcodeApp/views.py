@@ -24,13 +24,16 @@ class Home(LoginRequiredMixin, View):
         context = {}
 
         # context variables for the "Problems Completed" component
+        problems_unique = set()
         submissions = Submission.objects.filter(user=request.user, success=True)
         category_count = {}
         for submission in submissions:
-            categories = submission.problem.category.all()
+            if submission.problem not in problems_unique:
+                problems_unique.add(submission.problem)
+                categories = submission.problem.category.all()
 
-            for category in categories:
-                category_count[category.name] = category_count.get(category.name, 0) + 1
+                for category in categories:
+                    category_count[category.name] = category_count.get(category.name, 0) + 1
         context['categories'] = json.dumps(list(category_count.keys()))
         context['problem_freq'] = json.dumps(list(category_count.values()))    
 
