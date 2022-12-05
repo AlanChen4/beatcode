@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from pathlib import Path
 from django.urls import reverse_lazy
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 AUTH_USER_MODEL = 'authentication.CustomUser'
 
@@ -45,7 +49,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
 
     'authentication',
-    'beatcodeApp',
+    'beatcodeApp.apps.BeatcodeappConfig',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +143,11 @@ LOGIN_URL = reverse_lazy('home')
 # used with installed app crispy_forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+#used for notification system
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')

@@ -5,6 +5,8 @@ from django.views import View
 from django.utils.safestring import mark_safe
 from .utils import Calendar
 from datetime import datetime, timedelta
+from django.conf import settings
+from django.core.mail import send_mail
 from django.views.generic import (
     CreateView,
     UpdateView,
