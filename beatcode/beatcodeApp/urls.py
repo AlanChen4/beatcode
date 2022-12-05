@@ -11,5 +11,6 @@ urlpatterns = [
     path('todos/', Todo.as_view(), name='todos'),
     path('category-suggestions/', CategoryView.as_view(), name="category-suggestions"),
     path('home/', Home.as_view(), name='home'),
+    path('scraper/', ScraperView.as_view(), name='scraper'),
     path('', Home.as_view(), name='home'),
 ]

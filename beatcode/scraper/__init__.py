@@ -1,1 +1,2 @@
-from .main import *
+from .problems import *
+from .scraper import *

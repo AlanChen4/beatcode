@@ -1,5 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import View
 from django.utils.safestring import mark_safe
@@ -13,6 +13,7 @@ import json
 
 from .models import *
 from authentication.models import CustomUser
+from scraper import Scraper
 
 class Home(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
@@ -228,3 +229,15 @@ class CategoryView(LoginRequiredMixin, View):
         context['least_practiced'] = least_practiced
 
         return render(request, 'beatcodeApp/category.html', context)
+
+
+class ScraperView(LoginRequiredMixin, View):
+
+    def post(self, request, *args, **kwargs):
+        leetcode_password = request.POST.get('password')
+        if leetcode_password != None:
+            leetcode_username = request.user.leetcode_username
+            scraper = Scraper(leetcode_username, leetcode_password, headless=False)
+            submissions = scraper.get_all_submissions()
+            print(len(submissions))
+        return redirect('home')
