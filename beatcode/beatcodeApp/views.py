@@ -101,14 +101,19 @@ class ProblemSetView(LoginRequiredMixin, View):
 
         # get the problem set corresponding to the kwarg argument
         problem_set_id = kwargs['problem_set_id']
-        problem_set = ProblemSet.objects.get(id=problem_set_id)
+        context['problem_set'] = ProblemSet.objects.get(id=problem_set_id)
 
         # only add problems that are a part of the specified problem set
-        problems = []
-        for problem in Problem.objects.all().order_by('name'):
-            if problem_set in problem.problem_set.all():
-                problems.append(problem)
-
+        query = '''
+        SELECT p.id FROM beatcodeApp_problem p WHERE p.id IN (
+            SELECT psp.problem_id
+            FROM beatcodeApp_problem_problem_set psp
+            WHERE psp.problemset_id = %s
+        )
+        ORDER BY p.name
+        '''
+        problems = Problem.objects.raw(query, [str(problem_set_id).replace('-', '')])
+    
         # filter problems based on searched category
         searched_category = request.GET.get('category', None)
         if searched_category != None and searched_category != '':
@@ -128,6 +133,24 @@ class ProblemView(LoginRequiredMixin, View):
         problem = Problem.objects.get(id=problem_id)
 
         context['problem'] = problem
+
+        #gets problems of the same category for user to get more practice
+        similar_problems = []
+    
+        query = '''
+        SELECT p.id
+        FROM beatcodeApp_problem p, beatcodeApp_problem_category pc1
+        WHERE pc1.problem_id = p.id and p.id != %s and pc1.category_id IN (
+            SELECT pc2.category_id
+            FROM beatcodeApp_problem_category pc2
+            WHERE pc2.problem_id = %s
+        )
+        LIMIT 5
+        '''
+        problem_id_string = str(problem_id).replace('-', '')
+        similar_problems = Problem.objects.raw(query, [problem_id_string, problem_id_string])
+        context['similar_problems'] = set(similar_problems)
+        
         return render(request, 'beatcodeApp/problem.html', context)
 
     def post(self, request, *args, **kwargs):

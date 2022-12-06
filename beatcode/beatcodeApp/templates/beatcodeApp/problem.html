@@ -1,10 +1,51 @@
 {% extends 'beatcodeApp/main.html' %}
 {% block content %}
 <div class="container">
-    <h1>{{ problem.name }}</h1>
+    <div class="d-flex">
+        <h1 class="me-2">{{ problem.name }}</h1>
+        <div>
+            {% if problem.difficulty == 'Easy' %}
+                <span class="badge bg-success rounded-pill">{{ problem.difficulty }}</span>
+            {% elif problem.difficulty == 'Medium' %}
+                <span class="badge bg-warning rounded-pill">{{ problem.difficulty }}</span>
+            {% elif problem.difficulty == 'Hard' %}
+                <span class="badge bg-danger rounded-pill">{{ problem.difficulty }}</span>
+            {% endif %}
+        </div>
+    </div>
+    <div class="d-flex mb-3"> 
+        {% for category in problem.category.all %}
+        <span class="btn btn-outline-dark me-2">
+            {{ category.name }}
+        </span>
+        {% endfor %}
+    </div>
+    <h4>Similar Problems</h4>
+    <div class="d-flex mb-3 overflow-scroll">
+        {% for similar_problem in similar_problems %}
+        <div class="card me-3" style="min-width: 12rem; max-width: 12rem;">
+            <div class="card-body">
+                <div class="d-flex">
+                    <h6 class="me-2">
+                        <a class="link-dark" href="{% url 'problem' similar_problem.id %}">{{ similar_problem.name }}</a>
+                    </h6>
+                    <div>
+                        {% if similar_problem.difficulty == 'Easy' %}
+                            <span class="badge bg-success rounded-pill">{{ similar_problem.difficulty }}</span>
+                        {% elif similar_problem.difficulty == 'Medium' %}
+                            <span class="badge bg-warning rounded-pill">{{ similar_problem.difficulty }}</span>
+                        {% elif similar_problem.difficulty == 'Hard' %}
+                            <span class="badge bg-danger rounded-pill">{{ similar_problem.difficulty }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
     <form action="." method="POST">
         {% csrf_token %}
-        <button type="submit" value="{{ problem.id }}" class="btn btn-dark">Move to TODO</button>
+        <button type="submit" value="{{ problem.id }}" class="btn btn-outline-success">Move to TODO</button>
     </form>
 </div>
 {% endblock %}
