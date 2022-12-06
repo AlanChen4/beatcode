@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-import dj_database_url
 import os
 from pathlib import Path
 from django.urls import reverse_lazy
@@ -105,8 +104,12 @@ DATABASES = {
 }
 
 if os.environ.get('PRODUCTION_ENV') == 'HEROKU':
-    DATABASES = {}
-    DATABASES['default'] = dj_database_url.config(ssl_require=True)
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "prod.sqlite3",
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
