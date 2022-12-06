@@ -1,7 +1,7 @@
 {% extends 'beatcodeApp/main.html' %}
 {% block content %}
 <div class="container">
-    <h1>{{ problem_set.name }}</h1>
+    <h1 class="mb-2">{{ problem_set.name }}</h1>
     <form action="." method="GET" class="row"> {% csrf_token %}
         <div class="col-auto">
             <input type="text" name="category" placeholder="Category to search by" class="form-control">
@@ -26,8 +26,9 @@
                 </td>
                 <td>
                     {% for category in problem.category.all %}
-                    {{ category.name }}
+                    | {{ category.name }}
                     {% endfor %}
+                     |
                 </td>
                 <td>
                     <a class="link-dark" href="{% url 'problem' problem.id %}">
