@@ -32,7 +32,17 @@ SECRET_KEY = "django-insecure-oanz%im-6rpvmt4by&75$9(6motxcf&$2+e+0@b=g$3nq7wgq(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '0.0.0.0',
+    '127.0.0.1',
+    'localhost',
+    'beatcode316.herokuapp.com',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.beatcode316.herokuapp.com/',
+    'https://*.127.0.0.1',
+]
 
 
 # Application definition
