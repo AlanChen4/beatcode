@@ -6,13 +6,13 @@ certifi==2022.9.24
 cffi==1.15.1
 charset-normalizer==2.1.1
 crispy-bootstrap5==0.7
+dj-database-url==1.0.0
 Django==4.1.1
 django-apscheduler==0.6.2
 django-crispy-forms==1.14.0
 exceptiongroup==1.0.1
 h11==0.14.0
 idna==3.4
-mysqlclient==2.1.1
 outcome==1.2.0
 pycparser==2.21
 PySocks==1.7.1
