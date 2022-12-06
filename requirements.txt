@@ -12,6 +12,7 @@ django-crispy-forms==1.14.0
 exceptiongroup==1.0.1
 h11==0.14.0
 idna==3.4
+mysqlclient==2.1.1
 outcome==1.2.0
 pycparser==2.21
 PySocks==1.7.1
