@@ -175,7 +175,8 @@ class ProblemView(LoginRequiredMixin, View):
             ToDo.objects.create(user=request.user, problem=problem)
         
         context['problem'] = problem
-        return render(request, 'beatcodeApp/problem.html', context)
+
+        return redirect('problem', problem_id = problem_id)
 
 class ProblemSetListView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
