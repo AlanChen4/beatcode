@@ -164,19 +164,18 @@ class ProblemView(LoginRequiredMixin, View):
         WHERE t.problem_id = p.id AND a.id = t.user_id
         '''
         query_result = ToDo.objects.raw(query)
-        #print(problem.id)
         #check to see if the problem is already on the todo list
         flag = 0
         for td in query_result:
             if (td.problem_id == problem.id):
                 flag = 1
-        #print(flag)
-        #if (not ToDo.objects.filter(user = request.user, problem = problem)):
+
         if (not flag):
             ToDo.objects.create(user=request.user,problem=problem)
         
         context['problem'] = problem
-        return render(request, 'beatcodeApp/problem.html', context)
+
+        return redirect('problem', problem_id = problem_id)
 
 class ProblemSetListView(LoginRequiredMixin, View):
     login_url = reverse_lazy('login')
