@@ -228,13 +228,11 @@ class Todo(LoginRequiredMixin, View):
             ToDo.objects.filter(problem_id = p.id).delete()
         
         query_to_add_name = '''SELECT T.id, T.problem_id, T.user_id
-                                FROM beatcodeApp_todo T JOIN beatcodeApp_problem P
-                                ON T.problem_id = P.id
-                                JOIN authentication_customuser a
-                                ON T.user_id = a.id'''
+                                FROM beatcodeApp_todo T, beatcodeApp_problem P
+                                WHERE T.problem_id = P.id AND T.user_id = %s'''
 
         # problems are displayed in the order that they are added
-        context['todos'] = ToDo.objects.raw(query_to_add_name)
+        context['todos'] = ToDo.objects.raw(query_to_add_name, [str(request.user.id).replace("-","")])
         return render(request, 'beatcodeApp/todos.html', context)
         
     def post(self, request, *args, **kwargs):
