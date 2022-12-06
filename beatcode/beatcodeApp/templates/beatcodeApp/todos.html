@@ -2,6 +2,7 @@
 {% load static%}
 {% block content %}
 <div class="container">
+  {% if todos %}
     <table class="table todo">
         <thead>
             <tr>
@@ -26,5 +27,8 @@
             {% endfor %}
           </tbody>
     </table>
+    {% else %}
+    <h2>There are no current ToDos</h2>
+    {% endif %}
 </div>
 {% endblock %}
