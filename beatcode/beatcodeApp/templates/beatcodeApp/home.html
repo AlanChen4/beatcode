@@ -6,20 +6,21 @@
     {% if user.leetcode_username or user.leetcode_username|length > 0 %}
     <h5 class="text-secondary mb-3">Here you'll find a breakdown of problems completed, overall progress, and more.</h5>
 
-    <h5>Update Information</h5>
-    <div class="bg-white rounded-4 col-md-7 p-4 mb-3">
-        <p>Information isn't up to date? Enter your Leetcode password to submit an update (Your password isn't saved in the database)</p>
-        <form action="{% url 'scraper' %}" class="row" method="POST"> {% csrf_token %}
-            <div class="input-group col-md-6">
-                <input class="form-control" type="password" name="password" id="password" placeholder="Your Leetcode Password">
-                <input class="btn btn-dark" type="submit" value="Update">
-            </div>
-            <p class="text-secondary">Updates typically take 5-10 seconds</p>
-        </form>
-    </div>
+    
 
     <div class="row gx-5">
         <div class="col-md-7">
+            <h5>Update Information</h5>
+            <div class="bg-white rounded-4 row p-4 mb-3">
+                <p>Information isn't up to date? Enter your Leetcode password to submit an update (Your password isn't saved in the database)</p>
+                <form action="{% url 'scraper' %}" class="row" method="POST"> {% csrf_token %}
+                    <div class="input-group col-md-6">
+                        <input class="form-control" type="password" name="password" id="password" placeholder="Your Leetcode Password">
+                        <input class="btn btn-dark" type="submit" value="Update">
+                    </div>
+                    <p class="text-secondary">Updates typically take 5-10 seconds</p>
+                </form>
+            </div>
             <div class="row mb-3">
                 <!-- chart showing problems completed by user -->
                 <h5>Problems Completed</h5>
@@ -94,7 +95,7 @@
             <div class="row mb-3">
                 <!-- Show the current streak -->
                 <h5>Problem Streak</h5>
-                <h5>Your Current Streak is: {{streak}}</h5>
+                <h6>Your Current Streak is: {{streak}}</h6>
                 <div>{{calendar}}</div>
             </div>
         </div>

@@ -68,7 +68,7 @@ class Home(LoginRequiredMixin, View):
         context['calendar'] = mark_safe(html_calendar)     
 
         streak = 0
-        current_date = today.date()
+        current_date = today.date() - timedelta(days=1)
         
         streakQuery= '''SELECT S.id
                         FROM beatcodeApp_submission S
