@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
@@ -70,10 +71,10 @@ class Home(LoginRequiredMixin, View):
         streak = 0
         current_date = today.date() - timedelta(days=1)
         
-        streakQuery= '''SELECT S.id
-                        FROM beatcodeApp_submission S
-                        WHERE S.sub_date=%s
-                    '''
+        streakQuery = '''
+            SELECT S.id
+            FROM beatcodeApp_submission S
+            WHERE S.sub_date = %s'''
         
         while len(Submission.objects.raw(streakQuery, [current_date])) != 0:
             streak+=1
@@ -85,8 +86,7 @@ class Home(LoginRequiredMixin, View):
             SELECT t.id, t.problem_id, t.user_id FROM beatcodeApp_todo t
             JOIN authentication_customuser a
             ON t.user_id = a.id
-            LIMIT 5
-        '''
+            LIMIT 5'''
         todo_problems = ToDo.objects.raw(todo_top5)
         context['todo_problems'] = todo_problems
         
@@ -105,13 +105,11 @@ class ProblemSetView(LoginRequiredMixin, View):
 
         # only add problems that are a part of the specified problem set
         query = '''
-        SELECT p.id FROM beatcodeApp_problem p WHERE p.id IN (
-            SELECT psp.problem_id
-            FROM beatcodeApp_problem_problem_set psp
-            WHERE psp.problemset_id = %s
-        )
-        ORDER BY p.name
-        '''
+            SELECT p.id FROM beatcodeApp_problem p WHERE p.id IN 
+                (SELECT psp.problem_id
+                FROM beatcodeApp_problem_problem_set psp
+                WHERE psp.problemset_id = %s)
+            ORDER BY p.name'''
         problems = Problem.objects.raw(query, [str(problem_set_id).replace('-', '')])
     
         # filter problems based on searched category
@@ -134,18 +132,17 @@ class ProblemView(LoginRequiredMixin, View):
 
         context['problem'] = problem
 
-        #gets problems of the same category for user to get more practice
+        # gets problems of the same category for user to get more practice
         similar_problems = []
     
         query = '''
-        SELECT p.id
-        FROM beatcodeApp_problem p, beatcodeApp_problem_category pc1
-        WHERE pc1.problem_id = p.id and p.id != %s and pc1.category_id IN (
-            SELECT pc2.category_id
-            FROM beatcodeApp_problem_category pc2
-            WHERE pc2.problem_id = %s
-        )
-        LIMIT 5
+            SELECT p.id
+            FROM beatcodeApp_problem p, beatcodeApp_problem_category pc1
+            WHERE pc1.problem_id = p.id and p.id != %s and pc1.category_id IN 
+                (SELECT pc2.category_id
+                FROM beatcodeApp_problem_category pc2
+                WHERE pc2.problem_id = %s)
+            LIMIT 5
         '''
         problem_id_string = str(problem_id).replace('-', '')
         similar_problems = Problem.objects.raw(query, [problem_id_string, problem_id_string])
@@ -158,22 +155,24 @@ class ProblemView(LoginRequiredMixin, View):
 
         problem_id = kwargs['problem_id']
         problem = Problem.objects.get(id=problem_id)
-        #query to fetch everyone on the ToDo list
-        query = '''SELECT p.id, t.id, p.name, t.problem_id
-        FROM beatcodeApp_todo t, beatcodeApp_problem p, authentication_customuser a
-        WHERE t.problem_id = p.id AND a.id = t.user_id
-        '''
+        # query to fetch everything on the ToDo list
+        query = '''
+            SELECT p.id, t.id, p.name, t.problem_id, s.success
+            FROM beatcodeApp_todo t, beatcodeApp_problem p, authentication_customuser a, beatcodeApp_submission s
+            WHERE t.problem_id = p.id AND a.id = t.user_id AND s.problem_id = p.id'''
         query_result = ToDo.objects.raw(query)
-        #print(problem.id)
-        #check to see if the problem is already on the todo list
+        
+        # check to see if the problem is already on the ToDo list
         flag = 0
         for td in query_result:
             if (td.problem_id == problem.id):
                 flag = 1
-        #print(flag)
-        #if (not ToDo.objects.filter(user = request.user, problem = problem)):
+            if (td.success == 1):
+                flag = 1
+                messages.info(request, 'You have already successfully completed this problem!')
+
         if (not flag):
-            ToDo.objects.create(user=request.user,problem=problem)
+            ToDo.objects.create(user=request.user, problem=problem)
         
         context['problem'] = problem
         return render(request, 'beatcodeApp/problem.html', context)
@@ -211,10 +210,11 @@ class UserSubmissionView(LoginRequiredMixin,View):
         user = User.objects.get(id=user_id)
         all_subs = Submission.objects.filter(user_id=user_id)
         
-        query = '''SELECT S.id, P.category_id, C.category 
-                    FROM beatcodeApp_submission S, beatcodeApp_problem P, beatcodeApp_category C 
-                    WHERE S.problem_id = P.id AND C.id = P.category_id AND S.success = 1
-                    ORDER BY sub_date DESC'''
+        query = '''
+            SELECT S.id, P.category_id, C.category 
+            FROM beatcodeApp_submission S, beatcodeApp_problem P, beatcodeApp_category C 
+            WHERE S.problem_id = P.id AND C.id = P.category_id AND S.success = 1
+            ORDER BY sub_date DESC'''
              
         submissions = all_subs.raw(query)
         
@@ -241,21 +241,28 @@ class Todo(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         context = {}
 
-        query_to_delete_problem = '''SELECT P.id
-                    FROM (beatcodeApp_todo T JOIN beatcodeApp_problem P
-                    ON T.problem_id = P.id)
-                    JOIN beatcodeApp_submission S
-                    ON (T.problem_id = S.problem_id AND S.success = 1)'''
+        query_to_delete_problem = '''
+            SELECT P.id, S.success
+            FROM (beatcodeApp_todo T JOIN beatcodeApp_problem P
+            ON T.problem_id = P.id)
+            JOIN beatcodeApp_submission S
+            ON (T.problem_id = S.problem_id AND S.success = 1)'''
 
+        print("todo get")
         for p in ToDo.objects.raw(query_to_delete_problem):
+            print(p.success)
+            print("HELLO")
             ToDo.objects.filter(problem_id = p.id).delete()
         
-        query_to_add_name = '''SELECT T.id, T.problem_id, T.user_id
-                                FROM beatcodeApp_todo T, beatcodeApp_problem P
-                                WHERE T.problem_id = P.id AND T.user_id = %s'''
+        query_to_add_name = '''
+            SELECT T.id, T.problem_id, T.user_id
+            FROM beatcodeApp_todo T, beatcodeApp_problem P
+            WHERE T.problem_id = P.id AND T.user_id = %s'''
 
         # problems are displayed in the order that they are added
         context['todos'] = ToDo.objects.raw(query_to_add_name, [str(request.user.id).replace("-","")])
+        for p in ToDo.objects.raw(query_to_add_name, [str(request.user.id).replace("-","")]):
+            print(p.problem_id)
         return render(request, 'beatcodeApp/todos.html', context)
         
     def post(self, request, *args, **kwargs):
@@ -263,7 +270,7 @@ class Todo(LoginRequiredMixin, View):
 
         problem_id = request.POST['problem_id']
         problem = Problem.objects.get(id=problem_id)
-        #print(problem)
+        print("todo post")
         ToDo.objects.filter(user=request.user,problem=problem).delete()
         
         todo_problems = ToDo.objects.filter(user=request.user)
@@ -278,13 +285,14 @@ class CategoryView(LoginRequiredMixin, View):
         context = {}
         least_practiced = {}
 
-        query = """SELECT C.name, C.id, MAX(S.sub_date) AS recent_activity
-                    FROM beatcodeApp_category C LEFT OUTER JOIN
-                    ((beatcodeApp_problem P JOIN beatcodeApp_problem_category PC ON P.id = PC.problem_id)
-                    JOIN beatcodeApp_submission S ON P.id = S.problem_id)
-                    ON C.id = PC.category_id
-                    GROUP BY C.id
-                    ORDER BY recent_activity ASC"""
+        query = """
+            SELECT C.name, C.id, MAX(S.sub_date) AS recent_activity
+            FROM beatcodeApp_category C LEFT OUTER JOIN
+            ((beatcodeApp_problem P JOIN beatcodeApp_problem_category PC ON P.id = PC.problem_id)
+            JOIN beatcodeApp_submission S ON P.id = S.problem_id)
+            ON C.id = PC.category_id
+            GROUP BY C.id
+            ORDER BY recent_activity ASC"""
         
         for cat in Submission.objects.raw(query):
             least_practiced[cat.name] = cat.recent_activity
