@@ -1,9 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
+import os
 import time
 
 
@@ -16,11 +14,17 @@ class Authentication:
         self.username = username
         self.password = password
 
-        chrome_options = Options()
+        chrome_options = webdriver.ChromeOptions()
         if headless:
             chrome_options.add_argument("--headless")
 
-        self.driver = webdriver.Chrome(options=chrome_options)
+        if os.environ.get('PRODUCTION_ENV') == 'HEROKU':
+            chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+            chrome_options.add_argument("--disable-dev-shm-usage")
+            chrome_options.add_argument("--no-sandbox")
+            self.driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+        else:
+            self.driver = webdriver.Chrome(options=chrome_options)
 
     def get_auth_cookies(self):
         """
