@@ -155,6 +155,7 @@ class ProblemView(LoginRequiredMixin, View):
 
         problem_id = kwargs['problem_id']
         problem = Problem.objects.get(id=problem_id)
+        
         # query to fetch everything on the ToDo list
         query = '''
             SELECT p.id, t.id, p.name, t.problem_id, s.success
@@ -162,14 +163,28 @@ class ProblemView(LoginRequiredMixin, View):
             WHERE t.problem_id = p.id AND a.id = t.user_id AND s.problem_id = p.id'''
         query_result = ToDo.objects.raw(query)
         
+        # query to fetch the success status of the problem submission
+        success_status_query = '''
+            SELECT S.id, S.problem_id, S.success, MAX(S.sub_date)
+            FROM beatcodeApp_submission S, beatcodeApp_problem P
+            WHERE S.problem_id = P.id AND P.name = %s
+            GROUP BY P.name'''
+
+        # problem_id_string = str(problem_id).replace('-', '')
+        success_status = Submission.objects.raw(success_status_query, [problem.name])
+
         # check to see if the problem is already on the ToDo list
         flag = 0
         for td in query_result:
             if (td.problem_id == problem.id):
                 flag = 1
-            if (td.success == 1):
+        
+        # check to see if the problem has been successfully completed
+        for p in success_status:
+            if (p.success == 1):
                 flag = 1
-                messages.info(request, 'You have already successfully completed this problem!')
+                messages.add_message(request, messages.WARNING, 
+                'Your most recent submission for this problem was successful! Try adding a different problem to your TODO list.')
 
         if (not flag):
             ToDo.objects.create(user=request.user, problem=problem)
@@ -244,15 +259,10 @@ class Todo(LoginRequiredMixin, View):
 
         query_to_delete_problem = '''
             SELECT P.id, S.success
-            FROM (beatcodeApp_todo T JOIN beatcodeApp_problem P
-            ON T.problem_id = P.id)
-            JOIN beatcodeApp_submission S
-            ON (T.problem_id = S.problem_id AND S.success = 1)'''
+            FROM beatcodeApp_todo T, beatcodeApp_problem P, beatcodeApp_submission S
+            WHERE T.problem_id = P.id AND T.problem_id = S.problem_id AND S.success = 1'''
 
-        print("todo get")
         for p in ToDo.objects.raw(query_to_delete_problem):
-            print(p.success)
-            print("HELLO")
             ToDo.objects.filter(problem_id = p.id).delete()
         
         query_to_add_name = '''
@@ -262,8 +272,6 @@ class Todo(LoginRequiredMixin, View):
 
         # problems are displayed in the order that they are added
         context['todos'] = ToDo.objects.raw(query_to_add_name, [str(request.user.id).replace("-","")])
-        for p in ToDo.objects.raw(query_to_add_name, [str(request.user.id).replace("-","")]):
-            print(p.problem_id)
         return render(request, 'beatcodeApp/todos.html', context)
         
     def post(self, request, *args, **kwargs):
@@ -271,7 +279,6 @@ class Todo(LoginRequiredMixin, View):
 
         problem_id = request.POST['problem_id']
         problem = Problem.objects.get(id=problem_id)
-        print("todo post")
         ToDo.objects.filter(user=request.user,problem=problem).delete()
         
         todo_problems = ToDo.objects.filter(user=request.user)

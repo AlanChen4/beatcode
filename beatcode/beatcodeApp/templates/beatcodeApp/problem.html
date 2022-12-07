@@ -1,6 +1,19 @@
 {% extends 'beatcodeApp/main.html' %}
 {% block content %}
 <div class="container">
+    <div style="margin-bottom: 10px">
+        <ul class="messages" style="padding:0rem;">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags %}
+                    <div class="alert alert-{{ message.tags }} msg fade show" role="alert" style="width:fit-content;">{{ message }}</div>
+                {% else %}
+                    <div class="alert alert-info msg fade show" role="alert">{{ message }}</div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        </ul>
+    </div>
     <div class="d-flex">
         <h1 class="me-2">{{ problem.name }}</h1>
         <div>
@@ -47,12 +60,5 @@
         {% csrf_token %}
         <button type="submit" value="{{ problem.id }}" class="btn btn-outline-success">Move to TODO</button>
     </form>
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
 </div>
 {% endblock %}
